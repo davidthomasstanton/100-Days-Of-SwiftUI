@@ -1,7 +1,7 @@
 import UIKit
 
 // function that checks if a number has an integral square root
-/*
+
 enum SquareErrors: Error {
     case tooSmall, tooLarge, noRoot
 }
@@ -30,9 +30,9 @@ do {
 } catch SquareErrors.noRoot {
     print("There is no integer square root of \(number).")
 }
-*/
 
-/*
+
+
 func greetUser() {
     print("Hi there!")
 }
@@ -43,9 +43,8 @@ greetUser()
 var greetCopy: () -> Void = greetUser
 
 greetCopy()
-*/
 
-/*
+
 let sayHello = { (name: String) -> String in
     "Hi \(name)!"
 }
@@ -226,7 +225,7 @@ func repeatAction(count: Int, then action: () -> Void) {
 repeatAction(count: 5) {
     print("Hello!")
 }
-*/
+
 
 // input an array,
 // Filter out any numbers are even
