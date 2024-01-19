@@ -123,6 +123,7 @@ do {
 */
 
 // Closures ================================================================
+/*
 var painPicture = {
     print("Where are my watercolors?")
 }
@@ -398,6 +399,7 @@ func brewTea(steps: () -> Void) {
     print("Get milk")
     steps()
 }
+*/
 
 
 
@@ -409,3 +411,494 @@ func brewTea(steps: () -> Void) {
 // what data should be variable or constant? what's the access control?
 // Don't allow invalid gears (1...10) seems a fair range
 
+
+
+// Class ============================================================
+/*
+class Game {
+    var score = 0 {
+        didSet {
+            print("Score is now \(score)")
+        }
+    }
+}
+
+var newGame = Game()
+newGame.score += 10
+
+
+
+class Employee {
+    let hours: Int
+    
+    init(hours: Int) {
+        self.hours = hours
+    }
+    
+    func printSummary() {
+        print("I work \(hours) hours a day.")
+    }
+}
+
+final class Developer: Employee {
+    func work() {
+        print("I'm writing code for \(hours) hours.")
+    }
+    
+    override func printSummary() {
+        print("I'm a developer who will sometimes work \(hours) a day, but other times will spend hours arguing about whether code should be indented using tabs or spaces.")
+    }
+}
+
+final class Manager: Employee {
+    func work() {
+        print("I'm goint to meetings for \(hours) hours.")
+    }
+}
+
+let robert = Developer(hours: 8)
+let joseph = Manager(hours: 10)
+robert.work()
+joseph.work()
+
+let novall = Developer(hours: 8)
+novall.printSummary()
+
+class Vehicle {
+    let isElectric: Bool
+    
+    init(isElectric: Bool) {
+        self.isElectric = isElectric
+        
+    }
+}
+
+class Car: Vehicle {
+    let isConvertible: Bool
+    
+    init(isElectric: Bool, isConvertible: Bool) {
+        self.isConvertible = isConvertible
+        super.init(isElectric: isElectric)
+    }
+}
+
+let teslaX = Car(isElectric: true, isConvertible: false)
+*/
+
+// Class Inheritance =========================================
+/*
+class Vehicle {
+    var wheels: Int
+    init(wheels: Int) {
+        self.wheels = wheels
+    }
+}
+
+class Truck: Vehicle {
+    var goodsCapacity: Int
+    init(wheels: Int, goodsCapacity: Int) {
+        self.goodsCapacity = goodsCapacity
+        super.init(wheels: wheels)
+    }
+}
+
+class Student {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class UniversityStudent: Student {
+    var annualFees: Int
+    init(name: String, annualFees: Int) {
+        self.annualFees = annualFees
+        super.init(name: name)
+    }
+}
+
+class Handbag {
+    var price: Int
+    init(price: Int) {
+        self.price = price
+    }
+}
+
+class DesignerHandbag: Handbag {
+    var brand: String
+    init(brand: String, price: Int) {
+        self.brand = brand
+        super.init(price: price)
+    }
+}
+
+class Product {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class Book: Product {
+    var isbn: String
+    init(name: String, isbn: String) {
+        self.isbn = isbn
+        super.init(name: name)
+    }
+}
+
+class Computer {
+    var cpu: String
+    var ramGB: Int
+    init(cpu: String, ramGB: Int) {
+        self.cpu = cpu
+        self.ramGB = ramGB
+    }
+}
+
+class Laptop: Computer {
+    var screenInches: Int
+    init(screenInches: Int, cpu: String, ramGB: Int) {
+        self.screenInches = screenInches
+        super.init(cpu: cpu, ramGB: ramGB)
+    }
+}
+
+class Bicycle {
+    var color: String
+    init(color: String) {
+        self.color = color
+    }
+}
+
+class MountainBike: Bicycle {
+    var tireThickness: Double
+    init(color: String, tireThickness: Double) {
+        self.tireThickness = tireThickness
+        super.init(color: color)
+    }
+}
+
+class SmartPhone {
+    var price: Int
+    init(price: Int) {
+        self.price = price
+    }
+}
+
+class Android: SmartPhone {
+    var features: [String]
+    init(features: [String], price: Int) {
+        self.features = features
+        super.init(price: features.count * 50)
+    }
+}
+
+class Dog {
+    var breed: String
+    var isPedigree: Bool
+    init(breed: String, isPedigree: Bool) {
+        self.breed = breed
+        self.isPedigree = isPedigree
+    }
+}
+
+class Poodle: Dog {
+    var name: String
+    init(name: String) {
+        self.name = name
+        super.init(breed: "Poodle", isPedigree: true)
+    }
+}
+
+class Instrument {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+class Piano: Instrument {
+    var isElectric: Bool
+    init(isElectric: Bool) {
+        self.isElectric = isElectric
+        super.init(name: "Piano")
+    }
+}
+
+class Printer {
+    var cost: Int
+    init(cost: Int) {
+        self.cost = cost
+    }
+}
+class LaserPrinter: Printer {
+    var model: String
+    init(model: String, cost: Int) {
+        self.model = model
+        super.init(cost: cost)
+    }
+}
+
+class Food {
+    var name: String
+    var nutritionRating: Int
+    init(name: String, nutritionRating: Int) {
+        self.name = name
+        self.nutritionRating = nutritionRating
+    }
+}
+class Pizza: Food {
+    init() {
+        super.init(name: "Pizza", nutritionRating: 3)
+    }
+}
+
+class Shape {
+    var sides: Int
+    init(sides: Int) {
+        self.sides = sides
+    }
+}
+class Rectangle: Shape {
+    var color: String
+    init(color: String) {
+        self.color = color
+        super.init(sides: 4)
+    }
+}
+*/
+
+// How to Copy Classes ===============================
+/*
+class User {
+    var username = "Anonymous"
+    
+    func copy() -> User {
+        let user = User()
+        user.username = username
+        return user
+    }
+}
+
+var user1 = User()
+var user2 = user1.copy()
+user2.username = "Taylor"
+print(user1.username)
+print(user2.username)
+
+class Statue {
+    var sculptor = "Unknown"
+}
+
+struct GalacticaCrew {
+    var isCylon = false
+}
+var starbuck = GalacticaCrew()
+var tyrol = starbuck
+tyrol.isCylon = true
+print(starbuck.isCylon)
+print(tyrol.isCylon)
+
+
+var venusDeMilo = Statue()
+venusDeMilo.sculptor = "Aelexandros of Antioch"
+var david = Statue()
+david.sculptor = "Michaelangelo"
+print(venusDeMilo.sculptor)
+print(david.sculptor)
+
+struct Calculator {
+    var currentTotal = 0
+}
+
+class Starship {
+    var maxWarp = 9.0
+}
+var voyager = Starship()
+voyager.maxWarp = 9.975
+var enterprise = voyager
+enterprise.maxWarp = 9.6
+print(voyager.maxWarp)
+print(enterprise.maxWarp)
+
+var baseModel = Calculator()
+var casio = baseModel
+var texas = baseModel
+casio.currentTotal = 556
+texas.currentTotal = 384
+print(casio.currentTotal)
+print(texas.currentTotal)
+
+class Magazine {
+    var pageCount = 132
+}
+var example = Magazine()
+var wired = example
+wired.pageCount = 164
+var vogue = example
+vogue.pageCount = 128
+print("Example page count: \(example.pageCount)")
+print("Wired page count: \(wired.pageCount)")
+print("Vogue page count: \(vogue.pageCount)")
+
+class Hairdresser {
+    var clients = [String]()
+}
+var tim = Hairdresser()
+tim.clients.append("Jess")
+var dave = tim
+dave.clients.append("Sam")
+print(tim.clients.count)
+print(dave.clients.count)
+
+class UserId {
+    let id: Int
+    init(id: Int) {
+        self.id = id
+        print("User \(id): I'm alive!")
+    }
+    
+    deinit {
+        print("User \(id): I'm dead!")
+    }
+}
+
+/*
+for i in 1...3 {
+    let user = UserId(id: i)
+    print("User \(user.id): I'm in control!")
+
+}
+*/
+
+var users = [UserId]()
+
+for i in 1...3 {
+    let user = UserId(id: i)
+    print("User \(user.id): I'm in control!")
+    users.append(user)
+}
+
+print("Loop is finished!")
+users.removeAll()
+print("Array is clear!")
+
+class UserExample {
+    var name = "Paul"
+}
+
+var user = UserExample()
+user.name = "Taylor"
+user = UserExample()
+print(user.name)
+*/
+
+// Mutability =================================================
+/*
+class Pizza {
+    private var toppings = [String]()
+    func add(topping: String) {
+        toppings.append(topping)
+    }
+}
+var pizza = Pizza()
+pizza.add(topping: "Mushrooms")
+
+class School {
+    var students = 200
+    func expel(student: String, for reason: String) {
+        print("\(student) has been expelled for \(reason).")
+        students -= 1
+    }
+}
+
+struct Park {
+    var numberOfFlowers = 1000
+    mutating func plantFlowers() {
+        numberOfFlowers += 50
+    }
+}
+var park = Park()
+park.plantFlowers()
+
+struct Piano {
+    var untunedKeys = 4
+    mutating func tune() {
+        if untunedKeys > 0 {
+            untunedKeys -= 1
+        }
+    }
+}
+var piano = Piano()
+piano.tune()
+*/
+
+// Checkpoint 7
+// Class heirarchy for animals, Animal => Dog, Cat, => Corgi, Poodle; Persian, Lion
+// legs property for number of legs in Animal
+// Dog & Cat has speak() method, each subclass prints something different
+// Cat has isTame Boolean with an initializer
+class Animal {
+    var legs: Int
+    
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+class Dog: Animal {
+    var bark: String
+    
+    init(bark: String, legs: Int) {
+        self.bark = bark
+        super.init(legs: legs)
+    }
+    
+    func speak() {
+        print(bark)
+    }
+}
+
+class Corgi: Dog {
+    
+    override func speak() {
+        print("Yip!")
+    }
+}
+
+class Poodle: Dog {
+    override func speak() {
+        print("Bark!")
+    }
+}
+
+class Cat: Animal {
+    var meow: String
+    var isTame: Bool
+    
+    init(legs: Int, meow: String, isTame: Bool) {
+        self.meow = meow
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak() {
+        print(meow)
+    }
+    
+}
+
+class Persian: Cat {
+    
+    override func speak() {
+        print("Meooooow")
+    }
+
+}
+
+class Lion: Cat {
+    
+    override func speak() {
+        print("RRROOOOOOOOAAAAAAR")
+    }
+}
