@@ -421,3 +421,33 @@ let user = (try? getUser(id: 23)) ?? "Anonymous"
 print(user)
 
 
+// Checkpoint 9
+// Function that accepts an optional array of integers, and returns one randomly
+// if the array is missing or empty, return a random number (1...100)
+// Write this function in a single line of code
+
+var randoInts: [Int]? = [1, 4, 745, 23, 4, 24, 55, 4394520]
+
+//func randomFromArray(_ numbers: Int?) -> Int
+
+let randoInt = randoInts?.randomElement() ?? Int.random(in: 1...100)
+print(randoInt)
+
+func getNumber(in array: [Int]?) -> Int {
+    if let array = array {
+        return array.randomElement() ?? Int.random(in: 1...100)
+    }
+    return Int.random(in: 1...100)
+}
+
+print(getNumber(in: randoInts))
+
+func guardNumber(in array: [Int]?) -> Int {
+    let random = Int.random(in: 1...100)
+    guard let array = array else {
+        return random
+    }
+    return array.randomElement() ?? random
+}
+
+
