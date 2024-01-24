@@ -14,6 +14,7 @@
 		FCE7BA552B601BE2006AF0CA /* StudentSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BA542B601BE2006AF0CA /* StudentSelector.swift */; };
 		FCE7BA572B601D73006AF0CA /* EnterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BA562B601D73006AF0CA /* EnterName.swift */; };
 		FCE7BA592B601E2F006AF0CA /* TapCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BA582B601E2F006AF0CA /* TapCount.swift */; };
+		FCF664602B60279700303949 /* WeSplitPickerPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF6645F2B60279700303949 /* WeSplitPickerPractice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FCE7BA542B601BE2006AF0CA /* StudentSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSelector.swift; sourceTree = "<group>"; };
 		FCE7BA562B601D73006AF0CA /* EnterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterName.swift; sourceTree = "<group>"; };
 		FCE7BA582B601E2F006AF0CA /* TapCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapCount.swift; sourceTree = "<group>"; };
+		FCF6645F2B60279700303949 /* WeSplitPickerPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitPickerPractice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				FCE7BA462B5F8F26006AF0CA /* WeSplit2App.swift */,
 				FCE7BA482B5F8F26006AF0CA /* ContentView.swift */,
+				FCF6645F2B60279700303949 /* WeSplitPickerPractice.swift */,
 				FCE7BA542B601BE2006AF0CA /* StudentSelector.swift */,
 				FCE7BA562B601D73006AF0CA /* EnterName.swift */,
 				FCE7BA582B601E2F006AF0CA /* TapCount.swift */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE7BA492B5F8F26006AF0CA /* ContentView.swift in Sources */,
+				FCF664602B60279700303949 /* WeSplitPickerPractice.swift in Sources */,
 				FCE7BA572B601D73006AF0CA /* EnterName.swift in Sources */,
 				FCE7BA472B5F8F26006AF0CA /* WeSplit2App.swift in Sources */,
 				FCE7BA592B601E2F006AF0CA /* TapCount.swift in Sources */,
