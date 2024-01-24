@@ -23,6 +23,12 @@ struct WeSplitPickerPractice: View {
         return grandTotal / Double(numberOfPeople)
     }
     
+    // Computed property for grand total
+    var grandTotal: Double {
+        let tipTotal = checkAmount * 0.01 * Double(tipPercentage)
+        return checkAmount + tipTotal
+    }
+    
     var body: some View {
         // Navigation Stack with a Form and 3 sections, includes a Done button for keyboard
         NavigationStack {
@@ -43,21 +49,33 @@ struct WeSplitPickerPractice: View {
                 // Section with tip percentage in a segmented row
                 Section("Tip Percentage") {
                     Picker("Tip Percentage", selection: $tipPercentage) {
+                        ForEach(0..<101) {
+                            Text("\($0)")
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+                    /*
+                    Picker("Tip Percentage", selection: $tipPercentage) {
                         ForEach(tipPercentages, id: \.self) {
                             Text("\($0)")
                         }
                     }
                     .pickerStyle(.segmented)
+                     */
                 }
-                
+                // Section that displays the total amount of check
+                Section("Total Amount with Tip") {
+                    Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                }
                 // Section that displays the amount per person
-                Section("Amount Per Person") {
+                Section("Grand Total / Amount Per Person") {
                     Text(amountPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    
                 }
                 
             }
-            .navigationTitle("WeSplit Practice #2")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Something Really Cool")
+            //.navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if amountIsFocused {
                     Button("Done") {
