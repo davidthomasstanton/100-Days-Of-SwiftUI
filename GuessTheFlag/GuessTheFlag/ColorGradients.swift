@@ -30,13 +30,16 @@ struct ColorGradients: View {
             /*
             RadialGradient(colors: [.blue, .black], center: .center, startRadius: 20, endRadius: 400)
             */
-            /*
+            
+            
             AngularGradient(colors: [.red, .yellow, .green, .blue, .purple, .red], center: .center)
-            */
+            
+            /*
             Text("Halloooo")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundStyle(.white)
-                .background(.indigo.gradient)
+                .background(.blue.gradient)
+             */
 
         }
         .ignoresSafeArea()
