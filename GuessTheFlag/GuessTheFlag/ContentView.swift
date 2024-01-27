@@ -9,9 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingScore: Bool = false
+    @State private var gameOver: Bool = false
     @State private var scoreTitle = ""
+    @State private var gameOverText = ""
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var correctAnswers = 0
+    @State private var questionNumber = 0
+    
+    let totalQuestions = 7
+    
     
     var body: some View {
         ZStack  {
@@ -41,7 +48,7 @@ struct ContentView: View {
                                 flagTapped(number)
                             } label: {
                                 Image(countries[number])
-                                    .clipShape(.capsule)
+                                    .clipShape(.rect(cornerRadius: 20))
                                     .shadow(radius: 5)
                             }
                         }
@@ -55,7 +62,7 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: ???")
+                Text("Score: \(correctAnswers) / \(questionNumber)")
                     .foregroundStyle(.white)
                     .font(.title.bold())
                 
@@ -66,22 +73,46 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score = ???")
+            Text("Score: \(correctAnswers) / \(questionNumber)")
+        }
+        .alert(gameOverText, isPresented: $gameOver) {
+            Button("New Game", action: resetGame)
+        } message: {
+            Text("")
         }
     }
     
     func flagTapped(_ number: Int) {
+        questionNumber += 1
+        
         if number == correctAnswer {
             scoreTitle = "Correct"
+            correctAnswers += 1
         } else {
             scoreTitle = "Wrong"
         }
-        showingScore = true
+        if (questionNumber == totalQuestions) {
+            gameOverText = """
+                            Game Over!
+                            Your score is \(correctAnswers) / \(totalQuestions)
+                            """
+            gameOver = true
+        } else {
+            showingScore = true
+        }
     }
     
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func resetGame() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+        correctAnswers = 0
+        questionNumber = 0
+        gameOver = false
     }
 }
 
