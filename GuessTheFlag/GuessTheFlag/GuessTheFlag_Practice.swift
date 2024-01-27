@@ -9,84 +9,103 @@ import SwiftUI
 
 struct GuessTheFlag_Practice: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
+    @State private var verdict = ""
+    @State private var showContinue = false
+    @State private var showGameOver = false
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var scoreTitle = ""
-    @State private var showingScore: Bool = false
+    @State private var correctAnswers = 0
+    @State private var questionNumber = 0
+    
+    let totalQuestions = 3
+    
+    let topColor = Color(red: 0.2, green: 0.3, blue: 0.4, opacity: 0.9)
+    let bottomColor = Color(red: 0.3, green: 0.4, blue: 0.5, opacity: 0.9)
     
     var body: some View {
         ZStack {
             RadialGradient(stops: [
-                .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
-                .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3)
-            ], center: .bottom, startRadius: 200, endRadius: 1700)
+                .init(color: topColor, location: 0.3),
+                .init(color: bottomColor, location: 0.3)
+            ], center: .top, startRadius: 200, endRadius: 600)
             .ignoresSafeArea()
-            
+
             VStack {
-                VStack {
-                    Spacer()
-                    
-                    Text("Guess the flag")
+                Spacer()
+                
+                Text("Guess the Flag")
+                    .font(.largeTitle.bold())
+                    .foregroundStyle(.white)
+                
+                Spacer()
+                
+                VStack (spacing: 15) {
+                    Text("Tap the flag of")
+                        .font(.subheadline.weight(.heavy))
+                    Text(countries[correctAnswer])
                         .font(.largeTitle.bold())
-                        .foregroundStyle(.white)
                     
-                    Spacer()
-                    Spacer()
-                    
-                    VStack (spacing: 15) {
-                        Text("Tape the flag of")
-                            .font(.subheadline.weight(.semibold))
-                        Text(countries[correctAnswer])
-                            .font(.largeTitle.bold())
-                        
-                        VStack (spacing: 15) {
-                            ForEach(0..<3) { number in
-                                Button {
-                                    flagTapped(number)
-                                } label: {
-                                    Image(countries[number])
-                                        .clipShape(.rect(cornerRadius: 15))
-                                        .shadow(radius: 05)
-                                }
-                            }
+                    ForEach(0..<3) { number in
+                        Button {
+                            //
+                            flagTapped(number)
+                        } label: {
+                            Image(countries[number])
                         }
-                        //Spacer()
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 20)
-                    .background(.thinMaterial)
-                    .clipShape(.rect(cornerRadius: 20))
                     
-                    
-                    Spacer()
+                    Text("Score: \(correctAnswers) / \(questionNumber)")
+                        .font(.subheadline.italic())
                     
                 }
-                .padding(20)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(.thinMaterial)
+                .clipShape(.rect(cornerRadius: 15))
                 
-                Text("Your score: ???")
-                    .font(.title.weight(.semibold))
-                    .foregroundColor(.white)
+                Spacer()
                 Spacer()
             }
+            .padding(20)
         }
-        .alert(scoreTitle, isPresented: $showingScore) {
+        .alert(verdict, isPresented: $showContinue) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score = ???")
+            Text("Score: \(correctAnswers) / \(questionNumber)")
+        }
+        .alert(verdict, isPresented: $showGameOver) {
+            Button("New Game", action: resetGame)
         }
     }
     
     func flagTapped(_ number: Int) {
+        questionNumber += 1
+        
         if number == correctAnswer {
-            scoreTitle = "Correct"
+            correctAnswers += 1
+            verdict = "Correct"
         } else {
-            scoreTitle = "Wrong"
+            verdict = "Wrong"
         }
-        showingScore = true
+        
+        if questionNumber == totalQuestions {
+            verdict = "Game Over!\nScore: \(correctAnswers) / \(totalQuestions)"
+            showGameOver = true
+        } else {
+            showContinue = true
+        }
+        
     }
     
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func resetGame() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+        correctAnswers = 0
+        questionNumber = 0
     }
 }
 
