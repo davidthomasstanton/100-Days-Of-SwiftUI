@@ -15,6 +15,7 @@
 		FC8202AC2B65963A00D5592C /* ViewsAsProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8202AB2B65963900D5592C /* ViewsAsProperties.swift */; };
 		FC8202AE2B65989500D5592C /* ViewComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8202AD2B65989500D5592C /* ViewComposition.swift */; };
 		FC8202B02B65A6B300D5592C /* CustomContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8202AF2B65A6B300D5592C /* CustomContainers.swift */; };
+		FCCABD7D2B680630002BCBBF /* ViewsPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCABD7C2B680630002BCBBF /* ViewsPractice.swift */; };
 		FCEF09862B663D6200BBCAD1 /* PoincareReccursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF09852B663D6200BBCAD1 /* PoincareReccursion.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		FC8202AB2B65963900D5592C /* ViewsAsProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAsProperties.swift; sourceTree = "<group>"; };
 		FC8202AD2B65989500D5592C /* ViewComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComposition.swift; sourceTree = "<group>"; };
 		FC8202AF2B65A6B300D5592C /* CustomContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContainers.swift; sourceTree = "<group>"; };
+		FCCABD7C2B680630002BCBBF /* ViewsPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsPractice.swift; sourceTree = "<group>"; };
 		FCEF09852B663D6200BBCAD1 /* PoincareReccursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoincareReccursion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				FC8202AD2B65989500D5592C /* ViewComposition.swift */,
 				FC8202AF2B65A6B300D5592C /* CustomContainers.swift */,
 				FCEF09852B663D6200BBCAD1 /* PoincareReccursion.swift */,
+				FCCABD7C2B680630002BCBBF /* ViewsPractice.swift */,
 				FC82029F2B6573C400D5592C /* Assets.xcassets */,
 				FC8202A12B6573C400D5592C /* Preview Content */,
 			);
@@ -159,6 +162,7 @@
 				FC8202AA2B65941300D5592C /* EnvironmentModifier.swift in Sources */,
 				FC82029C2B6573C400D5592C /* ViewsAndModifiersApp.swift in Sources */,
 				FCEF09862B663D6200BBCAD1 /* PoincareReccursion.swift in Sources */,
+				FCCABD7D2B680630002BCBBF /* ViewsPractice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
