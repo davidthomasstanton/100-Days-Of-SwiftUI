@@ -12,6 +12,8 @@
 		FC1EDE8B2B6849D9000FA0CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1EDE8A2B6849D9000FA0CC /* Assets.xcassets */; };
 		FC1EDE8E2B6849D9000FA0CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1EDE8D2B6849D9000FA0CC /* Preview Assets.xcassets */; };
 		FC86F3CE2B68C336006D0000 /* RockPaperScissorsPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86F3CD2B68C336006D0000 /* RockPaperScissorsPractice.swift */; };
+		FC9E0C552B6952D000AACD6E /* TeacherSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E0C542B6952D000AACD6E /* TeacherSolution.swift */; };
+		FC9E0C572B69587F00AACD6E /* RPSPractice2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E0C562B69587F00AACD6E /* RPSPractice2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		FC1EDE8A2B6849D9000FA0CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1EDE8D2B6849D9000FA0CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC86F3CD2B68C336006D0000 /* RockPaperScissorsPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsPractice.swift; sourceTree = "<group>"; };
+		FC9E0C542B6952D000AACD6E /* TeacherSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSolution.swift; sourceTree = "<group>"; };
+		FC9E0C562B69587F00AACD6E /* RPSPractice2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSPractice2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				FC1EDE862B6849D8000FA0CC /* RockPaperScissorsApp.swift */,
 				FC1EDE882B6849D8000FA0CC /* ContentView.swift */,
 				FC86F3CD2B68C336006D0000 /* RockPaperScissorsPractice.swift */,
+				FC9E0C542B6952D000AACD6E /* TeacherSolution.swift */,
+				FC9E0C562B69587F00AACD6E /* RPSPractice2.swift */,
 				FC1EDE8A2B6849D9000FA0CC /* Assets.xcassets */,
 				FC1EDE8C2B6849D9000FA0CC /* Preview Content */,
 			);
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1EDE892B6849D8000FA0CC /* ContentView.swift in Sources */,
+				FC9E0C552B6952D000AACD6E /* TeacherSolution.swift in Sources */,
+				FC9E0C572B69587F00AACD6E /* RPSPractice2.swift in Sources */,
 				FC1EDE872B6849D8000FA0CC /* RockPaperScissorsApp.swift in Sources */,
 				FC86F3CE2B68C336006D0000 /* RockPaperScissorsPractice.swift in Sources */,
 			);
