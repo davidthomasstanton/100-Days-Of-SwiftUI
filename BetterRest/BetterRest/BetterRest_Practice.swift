@@ -18,6 +18,7 @@ struct BetterRest_Practice: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+    // default wakeup time
     static var defaultWakeUpTime: Date {
         var components = DateComponents()
         components.hour = 7
