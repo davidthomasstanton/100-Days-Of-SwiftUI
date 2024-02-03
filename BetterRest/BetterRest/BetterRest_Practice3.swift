@@ -75,6 +75,7 @@ struct BetterRest_Practice3: View {
                             Text("\($0)")
                         }
                     }
+                    
                 } header: {
                     Text("Daily coffee intake")
                         .sectionHeaderStyle()
