@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var playerScore = 0
+    
     var body: some View {
         // NavigationStack with Sections to Enter your word
         
@@ -31,7 +33,7 @@ struct ContentView: View {
                 }
                 
                 // Section to display usedWords
-                Section {
+                Section("Player Score: \(playerScore)") {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
                             // Add an SFSymbol to display the character count of word
@@ -41,6 +43,11 @@ struct ContentView: View {
                     }
                 }
             }
+            .listStyle(.sidebar)
+            .toolbar {
+                Button("new word", action: startGame)
+            }
+
             .navigationTitle(rootWord)
                         
             // onSubmit, add new word
@@ -82,11 +89,25 @@ struct ContentView: View {
             return
         }
         
+        guard isShort(word: answer) else {
+            wordError(title: "Too Short", message: "Word must be at least 3 characters long.")
+            return
+        }
+        
+        guard isRootWord(word: answer) else {
+            wordError(title: "Cannot be prompt", message: "\(answer) is the root word")
+            return
+        }
+        
         // insert newWord into usedWords at index 0
         // add an animation to slide words in
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        
+        // increase score
+        playerScore += newWord.count
+        
         // reset newWord
         newWord = ""
     }
@@ -109,6 +130,14 @@ struct ContentView: View {
                 // 4. Pick one random word, or use "silkworm" as a sensible default
                 rootWord = allWords.randomElement() ?? "silkworm"
                 
+                
+                // reset score
+                playerScore = 0
+                
+                // reset usedWords
+                withAnimation {
+                    usedWords.removeAll()
+                }
                 // If we're here everything has worked, so we can exit
                 return
             }
@@ -148,7 +177,17 @@ struct ContentView: View {
         return misspelledRange.location == NSNotFound
     }
     
-    func  wordError(title: String, message: String) {
+    // func isShort to check for words
+    func isShort(word: String) -> Bool {
+        return !(word.count < 3)
+    }
+    
+    // func isRootWord
+    func isRootWord(word: String) -> Bool {
+        return !(word == rootWord)
+    }
+    
+    func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
         showingError = true
