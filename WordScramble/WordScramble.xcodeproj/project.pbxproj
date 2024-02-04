@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC46D30C2B6EC47400F26972 /* WordScramble_Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46D30B2B6EC47400F26972 /* WordScramble_Practice.swift */; };
 		FC661EAF2B6D4740000163ED /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC661EAE2B6D4740000163ED /* WordScrambleApp.swift */; };
 		FC661EB12B6D4740000163ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC661EB02B6D4740000163ED /* ContentView.swift */; };
 		FC661EB32B6D4740000163ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC661EB22B6D4740000163ED /* Assets.xcassets */; };
@@ -17,9 +18,11 @@
 		FC661EC32B6D5DAA000163ED /* WorkingWithStrings_Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC661EC22B6D5DAA000163ED /* WorkingWithStrings_Practice.swift */; };
 		FC661EC52B6D5DFE000163ED /* LoadingResources_Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC661EC42B6D5DFE000163ED /* LoadingResources_Practice.swift */; };
 		FC661EC72B6D5E28000163ED /* AddingToAListOfWords_Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC661EC62B6D5E28000163ED /* AddingToAListOfWords_Practice.swift */; };
+		FCE934FB2B6EB3A400C7F51A /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = FCE934FA2B6EB3A400C7F51A /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC46D30B2B6EC47400F26972 /* WordScramble_Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble_Practice.swift; sourceTree = "<group>"; };
 		FC661EAB2B6D4740000163ED /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC661EAE2B6D4740000163ED /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		FC661EB02B6D4740000163ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		FC661EC22B6D5DAA000163ED /* WorkingWithStrings_Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingWithStrings_Practice.swift; sourceTree = "<group>"; };
 		FC661EC42B6D5DFE000163ED /* LoadingResources_Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResources_Practice.swift; sourceTree = "<group>"; };
 		FC661EC62B6D5E28000163ED /* AddingToAListOfWords_Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingToAListOfWords_Practice.swift; sourceTree = "<group>"; };
+		FCE934FA2B6EB3A400C7F51A /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			children = (
 				FC661EAE2B6D4740000163ED /* WordScrambleApp.swift */,
 				FC661EB02B6D4740000163ED /* ContentView.swift */,
+				FC46D30B2B6EC47400F26972 /* WordScramble_Practice.swift */,
+				FCE934FA2B6EB3A400C7F51A /* start.txt */,
 				FC661EC02B6D5D60000163ED /* AddingToAListOfWords.swift */,
 				FC661EC62B6D5E28000163ED /* AddingToAListOfWords_Practice.swift */,
 				FC661EBE2B6D51AA000163ED /* WorkingWithStrings.swift */,
@@ -144,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC661EB62B6D4740000163ED /* Preview Assets.xcassets in Resources */,
+				FCE934FB2B6EB3A400C7F51A /* start.txt in Resources */,
 				FC661EB32B6D4740000163ED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				FC661EC52B6D5DFE000163ED /* LoadingResources_Practice.swift in Sources */,
 				FC661EC72B6D5E28000163ED /* AddingToAListOfWords_Practice.swift in Sources */,
 				FC661EBD2B6D4F7D000163ED /* LoadingResources.swift in Sources */,
+				FC46D30C2B6EC47400F26972 /* WordScramble_Practice.swift in Sources */,
 				FC661EBF2B6D51AA000163ED /* WorkingWithStrings.swift in Sources */,
 				FC661EAF2B6D4740000163ED /* WordScrambleApp.swift in Sources */,
 				FC661EC12B6D5D60000163ED /* AddingToAListOfWords.swift in Sources */,

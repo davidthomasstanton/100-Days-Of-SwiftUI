@@ -12,14 +12,22 @@ struct LoadingResources_Practice: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
     
-    // function to load fileURL
+    func loadBundles() -> String {
+        if let fileURL = Bundle.main.url(forResource: "some file", withExtension: "txt") {
+            if let fileString = try? String(contentsOf: fileURL) {
+                return fileString
+            }
+        }
+        return ""
+    }
+    
+    // function testBundles() to load fileURL
     func testBundles() -> String {
         // read in and unwrap a fileURL
-        if let fileURL = Bundle.main.url(forResource: "somefile", withExtension: "txt") {
+        if let fileURL = Bundle.main.url(forResource: "some file", withExtension: "txt") {
             
             // load the fileContents into a string
             if let fileContents = try? String(contentsOf: fileURL) {
-                // we loaded the file into a string
                 return fileContents
             }
         }
