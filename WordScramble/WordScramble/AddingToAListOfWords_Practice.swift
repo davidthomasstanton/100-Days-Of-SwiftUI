@@ -18,10 +18,9 @@ struct AddingToAListOfWords_Practice: View {
         
         NavigationStack {
             List {
-                // Section to enter newWord
+                // Section to enter newWord in lowercase
                 Section {
                     TextField("Enter your word", text: $newWord)
-                    // set auto capitalization to never
                         .textInputAutocapitalization(.never)
                 }
                 
@@ -29,7 +28,6 @@ struct AddingToAListOfWords_Practice: View {
                 Section {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
-                            // Add an SFSymbol to display the character count of word
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }
@@ -45,7 +43,7 @@ struct AddingToAListOfWords_Practice: View {
     
     // function to addNewWord
     func addNewWord() {
-        // constant that stores the word in lowercased and trimmed
+        // constant "answer" that stores the word in lowercased and trimmed
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         // exit if the remaining string is empty
@@ -61,6 +59,8 @@ struct AddingToAListOfWords_Practice: View {
         // reset newWord
         newWord = ""
     }
+    
+
 }
 
 #Preview {

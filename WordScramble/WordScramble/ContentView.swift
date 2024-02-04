@@ -13,6 +13,11 @@ struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     
+    // variables for errors
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     var body: some View {
         // NavigationStack with Sections to Enter your word
         
@@ -37,9 +42,19 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
-            
+                        
             // onSubmit, add new word
             .onSubmit(addNewWord)
+            
+            // load start and pick a random word
+            .onAppear(perform: startGame)
+            
+            // alert for errors
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
     
@@ -51,7 +66,21 @@ struct ContentView: View {
         // exit if the remaining string is empty
         guard answer.count > 0 else { return }
         
-        // extra validation to come
+        // throw errors ifOriginal, isPossible, isReal and return
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used alread", message: "Try again!")
+            return
+        }
+        
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not possible", message: "You can't spell '\(answer)' from '\(rootWord)'")
+            return
+        }
+        
+        guard isReal(word: answer) else {
+            wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
+            return
+        }
         
         // insert newWord into usedWords at index 0
         // add an animation to slide words in
@@ -60,6 +89,69 @@ struct ContentView: View {
         }
         // reset newWord
         newWord = ""
+    }
+    
+    // function startGame to load start.txt
+    // 1. Find the URL for start.txt in our app bundle
+    // 2. Load start.txt into a string
+    // 3. Split the string up into an array of strings, splitting on line breaks
+    // 4. Pick one random word, or use "silkworm" as a sensible default
+    // If we're here everything has worked, so we can exit
+    // If we're *here* then there was a problem -- trigger a crash and report the error
+    func startGame() {
+        // 1. Find the URL for start.txt in our app bundle
+        if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+            // 2. Load start.txt into a string
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                // 3. Split the string up into an array of strings, splitting on line breaks
+                let allWords = startWords.components(separatedBy: "\n")
+                
+                // 4. Pick one random word, or use "silkworm" as a sensible default
+                rootWord = allWords.randomElement() ?? "silkworm"
+                
+                // If we're here everything has worked, so we can exit
+                return
+            }
+        }
+        
+        // If we're *here* then there was a problem -- trigger a crash and report the error
+        fatalError("Could not load start.txt from bundle")
+    }
+    
+    // function isOriginal to check if we've used the word before
+    func isOriginal(word: String) -> Bool {
+        !usedWords.contains(word)
+    }
+    
+    // function isPossible that checks if the newWord is made of the rootWord
+    // 1. make variable tempWord of rootWord
+    // 2. loop over each letter of newWord if so, remove from tempWord
+    // 3. if we get to the end, return true, else return false
+    func isPossible(word: String) -> Bool {
+        var tempWord = rootWord
+        
+        for letter in word {
+            if let pos = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: pos)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    // func isReal to check if word is real
+    func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        return misspelledRange.location == NSNotFound
+    }
+    
+    func  wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showingError = true
     }
 }
 

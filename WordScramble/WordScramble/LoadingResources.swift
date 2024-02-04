@@ -16,7 +16,7 @@ struct LoadingResources: View {
         }
         .padding()
     }
-    // function to load fileURL
+    // function testBundles to load fileURL
     func testBundles() -> String {
         // read in and unwrap a fileURL
         if let fileURL = Bundle.main.url(forResource: "somefile", withExtension: "txt") {
