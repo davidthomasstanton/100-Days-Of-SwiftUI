@@ -10,8 +10,8 @@ import SwiftUI
 struct AnimationPractice_1: View {
     @State private var animationAmount = 1.0
     @State private var animationOverlay = 1.0
-    @State private var animOverlayStart = 1.0
-    @State private var animOverlayEnd = 2.0
+    @State private var animRotate = 0.0
+    @State private var animOverlay = 0.84
     
     var body: some View {
         VStack {
@@ -28,14 +28,30 @@ struct AnimationPractice_1: View {
             .animation(.linear, value: animationAmount)
             
             // Button with overlay 'click me' effect
-            Button("Click me") {
+            Button {
                 //
-                
+                withAnimation{
+                    animOverlay = 2.0
+                    animRotate += (360)
+                }
+            } label: {
+                Text("😀")
+                    .font(.system(size:100))
+                    .rotationEffect(Angle(degrees: animRotate))
             }
-            .padding(50)
-            .background(.blue)
-            .foregroundStyle(.white)
-            .clipShape(.circle)
+            .overlay(
+                Circle()
+                    .stroke(.yellow)
+                    .scaleEffect(animOverlay)
+                    .opacity(2 - animOverlay)
+                    .animation(
+                        .easeOut(duration: 0.5),
+                        value: animOverlay)
+            )
+            
+            
+            
+            /*
             .overlay(
                 Circle()
                     .stroke(.blue)
@@ -49,6 +65,7 @@ struct AnimationPractice_1: View {
             .onAppear {
                 animationOverlay = 2.0
             }
+             */
         }
     }
 }

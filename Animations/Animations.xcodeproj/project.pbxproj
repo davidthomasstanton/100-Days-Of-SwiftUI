@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC2EAB352B72967100E8D9C1 /* AnimationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAB342B72967100E8D9C1 /* AnimationStack.swift */; };
+		FC2EAB372B729BDB00E8D9C1 /* AnimationGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAB362B729BDB00E8D9C1 /* AnimationGestures.swift */; };
+		FC2EAB392B73205E00E8D9C1 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAB382B73205E00E8D9C1 /* Transitions.swift */; };
+		FC2EAB3B2B73215400E8D9C1 /* CustomTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAB3A2B73215400E8D9C1 /* CustomTransitions.swift */; };
 		FC3E26452B714B0B00F8493D /* AnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E26442B714B0B00F8493D /* AnimationsApp.swift */; };
 		FC3E26472B714B0B00F8493D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E26462B714B0B00F8493D /* ContentView.swift */; };
 		FC3E26492B714B0B00F8493D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3E26482B714B0B00F8493D /* Assets.xcassets */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC2EAB342B72967100E8D9C1 /* AnimationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStack.swift; sourceTree = "<group>"; };
+		FC2EAB362B729BDB00E8D9C1 /* AnimationGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationGestures.swift; sourceTree = "<group>"; };
+		FC2EAB382B73205E00E8D9C1 /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
+		FC2EAB3A2B73215400E8D9C1 /* CustomTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitions.swift; sourceTree = "<group>"; };
 		FC3E26412B714B0B00F8493D /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3E26442B714B0B00F8493D /* AnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsApp.swift; sourceTree = "<group>"; };
 		FC3E26462B714B0B00F8493D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 				FC3E26462B714B0B00F8493D /* ContentView.swift */,
 				FC3E26522B714B6900F8493D /* ImplicitAnimations.swift */,
 				FC3E26542B7150E500F8493D /* AnimationPractice_1.swift */,
+				FC2EAB342B72967100E8D9C1 /* AnimationStack.swift */,
+				FC2EAB362B729BDB00E8D9C1 /* AnimationGestures.swift */,
+				FC2EAB382B73205E00E8D9C1 /* Transitions.swift */,
+				FC2EAB3A2B73215400E8D9C1 /* CustomTransitions.swift */,
 				FC45CBA42B71F64000481882 /* AnimationBinding.swift */,
 				FC45CBA62B71F9D200481882 /* ExplicitAnimations.swift */,
 				FC3E26482B714B0B00F8493D /* Assets.xcassets */,
@@ -152,9 +164,13 @@
 				FC3E26532B714B6900F8493D /* ImplicitAnimations.swift in Sources */,
 				FC3E26472B714B0B00F8493D /* ContentView.swift in Sources */,
 				FC3E26452B714B0B00F8493D /* AnimationsApp.swift in Sources */,
+				FC2EAB392B73205E00E8D9C1 /* Transitions.swift in Sources */,
 				FC3E26552B7150E500F8493D /* AnimationPractice_1.swift in Sources */,
+				FC2EAB372B729BDB00E8D9C1 /* AnimationGestures.swift in Sources */,
+				FC2EAB352B72967100E8D9C1 /* AnimationStack.swift in Sources */,
 				FC45CBA72B71F9D200481882 /* ExplicitAnimations.swift in Sources */,
 				FC45CBA52B71F64000481882 /* AnimationBinding.swift in Sources */,
+				FC2EAB3B2B73215400E8D9C1 /* CustomTransitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
