@@ -19,6 +19,8 @@
 		FC3E26552B7150E500F8493D /* AnimationPractice_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E26542B7150E500F8493D /* AnimationPractice_1.swift */; };
 		FC45CBA52B71F64000481882 /* AnimationBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45CBA42B71F64000481882 /* AnimationBinding.swift */; };
 		FC45CBA72B71F9D200481882 /* ExplicitAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45CBA62B71F9D200481882 /* ExplicitAnimations.swift */; };
+		FC5557042B73E5A3008DA84D /* CustomTransition_Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5557032B73E5A3008DA84D /* CustomTransition_Practice.swift */; };
+		FCB009D02B735983002687C8 /* AnimationPractice_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB009CF2B735983002687C8 /* AnimationPractice_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FC3E26542B7150E500F8493D /* AnimationPractice_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPractice_1.swift; sourceTree = "<group>"; };
 		FC45CBA42B71F64000481882 /* AnimationBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationBinding.swift; sourceTree = "<group>"; };
 		FC45CBA62B71F9D200481882 /* ExplicitAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimations.swift; sourceTree = "<group>"; };
+		FC5557032B73E5A3008DA84D /* CustomTransition_Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition_Practice.swift; sourceTree = "<group>"; };
+		FCB009CF2B735983002687C8 /* AnimationPractice_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPractice_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +75,12 @@
 				FC3E26462B714B0B00F8493D /* ContentView.swift */,
 				FC3E26522B714B6900F8493D /* ImplicitAnimations.swift */,
 				FC3E26542B7150E500F8493D /* AnimationPractice_1.swift */,
+				FCB009CF2B735983002687C8 /* AnimationPractice_2.swift */,
 				FC2EAB342B72967100E8D9C1 /* AnimationStack.swift */,
 				FC2EAB362B729BDB00E8D9C1 /* AnimationGestures.swift */,
 				FC2EAB382B73205E00E8D9C1 /* Transitions.swift */,
 				FC2EAB3A2B73215400E8D9C1 /* CustomTransitions.swift */,
+				FC5557032B73E5A3008DA84D /* CustomTransition_Practice.swift */,
 				FC45CBA42B71F64000481882 /* AnimationBinding.swift */,
 				FC45CBA62B71F9D200481882 /* ExplicitAnimations.swift */,
 				FC3E26482B714B0B00F8493D /* Assets.xcassets */,
@@ -165,7 +171,9 @@
 				FC3E26472B714B0B00F8493D /* ContentView.swift in Sources */,
 				FC3E26452B714B0B00F8493D /* AnimationsApp.swift in Sources */,
 				FC2EAB392B73205E00E8D9C1 /* Transitions.swift in Sources */,
+				FCB009D02B735983002687C8 /* AnimationPractice_2.swift in Sources */,
 				FC3E26552B7150E500F8493D /* AnimationPractice_1.swift in Sources */,
+				FC5557042B73E5A3008DA84D /* CustomTransition_Practice.swift in Sources */,
 				FC2EAB372B729BDB00E8D9C1 /* AnimationGestures.swift in Sources */,
 				FC2EAB352B72967100E8D9C1 /* AnimationStack.swift in Sources */,
 				FC45CBA72B71F9D200481882 /* ExplicitAnimations.swift in Sources */,

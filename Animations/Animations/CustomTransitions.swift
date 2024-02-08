@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CornerRotateModifier: ViewModifier {
     let amount: Double
     let anchor: UnitPoint
@@ -17,6 +18,7 @@ struct CornerRotateModifier: ViewModifier {
             .clipped()
     }
 }
+ 
 
 extension AnyTransition {
     static var pivot: AnyTransition {
@@ -40,7 +42,7 @@ struct CustomTransitions: View {
                 Rectangle()
                     .fill(.red)
                     .frame(width: 200, height: 200)
-                    .rotationEffect(.degrees(-90), anchor: .topLeading)
+                    .transition(.pivot)
             }
         }
         .onTapGesture {

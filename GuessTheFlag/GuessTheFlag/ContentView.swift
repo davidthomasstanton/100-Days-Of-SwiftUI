@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var correctAnswers = 0
     @State private var questionNumber = 0
+    @State private var selectedFlag = -1
     
     let totalQuestions = 7
     
@@ -46,11 +47,20 @@ struct ContentView: View {
                             Button {
                                 // Action
                                 flagTapped(number)
+                                
                             } label: {
                                 Image(countries[number])
                                     .clipShape(.rect(cornerRadius: 20))
                                     .shadow(radius: 5)
                             }
+                            .rotation3DEffect(
+                                .degrees(selectedFlag == number ? 360 : 0), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/
+                            )
+                            //.opacity(selectedFlag == -1 || selectedFlag == number ? 1 : 0.25)
+                            .scaleEffect(selectedFlag == -1 || selectedFlag == number ? 1 : 0.25)
+                            .saturation(selectedFlag == -1 || selectedFlag == number ? 1: 0)
+                            .animation(.default, value: selectedFlag)
+  
                         }
                     }
                 }
@@ -84,6 +94,7 @@ struct ContentView: View {
     
     func flagTapped(_ number: Int) {
         questionNumber += 1
+        selectedFlag = number
         
         if number == correctAnswer {
             scoreTitle = "Correct"
@@ -91,6 +102,7 @@ struct ContentView: View {
         } else {
             scoreTitle = "Wrong"
         }
+        
         if (questionNumber == totalQuestions) {
             gameOverText = """
                             Game Over!
@@ -105,6 +117,7 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        selectedFlag = -1
     }
     
     func resetGame() {
@@ -112,6 +125,7 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
         correctAnswers = 0
         questionNumber = 0
+        selectedFlag = -1
         gameOver = false
     }
 }
