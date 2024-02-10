@@ -15,6 +15,7 @@
 		FCABFF272B7545A3003215FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCABFF262B7545A3003215FC /* Preview Assets.xcassets */; };
 		FCABFF2E2B7545B6003215FC /* Review_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABFF2D2B7545B6003215FC /* Review_1.swift */; };
 		FCABFF302B7548B9003215FC /* Review_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABFF2F2B7548B9003215FC /* Review_2.swift */; };
+		FCAD40242B78286F00DA3C69 /* Multiplication_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAD40232B78286F00DA3C69 /* Multiplication_3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FCABFF262B7545A3003215FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FCABFF2D2B7545B6003215FC /* Review_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review_1.swift; sourceTree = "<group>"; };
 		FCABFF2F2B7548B9003215FC /* Review_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review_2.swift; sourceTree = "<group>"; };
+		FCAD40232B78286F00DA3C69 /* Multiplication_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplication_3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FCABFF212B7545A2003215FC /* ContentView.swift */,
 				FCAA86822B76890A00AEE3A4 /* Multiplication_1.swift */,
 				FCAA86842B77481400AEE3A4 /* Multiplication_2.swift */,
+				FCAD40232B78286F00DA3C69 /* Multiplication_3.swift */,
 				FCABFF2D2B7545B6003215FC /* Review_1.swift */,
 				FCABFF2F2B7548B9003215FC /* Review_2.swift */,
 				FCABFF232B7545A3003215FC /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 			files = (
 				FCABFF302B7548B9003215FC /* Review_2.swift in Sources */,
 				FCABFF222B7545A2003215FC /* ContentView.swift in Sources */,
+				FCAD40242B78286F00DA3C69 /* Multiplication_3.swift in Sources */,
 				FCAA86832B76890A00AEE3A4 /* Multiplication_1.swift in Sources */,
 				FCABFF2E2B7545B6003215FC /* Review_1.swift in Sources */,
 				FCAA86852B77481400AEE3A4 /* Multiplication_2.swift in Sources */,
