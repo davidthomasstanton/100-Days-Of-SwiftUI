@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCAA86832B76890A00AEE3A4 /* Multiplication_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAA86822B76890A00AEE3A4 /* Multiplication_1.swift */; };
+		FCAA86852B77481400AEE3A4 /* Multiplication_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAA86842B77481400AEE3A4 /* Multiplication_2.swift */; };
 		FCABFF202B7545A2003215FC /* MultiplicationGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABFF1F2B7545A2003215FC /* MultiplicationGameApp.swift */; };
 		FCABFF222B7545A2003215FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABFF212B7545A2003215FC /* ContentView.swift */; };
 		FCABFF242B7545A3003215FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCABFF232B7545A3003215FC /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCAA86822B76890A00AEE3A4 /* Multiplication_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplication_1.swift; sourceTree = "<group>"; };
+		FCAA86842B77481400AEE3A4 /* Multiplication_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplication_2.swift; sourceTree = "<group>"; };
 		FCABFF1C2B7545A2003215FC /* MultiplicationGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiplicationGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCABFF1F2B7545A2003215FC /* MultiplicationGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationGameApp.swift; sourceTree = "<group>"; };
 		FCABFF212B7545A2003215FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 			children = (
 				FCABFF1F2B7545A2003215FC /* MultiplicationGameApp.swift */,
 				FCABFF212B7545A2003215FC /* ContentView.swift */,
+				FCAA86822B76890A00AEE3A4 /* Multiplication_1.swift */,
+				FCAA86842B77481400AEE3A4 /* Multiplication_2.swift */,
 				FCABFF2D2B7545B6003215FC /* Review_1.swift */,
 				FCABFF2F2B7548B9003215FC /* Review_2.swift */,
 				FCABFF232B7545A3003215FC /* Assets.xcassets */,
@@ -145,7 +151,9 @@
 			files = (
 				FCABFF302B7548B9003215FC /* Review_2.swift in Sources */,
 				FCABFF222B7545A2003215FC /* ContentView.swift in Sources */,
+				FCAA86832B76890A00AEE3A4 /* Multiplication_1.swift in Sources */,
 				FCABFF2E2B7545B6003215FC /* Review_1.swift in Sources */,
+				FCAA86852B77481400AEE3A4 /* Multiplication_2.swift in Sources */,
 				FCABFF202B7545A2003215FC /* MultiplicationGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
