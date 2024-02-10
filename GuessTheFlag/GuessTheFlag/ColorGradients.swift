@@ -10,7 +10,7 @@ import SwiftUI
 struct ColorGradients: View {
     var body: some View {
         ZStack {
-            //LinearGradient(colors: [.white, .black], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.white, .black], startPoint: .top, endPoint: .bottom)
             /*
             LinearGradient(stops: [
                 Gradient.Stop(color: .white, location: 0.15),
@@ -32,7 +32,7 @@ struct ColorGradients: View {
             */
             
             
-            AngularGradient(colors: [.red, .yellow, .green, .blue, .purple, .red], center: .center)
+            //AngularGradient(colors: [.red, .yellow, .green, .blue, .purple, .red], center: .center)
             
             /*
             Text("Halloooo")

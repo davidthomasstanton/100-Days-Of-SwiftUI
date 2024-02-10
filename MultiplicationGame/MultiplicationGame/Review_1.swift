@@ -27,10 +27,12 @@ struct Review_1: View {
                 
                 // Working with dates in Swift, using Date, DateComponents, and
                 // Date Formatter
+                /*
                 var components = Calendar.current.dateComponents([.year, .month, .day], from: userDate)
                 let year = components.year ?? 0
                 let day = components.day ?? 0
                 Text("Today's date: \(Date.now, format: .dateTime.month().day().year())")
+                 */
 
                 // Bring in machine learning
                 
