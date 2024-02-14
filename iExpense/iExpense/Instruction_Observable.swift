@@ -8,6 +8,7 @@
 import SwiftUI
 import Observation
 
+/*
 @Observable
 class user {
     var firstName = "Bilbo"
@@ -30,3 +31,5 @@ struct Instruction_Observable: View {
 #Preview {
     Instruction_Observable()
 }
+
+*/

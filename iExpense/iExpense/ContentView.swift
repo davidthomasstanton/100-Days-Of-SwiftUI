@@ -6,24 +6,34 @@
 //
 
 import SwiftUI
+import Observation
+
+// create an Expenses class that will be attached to our list using @State
+// name of item, business or personal, cost (as a Double)
+struct ExpenseItem {
+    let name: String
+    let type: String
+    let amount: Double
+}
 
 @Observable
-class User {
-    var firstName = "Bilbo"
-    var lastName = "Baggins"
+class Expenses {
+    var items = [ExpenseItem]()
 }
+
 struct ContentView: View {
-    @State private var user = User()
+    @State private var expenses = Expenses()
+    
     
     var body: some View {
-
-        VStack {
-            Text("Your name is \(user.firstName) \(user.lastName).")
-            
-            TextField("First name", text: $user.firstName)
-            TextField("Last name", text: $user.lastName)
+        NavigationStack {
+            List {
+                ForEach(expenses.items, id: \.name) { item in
+                    Text(item.name)
+                }
+            }
+            .navigationTitle("iExpense")
         }
-        .padding()
     }
 }
 

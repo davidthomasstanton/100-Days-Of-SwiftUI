@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC3B759D2B7C482700788891 /* Instruction_UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B759C2B7C482700788891 /* Instruction_UserDefaults.swift */; };
+		FC3B759F2B7C4AAD00788891 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B759E2B7C4AAD00788891 /* Codable.swift */; };
 		FCBE814E2B7A87F1009D2566 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE814D2B7A87F1009D2566 /* iExpenseApp.swift */; };
 		FCBE81502B7A87F1009D2566 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE814F2B7A87F1009D2566 /* ContentView.swift */; };
 		FCBE81522B7A87F2009D2566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCBE81512B7A87F2009D2566 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC3B759C2B7C482700788891 /* Instruction_UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction_UserDefaults.swift; sourceTree = "<group>"; };
+		FC3B759E2B7C4AAD00788891 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		FCBE814A2B7A87F1009D2566 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBE814D2B7A87F1009D2566 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		FCBE814F2B7A87F1009D2566 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				FCBE815B2B7A8A5B009D2566 /* Instruction_Observable.swift */,
 				FCBE815D2B7A8E4D009D2566 /* Instruction_Sheets.swift */,
 				FCBE815F2B7A90CA009D2566 /* Instruction_onDelete.swift */,
+				FC3B759C2B7C482700788891 /* Instruction_UserDefaults.swift */,
+				FC3B759E2B7C4AAD00788891 /* Codable.swift */,
 				FCBE81512B7A87F2009D2566 /* Assets.xcassets */,
 				FCBE81532B7A87F2009D2566 /* Preview Content */,
 			);
@@ -149,6 +155,8 @@
 				FCBE815E2B7A8E4D009D2566 /* Instruction_Sheets.swift in Sources */,
 				FCBE815C2B7A8A5B009D2566 /* Instruction_Observable.swift in Sources */,
 				FCBE81502B7A87F1009D2566 /* ContentView.swift in Sources */,
+				FC3B759D2B7C482700788891 /* Instruction_UserDefaults.swift in Sources */,
+				FC3B759F2B7C4AAD00788891 /* Codable.swift in Sources */,
 				FCBE81602B7A90CA009D2566 /* Instruction_onDelete.swift in Sources */,
 				FCBE814E2B7A87F1009D2566 /* iExpenseApp.swift in Sources */,
 			);
