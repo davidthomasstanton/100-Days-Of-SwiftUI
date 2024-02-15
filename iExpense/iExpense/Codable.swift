@@ -12,13 +12,12 @@ struct User: Codable {
     let firstName: String
     let lastName: String
 }
-struct Codable: View {
-@State private var user = User(User(firstName: "Taylor", lastName: "Swift"))
 
+struct Codable: View {
+    @State private var user = User(firstName: "T", lastName: "Swift")
     var body: some View {
         Button("Save User") {
-            let encoder = JSONEncoder()
-            
+            let encoder = Encoder()
             if let data = try? encoder.encode(user) {
                 UserDefaults.standard.set(data, forKey: "UserData")
             }
@@ -29,5 +28,4 @@ struct Codable: View {
 #Preview {
     Codable()
 }
-
 */
