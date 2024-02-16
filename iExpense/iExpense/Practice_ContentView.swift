@@ -1,12 +1,11 @@
 //
-//  Practice_AddRemoveItems.swift
+//  Practice_ContentView.swift
 //  iExpense
 //
-//  Created by David Stanton on 2/14/24.
+//  Created by David Stanton on 2/15/24.
 //
 
 import SwiftUI
-
 // Struct of a single expense
 // observe a class of an array of single expenses
 // with a didSet, encode the addition to a JSON file then save with a key
@@ -15,74 +14,69 @@ import SwiftUI
 // toolbar button + that adds new expenses
 // function to remove items
 // .onDelete modifier to ForEach to remove items
-struct IExpense: Identifiable, Codable {
+struct ExpenseItem2: Identifiable, Codable {
     var id = UUID()
     let name: String
     let type: String
     let amount: Double
 }
 
-@Observable
-class IExpenses {
-    var items = [IExpense]() {
+class Expenses2 {
+    var items = [ExpenseItem2]() {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
             }
         }
     }
-    
     init() {
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
-            if let decodedItems = try? JSONDecoder().decode([IExpense].self, from: savedItems) {
-                items = decodedItems
+            if let decoded = try? JSONDecoder().decode([ExpenseItem2].self, from: savedItems) {
+                items = decoded
                 return
             }
         }
         items = []
     }
+    
 }
 
-struct Practice_AddRemoveItems: View {
-    @State private var expenses = IExpenses()
-    @State private var showingAddExpense = false
+struct Practice_ContentView: View {
+    @State private var expenses = Expenses2()
+    @State private var showingSheet = false
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(expenses.items) { item in
                     HStack {
-                        VStack(alignment: .leading) {
+                        VStack {
                             Text(item.name)
                                 .font(.headline)
                             Text(item.type)
                         }
-                        
                         Spacer()
-                        
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount,format: .currency(code: "USD"))
                     }
                 }
-                .onDelete(perform: deleteItem)
+                .onDelete(perform: removeItem)
             }
             .navigationTitle("Expenses")
             .toolbar {
-                Button("Add Item", systemImage: "plus") {
-                    showingAddExpense = true
+                Button("Add Expense", systemImage: "plus") {
+                    showingSheet = true
                 }
             }
-            .sheet(isPresented: $showingAddExpense) {
-                Practice_AddView(expenses: expenses)
+            .sheet(isPresented: $showingSheet) {
+                Practice_AddView2(expenses: expenses)
             }
         }
-        
     }
-    func deleteItem(at offset: IndexSet) {
-        expenses.items.remove(atOffsets: offset)
+    func removeItem(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
-
 }
 
 #Preview {
-    Practice_AddRemoveItems()
+    Practice_ContentView()
 }

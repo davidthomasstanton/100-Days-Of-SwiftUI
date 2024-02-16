@@ -1,40 +1,36 @@
 //
-//  AddView.swift
+//  Practice_AddView2.swift
 //  iExpense
 //
-//  Created by David Stanton on 2/14/24.
+//  Created by David Stanton on 2/15/24.
 //
 
 import SwiftUI
 
-struct AddView: View {
+struct Practice_AddView2: View {
     @Environment(\.dismiss) var dismiss
-    
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    
-    var expenses: Expenses
-    let types = ["Business", "Personal"]
+    var expenses: Expenses2
+    let types = ["Personal", "Business"]
     
     var body: some View {
         NavigationStack {
             Form {
                 TextField("Name", text: $name)
-                
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
-                
                 TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
             }
-            .navigationTitle("Add new expense")
+            .navigationTitle("Add Expense")
             .toolbar {
                 Button("Save Expense") {
-                    let item = ExpenseItem(name: name, type: type, amount: amount)
+                    let item = ExpenseItem2(name: name, type: type, amount: amount)
                     expenses.items.append(item)
                     dismiss()
                 }
@@ -44,5 +40,5 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    Practice_AddView2(expenses: Expenses2())
 }

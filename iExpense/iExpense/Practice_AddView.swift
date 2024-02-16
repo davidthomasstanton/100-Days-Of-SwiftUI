@@ -5,16 +5,18 @@
 //  Created by David Stanton on 2/14/24.
 //
 
-// Form with name, type, and amount, and types
+// Form with defaults for name, type, and amount, and types
+// @Environment protocol for dismissing 
 // variable for IExpenses()
 
 import SwiftUI
 
 struct Practice_AddView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    let types = ["Business", "Personal"]
+    let types = ["Personal", "Business"]
     var expenses: IExpenses
     
     var body: some View {
@@ -29,6 +31,14 @@ struct Practice_AddView: View {
                 .pickerStyle(.segmented)
                 TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
+            }
+            .navigationTitle("Add Expense")
+            .toolbar {
+                Button("Save Expense") {
+                    let item = IExpense(name: name, type: type, amount: amount)
+                    expenses.items.append(item)
+                    dismiss()
+                }
             }
         }
     }
