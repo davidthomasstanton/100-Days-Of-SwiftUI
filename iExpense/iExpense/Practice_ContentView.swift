@@ -56,7 +56,7 @@ struct Practice_ContentView: View {
                             Text(item.type)
                         }
                         Spacer()
-                        Text(item.amount,format: .currency(code: "USD"))
+                        Text(item.amount, format: .currency(code: "USD"))
                     }
                 }
                 .onDelete(perform: removeItem)
