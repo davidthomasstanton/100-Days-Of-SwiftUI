@@ -22,7 +22,8 @@ struct ExpenseItem: Identifiable, Codable {
     let type: String
     let amount: Double
 }
-    
+
+@Observable
 class Expenses {
     var items = [ExpenseItem]() {
         didSet {
@@ -44,37 +45,42 @@ class Expenses {
 
 
 struct ContentView: View {
+    @State private var showingAddExpense = false
     @State private var expenses = Expenses()
-    @State private var showingSheet = false
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(expenses.items) { item in
                     HStack {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(item.name)
                                 .font(.headline)
                             Text(item.type)
+                                .font(.subheadline)
                         }
                         Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                        
+                        Text(item.amount, format: .currency(code: localCurrency))
+                            //.font(item.amount > 100 ? .headline : .subheadline)
+                            
                     }
                 }
-                .onDelete(perform: removeItem)
+                .onDelete(perform: deleteExpense)
             }
             .navigationTitle("Expenses")
             .toolbar {
                 Button("Add Expense", systemImage: "plus") {
-                    showingSheet = true
+                    showingAddExpense = true
                 }
             }
-            .sheet(isPresented: $showingSheet) {
+            .sheet(isPresented: $showingAddExpense) {
                 AddView(expenses: expenses)
             }
         }
     }
-    func removeItem(at offsets: IndexSet) {
+    func deleteExpense(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
     }
 }

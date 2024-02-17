@@ -14,25 +14,26 @@ import SwiftUI
 
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
+    var expenses: Expenses
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    var expenses: Expenses
-    var types = ["Personal", "Business"]
-    
+    let types = ["Personal", "Business"]
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name of Expense", text: $name)
-                Picker("Type of Expense", selection: $type) {
+                TextField("Name", text: $name)
+                Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
                 .pickerStyle(.segmented)
-                TextField("Amount of Expense", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount", value: $amount, format: .currency(code: localCurrency))
+                    .keyboardType(.decimalPad)
             }
-            .navigationTitle("Add Expense")
+            .navigationTitle("Add New Expense")
             .toolbar {
                 Button("Save Expense") {
                     let item = ExpenseItem(name: name, type: type, amount: amount)
