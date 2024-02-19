@@ -17,26 +17,26 @@ struct Practice_AddView: View {
     @State private var type = "Personal"
     @State private var amount = 0.0
     let types = ["Personal", "Business"]
-    var expenses: IExpenses
+    var expenses = aExpenses()
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
     
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $name)
-                Picker("Type", selection: $type) {
+                TextField("Expense Name", text: $name)
+                Picker("Expense Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
                 .pickerStyle(.segmented)
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
-                    .keyboardType(.decimalPad)
+                TextField("Expense Amount", value: $amount, format: .currency(code: localCurrency))
             }
             .navigationTitle("Add Expense")
             .toolbar {
                 Button("Save Expense") {
-                    let item = IExpense(name: name, type: type, amount: amount)
-                    expenses.items.append(item)
+                    let itemToAdd = aExpenseItem(name: name, type: type, amount: amount)
+                    expenses.items.append(itemToAdd)
                     dismiss()
                 }
             }
@@ -45,5 +45,5 @@ struct Practice_AddView: View {
 }
 
 #Preview {
-    Practice_AddView(expenses: IExpenses())
+    Practice_AddView(expenses: aExpenses())
 }

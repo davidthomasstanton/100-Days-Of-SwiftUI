@@ -16,7 +16,7 @@ import Observation
 // toolbar button + that adds new expenses
 // function to remove items
 // .onDelete modifier to ForEach to remove items
-struct ExpenseItem: Identifiable, Codable {
+struct ExpenseItem: Identifiable, Codable, Equatable {
     var id = UUID()
     let name: String
     let type: String
@@ -32,6 +32,23 @@ class Expenses {
             }
         }
     }
+    
+//    var personalItems: [ExpenseItem] {
+//        items.filter { $0.type == "Personal" }
+//    }
+//    
+//    var businessItems: [ExpenseItem] {
+//        items.filter { $0.type == "Business" }
+//    }
+    
+    var personalItems: [ExpenseItem] {
+        items.filter { $0.type == "Personal" }
+    }
+    
+    var businessItems: [ExpenseItem] {
+        items.filter { $0.type == "Business" }
+    }
+    
     init() {
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
             if let decoded = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
@@ -47,27 +64,14 @@ class Expenses {
 struct ContentView: View {
     @State private var showingAddExpense = false
     @State private var expenses = Expenses()
-    let localCurrency = Locale.current.currency?.identifier ?? "USD"
+    
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                                .font(.subheadline)
-                        }
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code: localCurrency))
-                            //.font(item.amount > 100 ? .headline : .subheadline)
-                            
-                    }
-                }
-                .onDelete(perform: deleteExpense)
+                ExpenseSection(title: "Business", expenses: expenses.businessItems, deleteItems: removeBusinessItems)
+                
+                ExpenseSection(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
             }
             .navigationTitle("Expenses")
             .toolbar {
@@ -80,8 +84,27 @@ struct ContentView: View {
             }
         }
     }
-    func deleteExpense(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    func removeItems(at offsets: IndexSet, in inputArray: [ExpenseItem]) {
+//        expenses.items.remove(atOffsets: offsets)
+        var objectsToDelete = IndexSet()
+        
+        for offset in offsets {
+            let item = inputArray[offset]
+            
+            if let index = expenses.items.firstIndex(of: item) {
+                objectsToDelete.insert(index)
+            }
+        }
+        
+        expenses.items.remove(atOffsets: objectsToDelete)
+    }
+    
+    func removePersonalItems(at offsets: IndexSet) {
+        removeItems(at: offsets, in: expenses.personalItems)
+    }
+    
+    func removeBusinessItems(at offsets: IndexSet) {
+        removeItems(at: offsets, in: expenses.businessItems)
     }
 }
 

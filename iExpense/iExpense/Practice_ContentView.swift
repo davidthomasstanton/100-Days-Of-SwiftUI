@@ -14,69 +14,80 @@ import SwiftUI
 // toolbar button + that adds new expenses
 // function to remove items
 // .onDelete modifier to ForEach to remove items
-struct ExpenseItem2: Identifiable, Codable {
+struct aExpenseItem: Identifiable, Codable, Equatable {
     var id = UUID()
     let name: String
     let type: String
     let amount: Double
 }
 
-class Expenses2 {
-    var items = [ExpenseItem2]() {
+@Observable
+class aExpenses {
+    var items = [aExpenseItem]() {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
             }
         }
     }
+    
     init() {
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
-            if let decoded = try? JSONDecoder().decode([ExpenseItem2].self, from: savedItems) {
+            if let decoded = try? JSONDecoder().decode([aExpenseItem].self, from: savedItems) {
                 items = decoded
                 return
             }
         }
         items = []
     }
-    
 }
 
 struct Practice_ContentView: View {
-    @State private var expenses = Expenses2()
-    @State private var showingSheet = false
-    
+    @State private var expenses = aExpenses()
+    @State private var showingAddExpense = false
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
     var body: some View {
         NavigationStack {
             List {
                 ForEach(expenses.items) { item in
                     HStack {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(item.name)
                                 .font(.headline)
                             Text(item.type)
+                                .font(.subheadline)
                         }
                         Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount, format: .currency(code: localCurrency))
+                            .styleAmount(for: item)
                     }
                 }
-                .onDelete(perform: removeItem)
             }
-            .navigationTitle("Expenses")
+            .navigationTitle("Expenses Practice")
             .toolbar {
                 Button("Add Expense", systemImage: "plus") {
-                    showingSheet = true
+                    showingAddExpense = true
                 }
             }
-            .sheet(isPresented: $showingSheet) {
-                Practice_AddView2(expenses: expenses)
+            .sheet(isPresented: $showingAddExpense) {
+                Practice_AddView(expenses: expenses)
             }
         }
     }
-    func removeItem(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
-    }
+    
 }
 
+extension View {
+    func styleAmount(for item: aExpenseItem) -> some View {
+        if item.amount < 10 {
+            return self.font(.body)
+        } else if item.amount < 100 {
+            return self.font(.title3)
+        } else {
+            return self.font(.title)
+        }
+    }
+}
 #Preview {
     Practice_ContentView()
 }
