@@ -8,7 +8,7 @@
 import SwiftUI
 // constants for astronauts and missions decoded from JSONs in Bundle
 // constant for columns of an adaptive number, minimum width of 150
-
+// Display all missions, image, display name formatted launch date
 
 struct ContentView: View {
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
