@@ -6,7 +6,12 @@
 //
 
 import SwiftUI
-
+// struct for Mission view that has mission, and crew of type...
+// nested struct for CrewMember that has role and astronaut
+// ScrollView with the image of the patch
+// Mission Highlights & description
+// Crew in a H scrolling Stack
+// initiation of mission and crew
 struct MissionView: View {
     struct CrewMember {
         let role: String

@@ -8,6 +8,10 @@
 import Foundation
 // extension of Bundle
 // function that decodes a generic
+// load the url
+// get the data
+// create decoder and format dates
+// decode and return data
 extension Bundle {
     func decode<T: Codable>(_ file: String) -> T {
         // load url
