@@ -27,6 +27,7 @@
 		FC927FEC2B85C68D0027DC85 /* Practice_Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC927FEB2B85C68D0027DC85 /* Practice_Mission.swift */; };
 		FC927FEE2B85CA610027DC85 /* Practice_Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC927FED2B85CA610027DC85 /* Practice_Color-Theme.swift */; };
 		FC927FF02B85CCEB0027DC85 /* Practice_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC927FEF2B85CCEB0027DC85 /* Practice_ContentView.swift */; };
+		FCFA13F62B8981F200DD7F74 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA13F52B8981F200DD7F74 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		FC927FEB2B85C68D0027DC85 /* Practice_Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_Mission.swift; sourceTree = "<group>"; };
 		FC927FED2B85CA610027DC85 /* Practice_Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Practice_Color-Theme.swift"; sourceTree = "<group>"; };
 		FC927FEF2B85CCEB0027DC85 /* Practice_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_ContentView.swift; sourceTree = "<group>"; };
+		FCFA13F52B8981F200DD7F74 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				FC09529C2B83D0D900CC82F1 /* MoonshotApp.swift */,
 				FC09529E2B83D0D900CC82F1 /* ContentView.swift */,
 				FC0062322B865F6900BCB5BB /* MissionView.swift */,
+				FCFA13F52B8981F200DD7F74 /* AstronautView.swift */,
 				FC927FE32B850EC50027DC85 /* Bundle-Decodable.swift */,
 				FC927FE92B858B3D0027DC85 /* Color-Theme.swift */,
 				FC927FE12B850E2A0027DC85 /* Astronaut.swift */,
@@ -192,6 +195,7 @@
 				FC927FEA2B858B3D0027DC85 /* Color-Theme.swift in Sources */,
 				FC927FF02B85CCEB0027DC85 /* Practice_ContentView.swift in Sources */,
 				FC0952AC2B83DBA200CC82F1 /* Practice_ScrollView.swift in Sources */,
+				FCFA13F62B8981F200DD7F74 /* AstronautView.swift in Sources */,
 				FC927FE42B850EC50027DC85 /* Bundle-Decodable.swift in Sources */,
 				FC927FEC2B85C68D0027DC85 /* Practice_Mission.swift in Sources */,
 				FC927FE22B850E2A0027DC85 /* Astronaut.swift in Sources */,
