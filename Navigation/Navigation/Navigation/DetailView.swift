@@ -1,25 +1,29 @@
+////
+////  DetailView.swift
+////  Navigation
+////
+////  Created by David Stanton on 2/24/24.
+////
 //
-//  DetailView.swift
-//  Navigation
+//import SwiftUI
 //
-//  Created by David Stanton on 2/24/24.
+//struct DetailView: View {
+//    
+//    var number: Int
+//    @Binding var path: [Int]
+//    
+//    var body: some View {
+//        NavigationLink("Go to Random Number", value: Int.random(in: 1...1000))
+//            .navigationTitle("Number: \(number)")
+//    }
+//    
+//    init(number: Int, path: [Int]) {
+//        self.number = number
+//        self.path = path
+//        print("Creating detail view \(number)")
+//    }
+//}
 //
-
-import SwiftUI
-
-struct DetailView: View {
-    
-    var number: Int
-    var body: some View {
-        Text("Details of \(number)")
-    }
-    
-    init(number: Int) {
-        self.number = number
-        print("Creating detail view \(number)")
-    }
-}
-
-#Preview {
-    DetailView(number: 558)
-}
+//#Preview {
+//    DetailView(number: 558)
+//}

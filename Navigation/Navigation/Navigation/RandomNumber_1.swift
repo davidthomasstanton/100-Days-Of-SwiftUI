@@ -1,17 +1,17 @@
 //
-//  ContentView.swift
+//  RandomNumber_1.swift
 //  Navigation
 //
-//  Created by David Stanton on 2/24/24.
+//  Created by David Stanton on 2/26/24.
 //
 
 import SwiftUI
-struct DetailView2: View {
+struct RandomView1: View {
     var number: Int
     @Binding var path: [Int]
     var body: some View {
         NavigationLink("Go to Random Number", value: Int.random(in: 0...1000))
-            .navigationTitle("Number: \(number)")
+            .navigationTitle("Random Number: \(number)")
             .toolbar {
                 Button("Home") {
                     path.removeAll()
@@ -19,20 +19,19 @@ struct DetailView2: View {
             }
     }
 }
-struct ContentView: View {
-    @State private var pathStore = PathStore()
+struct RandomNumber_1: View {
+    @State private var path = [Int]()
+    
     var body: some View {
-        NavigationStack(path: $pathStore.path) {
-            DetailView2(number: 0, path: $pathStore.path)
+        NavigationStack(path: $path) {
+            RandomView1(number: 0, path: $path)
                 .navigationDestination(for: Int.self) { i in
-                    DetailView2(number: i, path: $pathStore.path)
+                    RandomView1(number: i, path: $path)
                 }
         }
     }
 }
 
-
-
 #Preview {
-    ContentView()
+    RandomNumber_1()
 }
