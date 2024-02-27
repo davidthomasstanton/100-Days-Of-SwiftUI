@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCC595382B8CEAB800612ECC /* NavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595372B8CEAB800612ECC /* NavigationPath.swift */; };
+		FCC5953A2B8CF83F00612ECC /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595392B8CF83F00612ECC /* RandomNumber.swift */; };
+		FCC5953C2B8CFA9600612ECC /* RandomNumber_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5953B2B8CFA9600612ECC /* RandomNumber_1.swift */; };
+		FCC5953E2B8CFB7900612ECC /* RandomNumber_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5953D2B8CFB7900612ECC /* RandomNumber_2.swift */; };
+		FCC595402B8CFC5D00612ECC /* RandomNumber_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5953F2B8CFC5D00612ECC /* RandomNumber_3.swift */; };
+		FCC595422B8CFF7D00612ECC /* RandomNumber_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595412B8CFF7D00612ECC /* RandomNumber_4.swift */; };
+		FCC595462B8D967A00612ECC /* PathStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595452B8D967A00612ECC /* PathStore.swift */; };
+		FCC595482B8D9B8300612ECC /* PathStore_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595472B8D9B8300612ECC /* PathStore_1.swift */; };
+		FCC5954A2B8D9D2B00612ECC /* PathStore_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595492B8D9D2B00612ECC /* PathStore_2.swift */; };
+		FCC5954C2B8D9E1400612ECC /* PathStore_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5954B2B8D9E1400612ECC /* PathStore_3.swift */; };
+		FCC5954E2B8DA31600612ECC /* PathStore_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5954D2B8DA31600612ECC /* PathStore_4.swift */; };
 		FCDE9A5A2B8AB54C009F1A18 /* NavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE9A592B8AB54C009F1A18 /* NavigationApp.swift */; };
 		FCDE9A5C2B8AB54C009F1A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE9A5B2B8AB54C009F1A18 /* ContentView.swift */; };
 		FCDE9A5E2B8AB54D009F1A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDE9A5D2B8AB54D009F1A18 /* Assets.xcassets */; };
@@ -16,6 +27,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCC595372B8CEAB800612ECC /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
+		FCC595392B8CF83F00612ECC /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
+		FCC5953B2B8CFA9600612ECC /* RandomNumber_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber_1.swift; sourceTree = "<group>"; };
+		FCC5953D2B8CFB7900612ECC /* RandomNumber_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber_2.swift; sourceTree = "<group>"; };
+		FCC5953F2B8CFC5D00612ECC /* RandomNumber_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber_3.swift; sourceTree = "<group>"; };
+		FCC595412B8CFF7D00612ECC /* RandomNumber_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber_4.swift; sourceTree = "<group>"; };
+		FCC595452B8D967A00612ECC /* PathStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore.swift; sourceTree = "<group>"; };
+		FCC595472B8D9B8300612ECC /* PathStore_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore_1.swift; sourceTree = "<group>"; };
+		FCC595492B8D9D2B00612ECC /* PathStore_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore_2.swift; sourceTree = "<group>"; };
+		FCC5954B2B8D9E1400612ECC /* PathStore_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore_3.swift; sourceTree = "<group>"; };
+		FCC5954D2B8DA31600612ECC /* PathStore_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore_4.swift; sourceTree = "<group>"; };
 		FCDE9A562B8AB54C009F1A18 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDE9A592B8AB54C009F1A18 /* NavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationApp.swift; sourceTree = "<group>"; };
 		FCDE9A5B2B8AB54C009F1A18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +80,18 @@
 				FCDE9A592B8AB54C009F1A18 /* NavigationApp.swift */,
 				FCDE9A5B2B8AB54C009F1A18 /* ContentView.swift */,
 				FCDE9A692B8ACE2E009F1A18 /* ProgrammaticNavigation.swift */,
+				FCC595372B8CEAB800612ECC /* NavigationPath.swift */,
 				FCDE9A672B8AC355009F1A18 /* DetailView.swift */,
+				FCC595392B8CF83F00612ECC /* RandomNumber.swift */,
+				FCC5953B2B8CFA9600612ECC /* RandomNumber_1.swift */,
+				FCC5953D2B8CFB7900612ECC /* RandomNumber_2.swift */,
+				FCC5953F2B8CFC5D00612ECC /* RandomNumber_3.swift */,
+				FCC595412B8CFF7D00612ECC /* RandomNumber_4.swift */,
+				FCC595452B8D967A00612ECC /* PathStore.swift */,
+				FCC595472B8D9B8300612ECC /* PathStore_1.swift */,
+				FCC595492B8D9D2B00612ECC /* PathStore_2.swift */,
+				FCC5954B2B8D9E1400612ECC /* PathStore_3.swift */,
+				FCC5954D2B8DA31600612ECC /* PathStore_4.swift */,
 				FCDE9A5D2B8AB54D009F1A18 /* Assets.xcassets */,
 				FCDE9A5F2B8AB54D009F1A18 /* Preview Content */,
 			);
@@ -143,10 +176,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC5953C2B8CFA9600612ECC /* RandomNumber_1.swift in Sources */,
+				FCC5954E2B8DA31600612ECC /* PathStore_4.swift in Sources */,
+				FCC595382B8CEAB800612ECC /* NavigationPath.swift in Sources */,
+				FCC5953E2B8CFB7900612ECC /* RandomNumber_2.swift in Sources */,
 				FCDE9A5C2B8AB54C009F1A18 /* ContentView.swift in Sources */,
 				FCDE9A6A2B8ACE2E009F1A18 /* ProgrammaticNavigation.swift in Sources */,
 				FCDE9A682B8AC355009F1A18 /* DetailView.swift in Sources */,
+				FCC5954C2B8D9E1400612ECC /* PathStore_3.swift in Sources */,
 				FCDE9A5A2B8AB54C009F1A18 /* NavigationApp.swift in Sources */,
+				FCC5954A2B8D9D2B00612ECC /* PathStore_2.swift in Sources */,
+				FCC5953A2B8CF83F00612ECC /* RandomNumber.swift in Sources */,
+				FCC595422B8CFF7D00612ECC /* RandomNumber_4.swift in Sources */,
+				FCC595402B8CFC5D00612ECC /* RandomNumber_3.swift in Sources */,
+				FCC595482B8D9B8300612ECC /* PathStore_1.swift in Sources */,
+				FCC595462B8D967A00612ECC /* PathStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
