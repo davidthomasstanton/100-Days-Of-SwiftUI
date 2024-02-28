@@ -13,13 +13,13 @@ import SwiftUI
 struct ContentView: View {
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
-    
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
+    @State private var pathStore = PathStore()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $pathStore.path) {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(missions) { mission in

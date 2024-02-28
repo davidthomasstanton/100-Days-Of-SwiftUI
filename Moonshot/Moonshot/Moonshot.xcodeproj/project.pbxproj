@@ -17,6 +17,7 @@
 		FC0952AE2B83E49500CC82F1 /* Practice_NavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0952AD2B83E49500CC82F1 /* Practice_NavigationLink.swift */; };
 		FC0952B02B84245C00CC82F1 /* Practice_Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0952AF2B84245C00CC82F1 /* Practice_Codable.swift */; };
 		FC0952B22B84387400CC82F1 /* Practice_ScrollingGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0952B12B84387400CC82F1 /* Practice_ScrollingGrid.swift */; };
+		FC890E002B8E4D74001923B9 /* PathStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC890DFF2B8E4D74001923B9 /* PathStore.swift */; };
 		FC927FDF2B850D870027DC85 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = FC927FDD2B850D870027DC85 /* missions.json */; };
 		FC927FE02B850D870027DC85 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = FC927FDE2B850D870027DC85 /* astronauts.json */; };
 		FC927FE22B850E2A0027DC85 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC927FE12B850E2A0027DC85 /* Astronaut.swift */; };
@@ -42,6 +43,7 @@
 		FC0952AD2B83E49500CC82F1 /* Practice_NavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_NavigationLink.swift; sourceTree = "<group>"; };
 		FC0952AF2B84245C00CC82F1 /* Practice_Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_Codable.swift; sourceTree = "<group>"; };
 		FC0952B12B84387400CC82F1 /* Practice_ScrollingGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_ScrollingGrid.swift; sourceTree = "<group>"; };
+		FC890DFF2B8E4D74001923B9 /* PathStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore.swift; sourceTree = "<group>"; };
 		FC927FDD2B850D870027DC85 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = SOURCE_ROOT; };
 		FC927FDE2B850D870027DC85 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = SOURCE_ROOT; };
 		FC927FE12B850E2A0027DC85 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				FC09529C2B83D0D900CC82F1 /* MoonshotApp.swift */,
 				FC09529E2B83D0D900CC82F1 /* ContentView.swift */,
+				FC890DFF2B8E4D74001923B9 /* PathStore.swift */,
 				FC0062322B865F6900BCB5BB /* MissionView.swift */,
 				FCFA13F52B8981F200DD7F74 /* AstronautView.swift */,
 				FC927FE32B850EC50027DC85 /* Bundle-Decodable.swift */,
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC890E002B8E4D74001923B9 /* PathStore.swift in Sources */,
 				FC0952B22B84387400CC82F1 /* Practice_ScrollingGrid.swift in Sources */,
 				FC0952AE2B83E49500CC82F1 /* Practice_NavigationLink.swift in Sources */,
 				FC927FEA2B858B3D0027DC85 /* Color-Theme.swift in Sources */,
