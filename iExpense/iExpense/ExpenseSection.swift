@@ -16,19 +16,21 @@ struct ExpenseSection: View {
     var body: some View {
         Section(title) {
             ForEach(expenses) { item in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
-                        Text(item.type)
-                            .font(.subheadline)
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.type)
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                        
+                        Text(item.amount, format: .currency(code: localCurrency))
+                            .style(for: item)
+                        //.font(item.amount > 100 ? .headline : .subheadline)
+                        
                     }
-                    Spacer()
-                    
-                    Text(item.amount, format: .currency(code: localCurrency))
-                        .style(for: item)
-                    //.font(item.amount > 100 ? .headline : .subheadline)
-                    
                 }
             }
             .onDelete(perform: deleteItems)

@@ -20,6 +20,7 @@ struct MissionView: View {
     
     let mission: Mission
     let crew: [CrewMember]
+    //@Binding var path: PathStore
     
     var body: some View {
         ScrollView {

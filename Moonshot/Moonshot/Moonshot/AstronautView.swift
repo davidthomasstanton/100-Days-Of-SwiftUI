@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AstronautView: View {
     let astronaut: Astronaut
-    
+    //@Binding var pathStore: PathStore
     var body: some View {
         NavigationStack {
             ScrollView {

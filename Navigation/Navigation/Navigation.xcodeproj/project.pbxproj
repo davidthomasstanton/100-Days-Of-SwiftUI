@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC890DF62B8E385D001923B9 /* PathStore_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC890DF52B8E385D001923B9 /* PathStore_5.swift */; };
+		FC890DF82B8E39E0001923B9 /* CustomizingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC890DF72B8E39E0001923B9 /* CustomizingNavigationBar.swift */; };
+		FC890DFA2B8E3C0B001923B9 /* ToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC890DF92B8E3C0B001923B9 /* ToolbarPlacement.swift */; };
+		FC890DFC2B8E3F3C001923B9 /* NavigationBar_Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC890DFB2B8E3F3C001923B9 /* NavigationBar_Editable.swift */; };
 		FCC595382B8CEAB800612ECC /* NavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595372B8CEAB800612ECC /* NavigationPath.swift */; };
 		FCC5953A2B8CF83F00612ECC /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC595392B8CF83F00612ECC /* RandomNumber.swift */; };
 		FCC5953C2B8CFA9600612ECC /* RandomNumber_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5953B2B8CFA9600612ECC /* RandomNumber_1.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC890DF52B8E385D001923B9 /* PathStore_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore_5.swift; sourceTree = "<group>"; };
+		FC890DF72B8E39E0001923B9 /* CustomizingNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizingNavigationBar.swift; sourceTree = "<group>"; };
+		FC890DF92B8E3C0B001923B9 /* ToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlacement.swift; sourceTree = "<group>"; };
+		FC890DFB2B8E3F3C001923B9 /* NavigationBar_Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar_Editable.swift; sourceTree = "<group>"; };
 		FCC595372B8CEAB800612ECC /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
 		FCC595392B8CF83F00612ECC /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
 		FCC5953B2B8CFA9600612ECC /* RandomNumber_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber_1.swift; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 				FCC595492B8D9D2B00612ECC /* PathStore_2.swift */,
 				FCC5954B2B8D9E1400612ECC /* PathStore_3.swift */,
 				FCC5954D2B8DA31600612ECC /* PathStore_4.swift */,
+				FC890DF52B8E385D001923B9 /* PathStore_5.swift */,
+				FC890DF72B8E39E0001923B9 /* CustomizingNavigationBar.swift */,
+				FC890DF92B8E3C0B001923B9 /* ToolbarPlacement.swift */,
+				FC890DFB2B8E3F3C001923B9 /* NavigationBar_Editable.swift */,
 				FCDE9A5D2B8AB54D009F1A18 /* Assets.xcassets */,
 				FCDE9A5F2B8AB54D009F1A18 /* Preview Content */,
 			);
@@ -183,9 +195,13 @@
 				FCDE9A5C2B8AB54C009F1A18 /* ContentView.swift in Sources */,
 				FCDE9A6A2B8ACE2E009F1A18 /* ProgrammaticNavigation.swift in Sources */,
 				FCDE9A682B8AC355009F1A18 /* DetailView.swift in Sources */,
+				FC890DFA2B8E3C0B001923B9 /* ToolbarPlacement.swift in Sources */,
+				FC890DF82B8E39E0001923B9 /* CustomizingNavigationBar.swift in Sources */,
 				FCC5954C2B8D9E1400612ECC /* PathStore_3.swift in Sources */,
+				FC890DFC2B8E3F3C001923B9 /* NavigationBar_Editable.swift in Sources */,
 				FCDE9A5A2B8AB54C009F1A18 /* NavigationApp.swift in Sources */,
 				FCC5954A2B8D9D2B00612ECC /* PathStore_2.swift in Sources */,
+				FC890DF62B8E385D001923B9 /* PathStore_5.swift in Sources */,
 				FCC5953A2B8CF83F00612ECC /* RandomNumber.swift in Sources */,
 				FCC595422B8CFF7D00612ECC /* RandomNumber_4.swift in Sources */,
 				FCC595402B8CFC5D00612ECC /* RandomNumber_3.swift in Sources */,

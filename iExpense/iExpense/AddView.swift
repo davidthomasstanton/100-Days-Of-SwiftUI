@@ -15,7 +15,7 @@ import SwiftUI
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
     var expenses: Expenses
-    @State private var name = ""
+    @State private var name = "New Expense"
     @State private var type = "Personal"
     @State private var amount = 0.0
     let types = ["Personal", "Business"]
@@ -33,14 +33,23 @@ struct AddView: View {
                 TextField("Amount", value: $amount, format: .currency(code: localCurrency))
                     .keyboardType(.decimalPad)
             }
-            .navigationTitle("Add New Expense")
+            .navigationTitle($name)
             .toolbar {
-                Button("Save Expense") {
-                    let item = ExpenseItem(name: name, type: type, amount: amount)
-                    expenses.items.append(item)
-                    dismiss()
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        let item = ExpenseItem(name: name, type: type, amount: amount)
+                        expenses.items.append(item)
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel) {
+                        dismiss()
+                    }
                 }
             }
+            .navigationBarBackButtonHidden()
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
