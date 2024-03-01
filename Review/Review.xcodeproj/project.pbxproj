@@ -12,7 +12,18 @@
 		FC2204B22B8F8C3D00211434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2204B12B8F8C3D00211434 /* Assets.xcassets */; };
 		FC2204B52B8F8C3D00211434 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2204B42B8F8C3D00211434 /* Preview Assets.xcassets */; };
 		FC2204BC2B8F91F900211434 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2204BB2B8F91F900211434 /* StepperView.swift */; };
-		FC2204BE2B90591E00211434 /* StepperView_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2204BD2B90591E00211434 /* StepperView_2.swift */; };
+		FCA2DC522B90E6950064EFE1 /* ExplicitAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC512B90E6950064EFE1 /* ExplicitAnimation.swift */; };
+		FCA2DC542B90E86C0064EFE1 /* ExplicitAnimation_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC532B90E86C0064EFE1 /* ExplicitAnimation_1.swift */; };
+		FCA2DC562B90E9530064EFE1 /* MultipleAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC552B90E9530064EFE1 /* MultipleAnimations.swift */; };
+		FCA2DC582B90EB330064EFE1 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC572B90EB330064EFE1 /* Gestures.swift */; };
+		FCA2DC5A2B90EF2E0064EFE1 /* ShowingSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC592B90EF2E0064EFE1 /* ShowingSheets.swift */; };
+		FCA2DC5C2B90F1AF0064EFE1 /* DismissingSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC5B2B90F1AF0064EFE1 /* DismissingSheets.swift */; };
+		FCA2DC5E2B916DA30064EFE1 /* RemoveRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC5D2B916DA30064EFE1 /* RemoveRows.swift */; };
+		FCA2DC602B9170100064EFE1 /* RemoveRows_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC5F2B9170100064EFE1 /* RemoveRows_1.swift */; };
+		FCA2DC642B9173470064EFE1 /* StoringData_UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC632B9173470064EFE1 /* StoringData_UserDefaults.swift */; };
+		FCA2DC662B91746C0064EFE1 /* StoringData_AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC652B91746C0064EFE1 /* StoringData_AppStorage.swift */; };
+		FCA2DC682B9175990064EFE1 /* SaveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC672B9175990064EFE1 /* SaveUser.swift */; };
+		FCA2DC6A2B91771C0064EFE1 /* SaveUser_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC692B91771C0064EFE1 /* SaveUser_1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +33,18 @@
 		FC2204B12B8F8C3D00211434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC2204B42B8F8C3D00211434 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC2204BB2B8F91F900211434 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
-		FC2204BD2B90591E00211434 /* StepperView_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView_2.swift; sourceTree = "<group>"; };
+		FCA2DC512B90E6950064EFE1 /* ExplicitAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimation.swift; sourceTree = "<group>"; };
+		FCA2DC532B90E86C0064EFE1 /* ExplicitAnimation_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimation_1.swift; sourceTree = "<group>"; };
+		FCA2DC552B90E9530064EFE1 /* MultipleAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnimations.swift; sourceTree = "<group>"; };
+		FCA2DC572B90EB330064EFE1 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
+		FCA2DC592B90EF2E0064EFE1 /* ShowingSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingSheets.swift; sourceTree = "<group>"; };
+		FCA2DC5B2B90F1AF0064EFE1 /* DismissingSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingSheets.swift; sourceTree = "<group>"; };
+		FCA2DC5D2B916DA30064EFE1 /* RemoveRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRows.swift; sourceTree = "<group>"; };
+		FCA2DC5F2B9170100064EFE1 /* RemoveRows_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRows_1.swift; sourceTree = "<group>"; };
+		FCA2DC632B9173470064EFE1 /* StoringData_UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringData_UserDefaults.swift; sourceTree = "<group>"; };
+		FCA2DC652B91746C0064EFE1 /* StoringData_AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringData_AppStorage.swift; sourceTree = "<group>"; };
+		FCA2DC672B9175990064EFE1 /* SaveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUser.swift; sourceTree = "<group>"; };
+		FCA2DC692B91771C0064EFE1 /* SaveUser_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUser_1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +80,18 @@
 				FC2204AD2B8F8C3C00211434 /* ReviewApp.swift */,
 				FC2204AF2B8F8C3C00211434 /* ContentView.swift */,
 				FC2204BB2B8F91F900211434 /* StepperView.swift */,
-				FC2204BD2B90591E00211434 /* StepperView_2.swift */,
+				FCA2DC512B90E6950064EFE1 /* ExplicitAnimation.swift */,
+				FCA2DC532B90E86C0064EFE1 /* ExplicitAnimation_1.swift */,
+				FCA2DC552B90E9530064EFE1 /* MultipleAnimations.swift */,
+				FCA2DC572B90EB330064EFE1 /* Gestures.swift */,
+				FCA2DC592B90EF2E0064EFE1 /* ShowingSheets.swift */,
+				FCA2DC652B91746C0064EFE1 /* StoringData_AppStorage.swift */,
+				FCA2DC632B9173470064EFE1 /* StoringData_UserDefaults.swift */,
+				FCA2DC5B2B90F1AF0064EFE1 /* DismissingSheets.swift */,
+				FCA2DC5D2B916DA30064EFE1 /* RemoveRows.swift */,
+				FCA2DC672B9175990064EFE1 /* SaveUser.swift */,
+				FCA2DC692B91771C0064EFE1 /* SaveUser_1.swift */,
+				FCA2DC5F2B9170100064EFE1 /* RemoveRows_1.swift */,
 				FC2204B12B8F8C3D00211434 /* Assets.xcassets */,
 				FC2204B32B8F8C3D00211434 /* Preview Content */,
 			);
@@ -143,10 +176,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA2DC522B90E6950064EFE1 /* ExplicitAnimation.swift in Sources */,
+				FCA2DC602B9170100064EFE1 /* RemoveRows_1.swift in Sources */,
+				FCA2DC5A2B90EF2E0064EFE1 /* ShowingSheets.swift in Sources */,
 				FC2204B02B8F8C3C00211434 /* ContentView.swift in Sources */,
-				FC2204BE2B90591E00211434 /* StepperView_2.swift in Sources */,
+				FCA2DC562B90E9530064EFE1 /* MultipleAnimations.swift in Sources */,
 				FC2204BC2B8F91F900211434 /* StepperView.swift in Sources */,
+				FCA2DC542B90E86C0064EFE1 /* ExplicitAnimation_1.swift in Sources */,
+				FCA2DC682B9175990064EFE1 /* SaveUser.swift in Sources */,
+				FCA2DC6A2B91771C0064EFE1 /* SaveUser_1.swift in Sources */,
+				FCA2DC5C2B90F1AF0064EFE1 /* DismissingSheets.swift in Sources */,
+				FCA2DC582B90EB330064EFE1 /* Gestures.swift in Sources */,
+				FCA2DC662B91746C0064EFE1 /* StoringData_AppStorage.swift in Sources */,
+				FCA2DC5E2B916DA30064EFE1 /* RemoveRows.swift in Sources */,
 				FC2204AE2B8F8C3C00211434 /* ReviewApp.swift in Sources */,
+				FCA2DC642B9173470064EFE1 /* StoringData_UserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

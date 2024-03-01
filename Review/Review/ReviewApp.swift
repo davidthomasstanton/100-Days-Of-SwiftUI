@@ -11,7 +11,9 @@ import SwiftUI
 struct ReviewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            //StoringData_UserDefaults()
+            StoringData_AppStorage()
         }
     }
 }
