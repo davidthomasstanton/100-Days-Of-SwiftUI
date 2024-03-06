@@ -32,4 +32,5 @@ class Activities: Codable, Identifiable {
         let newActivity = Activity(title: title, description: description, timesCompleted: 0)
         activities.append(newActivity)
     }
+    
 }

@@ -13,5 +13,6 @@ struct Activity: Identifiable, Codable, Equatable {
     var description: String
     var timesCompleted: Int
     
-    static let example = Activity(title: "Example Title", description: "Example Description", timesCompleted: 0)
+    static var example = Activity(title: "Example Title", description: "Example Description", timesCompleted: 0)
+    
 }

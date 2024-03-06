@@ -12,6 +12,9 @@
 		FCC6DD1C2B96BA4900D63785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC6DD1B2B96BA4900D63785 /* Assets.xcassets */; };
 		FCC6DD1F2B96BA4900D63785 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC6DD1E2B96BA4900D63785 /* Preview Assets.xcassets */; };
 		FCC6DD262B96BA8600D63785 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6DD252B96BA8600D63785 /* Activity.swift */; };
+		FCC717242B97876B0024CB05 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC717232B97876B0024CB05 /* Activities.swift */; };
+		FCC717262B9788E70024CB05 /* AddActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC717252B9788E70024CB05 /* AddActivity.swift */; };
+		FCC717282B978BE80024CB05 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC717272B978BE80024CB05 /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		FCC6DD1B2B96BA4900D63785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCC6DD1E2B96BA4900D63785 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FCC6DD252B96BA8600D63785 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		FCC717232B97876B0024CB05 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
+		FCC717252B9788E70024CB05 /* AddActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivity.swift; sourceTree = "<group>"; };
+		FCC717272B978BE80024CB05 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			children = (
 				FCC6DD172B96BA4800D63785 /* Habit_TrackingApp.swift */,
 				FCC6DD192B96BA4800D63785 /* ContentView.swift */,
+				FCC717272B978BE80024CB05 /* ActivityView.swift */,
+				FCC717252B9788E70024CB05 /* AddActivity.swift */,
 				FCC6DD252B96BA8600D63785 /* Activity.swift */,
+				FCC717232B97876B0024CB05 /* Activities.swift */,
 				FCC6DD1B2B96BA4900D63785 /* Assets.xcassets */,
 				FCC6DD1D2B96BA4900D63785 /* Preview Content */,
 			);
@@ -140,9 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC717242B97876B0024CB05 /* Activities.swift in Sources */,
 				FCC6DD262B96BA8600D63785 /* Activity.swift in Sources */,
+				FCC717262B9788E70024CB05 /* AddActivity.swift in Sources */,
 				FCC6DD1A2B96BA4800D63785 /* ContentView.swift in Sources */,
 				FCC6DD182B96BA4800D63785 /* Habit_TrackingApp.swift in Sources */,
+				FCC717282B978BE80024CB05 /* ActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

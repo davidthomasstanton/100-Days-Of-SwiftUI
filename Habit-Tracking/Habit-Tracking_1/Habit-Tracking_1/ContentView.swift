@@ -14,28 +14,40 @@ import SwiftUI
 struct ContentView: View {
     @State private var pathStore = PathStore()
     @State private var data = Activities()
-    @State private var showingSheet = false
+    @State private var showingAddActivity = false
     var body: some View {
         NavigationStack(path: $pathStore.path) {
             List(data.activities) { activity in
                 NavigationLink {
-                    AddActivity(data: data)
+                    ActivityView(data: data, activity: activity)
                 } label: {
                     HStack {
-                        Text(activity.title)
+                        Text(activity.title + ":")
                         Text(String(activity.timesCompleted))
+                            .foregroundStyle(changeColor(for: activity))
+                        Text("times")
                     }
                 }
             }
             .navigationTitle("Habit-Tracker")
             .toolbar {
                 Button("Add", systemImage: "plus") {
-                    showingSheet = true
+                    showingAddActivity = true
                 }
             }
-            .sheet(isPresented: $showingSheet) {
+            .sheet(isPresented: $showingAddActivity) {
                 AddActivity(data: data)
             }
+        }
+    }
+    
+    func changeColor(for activity: Activity) -> Color {
+        if activity.timesCompleted > 20 {
+            return .red
+        } else if activity.timesCompleted > 10 {
+            return .orange
+        } else {
+            return .black
         }
     }
 }
