@@ -15,6 +15,7 @@
 		FC81F5E62B962FF700117F35 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81F5E52B962FF700117F35 /* Activities.swift */; };
 		FC81F5E82B96344300117F35 /* PathStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81F5E72B96344300117F35 /* PathStore.swift */; };
 		FCC6DD282B96F2D800D63785 /* AddActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6DD272B96F2D800D63785 /* AddActivity.swift */; };
+		FCC717222B9781920024CB05 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC717212B9781920024CB05 /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FC81F5E52B962FF700117F35 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		FC81F5E72B96344300117F35 /* PathStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore.swift; sourceTree = "<group>"; };
 		FCC6DD272B96F2D800D63785 /* AddActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivity.swift; sourceTree = "<group>"; };
+		FCC717212B9781920024CB05 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				FC81F5D52B962E1D00117F35 /* Habit_Tracking_1App.swift */,
 				FC81F5D72B962E1D00117F35 /* ContentView.swift */,
+				FCC717212B9781920024CB05 /* ActivityView.swift */,
 				FCC6DD272B96F2D800D63785 /* AddActivity.swift */,
 				FC81F5E72B96344300117F35 /* PathStore.swift */,
 				FC81F5E32B962FA200117F35 /* Activity.swift */,
@@ -153,6 +156,7 @@
 				FC81F5E62B962FF700117F35 /* Activities.swift in Sources */,
 				FC81F5E42B962FA200117F35 /* Activity.swift in Sources */,
 				FC81F5D82B962E1D00117F35 /* ContentView.swift in Sources */,
+				FCC717222B9781920024CB05 /* ActivityView.swift in Sources */,
 				FCC6DD282B96F2D800D63785 /* AddActivity.swift in Sources */,
 				FC81F5D62B962E1D00117F35 /* Habit_Tracking_1App.swift in Sources */,
 			);

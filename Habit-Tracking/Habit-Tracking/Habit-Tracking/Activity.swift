@@ -11,9 +11,7 @@ struct Activity: Codable, Equatable, Identifiable {
     var id = UUID()
     var title: String
     var description: String
-    var completionCount = 0
+    var timesCompleted: Int
     
-    static let example = Activity(title: "Exammple Activity", description: "This is a test activity")
-    
-    
+    static var example = Activity(title: "Example Habit", description: "Description", timesCompleted: 0)
 }
