@@ -1,15 +1,17 @@
 //
 //  ContentView.swift
-//  CupcakeCorner
+//  CupcakeCorner_2
 //
-//  Created by David Stanton on 3/8/24.
+//  Created by David Stanton on 3/9/24.
 //
-
-import SwiftUI
-// Nav Stack, Form
+// ContentView :: Nav Stack, Form
 // Section 1: Picker to select cake type, Stepper for number of cakes (3-20)
 // Section 2: Toggles for special requests, extra frosting, extra spinkles
 // Section 3: Navlink to AddressView for delivery details
+//
+// AddressView :: struct
+// pass in Order
+import SwiftUI
 
 struct ContentView: View {
     @State private var order = Order()
@@ -18,27 +20,22 @@ struct ContentView: View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("Select your cake type", selection: $order.type) {
+                    Picker("Cupcake Type:", selection: $order.type) {
                         ForEach(Order.types.indices, id: \.self) {
                             Text(Order.types[$0])
                         }
                     }
-                    
-                    Stepper("Number of cakes \(order.quantity)", value: $order.quantity, in: 3...20)
+                    Stepper("Quantity: \(order.quantity)", value: $order.quantity, in: 3...20, step: 1)
                 }
-                
                 Section {
-                    Toggle("Any special requests?", isOn: $order.specialRequestEnabled)
+                    Toggle("Special Requests?", isOn: $order.specialRequestEnabled)
                     if order.specialRequestEnabled {
-                        Toggle("Add extra frosting", isOn: $order.extraFrosting)
-                        Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
+                        Toggle("Extra Frosting", isOn: $order.extraFrosting)
+                        Toggle("Extra Sprinkles", isOn: $order.addSprinkles)
                     }
                 }
-                
                 Section {
-                    NavigationLink("Delivery Details") {
-                        AddressView(order: order)
-                    }
+                    NavigationLink("Delivery Details", destination: AddressView(order: order))
                 }
             }
             .navigationTitle("Cupcake Corner")

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC24E58E2B9CC97700CA419D /* Practice_HapticEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E58D2B9CC97700CA419D /* Practice_HapticEffects.swift */; };
+		FC24E5902B9CCF6A00CA419D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E58F2B9CCF6A00CA419D /* Order.swift */; };
+		FC24E5922B9CD17500CA419D /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5912B9CD17500CA419D /* AddressView.swift */; };
+		FC24E5942B9CD33000CA419D /* Practice_CodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5932B9CD33000CA419D /* Practice_CodableConformance.swift */; };
+		FC24E5D42B9CE17400CA419D /* AnkiBreakouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5D32B9CE17400CA419D /* AnkiBreakouts.swift */; };
 		FCA8C3D52B9B742E00774D88 /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */; };
 		FCA8C3D72B9B742E00774D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D62B9B742E00774D88 /* ContentView.swift */; };
 		FCA8C3D92B9B742F00774D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3D82B9B742F00774D88 /* Assets.xcassets */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC24E58D2B9CC97700CA419D /* Practice_HapticEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_HapticEffects.swift; sourceTree = "<group>"; };
+		FC24E58F2B9CCF6A00CA419D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FC24E5912B9CD17500CA419D /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FC24E5932B9CD33000CA419D /* Practice_CodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_CodableConformance.swift; sourceTree = "<group>"; };
+		FC24E5D32B9CE17400CA419D /* AnkiBreakouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiBreakouts.swift; sourceTree = "<group>"; };
 		FCA8C3D12B9B742E00774D88 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		FCA8C3D62B9B742E00774D88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 			children = (
 				FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */,
 				FCA8C3D62B9B742E00774D88 /* ContentView.swift */,
+				FC24E58F2B9CCF6A00CA419D /* Order.swift */,
+				FC24E5912B9CD17500CA419D /* AddressView.swift */,
 				FCA8C3F02B9C3FC500774D88 /* Practice */,
 				FCA8C3D82B9B742F00774D88 /* Assets.xcassets */,
 				FCA8C3DA2B9B742F00774D88 /* Preview Content */,
@@ -85,6 +97,7 @@
 		FCA8C3F02B9C3FC500774D88 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				FC24E5932B9CD33000CA419D /* Practice_CodableConformance.swift */,
 				FCA8C3E62B9C0A0600774D88 /* Practice_DisabledForm.swift */,
 				FCA8C3E42B9C06E000774D88 /* Practice_AsyncImage.swift */,
 				FCA8C3E82B9C0A9200774D88 /* Practice_AsyncImage_1.swift */,
@@ -92,6 +105,8 @@
 				FCA8C3EA2B9C2BF500774D88 /* Practice_URLSession_1.swift */,
 				FCA8C3EC2B9C3D1900774D88 /* Practice_URLSession_2.swift */,
 				FCA8C3EE2B9C3E9A00774D88 /* Practice_URLSession_3.swift */,
+				FC24E58D2B9CC97700CA419D /* Practice_HapticEffects.swift */,
+				FC24E5D32B9CE17400CA419D /* AnkiBreakouts.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -168,7 +183,12 @@
 			files = (
 				FCA8C3ED2B9C3D1900774D88 /* Practice_URLSession_2.swift in Sources */,
 				FCA8C3E72B9C0A0600774D88 /* Practice_DisabledForm.swift in Sources */,
+				FC24E58E2B9CC97700CA419D /* Practice_HapticEffects.swift in Sources */,
+				FC24E5942B9CD33000CA419D /* Practice_CodableConformance.swift in Sources */,
 				FCA8C3EB2B9C2BF500774D88 /* Practice_URLSession_1.swift in Sources */,
+				FC24E5D42B9CE17400CA419D /* AnkiBreakouts.swift in Sources */,
+				FC24E5902B9CCF6A00CA419D /* Order.swift in Sources */,
+				FC24E5922B9CD17500CA419D /* AddressView.swift in Sources */,
 				FCA8C3EF2B9C3E9A00774D88 /* Practice_URLSession_3.swift in Sources */,
 				FCA8C3D72B9B742E00774D88 /* ContentView.swift in Sources */,
 				FCA8C3E32B9B7AE400774D88 /* Practice_URLSession.swift in Sources */,
