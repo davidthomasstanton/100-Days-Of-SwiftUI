@@ -23,6 +23,7 @@
 		FCA8C3EB2B9C2BF500774D88 /* Practice_URLSession_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3EA2B9C2BF500774D88 /* Practice_URLSession_1.swift */; };
 		FCA8C3ED2B9C3D1900774D88 /* Practice_URLSession_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3EC2B9C3D1900774D88 /* Practice_URLSession_2.swift */; };
 		FCA8C3EF2B9C3E9A00774D88 /* Practice_URLSession_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3EE2B9C3E9A00774D88 /* Practice_URLSession_3.swift */; };
+		FCC75B072B9F576900431BF5 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC75B062B9F576900431BF5 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		FCA8C3EA2B9C2BF500774D88 /* Practice_URLSession_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_URLSession_1.swift; sourceTree = "<group>"; };
 		FCA8C3EC2B9C3D1900774D88 /* Practice_URLSession_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_URLSession_2.swift; sourceTree = "<group>"; };
 		FCA8C3EE2B9C3E9A00774D88 /* Practice_URLSession_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_URLSession_3.swift; sourceTree = "<group>"; };
+		FCC75B062B9F576900431BF5 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */,
 				FCA8C3D62B9B742E00774D88 /* ContentView.swift */,
+				FCC75B062B9F576900431BF5 /* CheckoutView.swift */,
 				FC24E58F2B9CCF6A00CA419D /* Order.swift */,
 				FC24E5912B9CD17500CA419D /* AddressView.swift */,
 				FCA8C3F02B9C3FC500774D88 /* Practice */,
@@ -183,6 +186,7 @@
 			files = (
 				FCA8C3ED2B9C3D1900774D88 /* Practice_URLSession_2.swift in Sources */,
 				FCA8C3E72B9C0A0600774D88 /* Practice_DisabledForm.swift in Sources */,
+				FCC75B072B9F576900431BF5 /* CheckoutView.swift in Sources */,
 				FC24E58E2B9CC97700CA419D /* Practice_HapticEffects.swift in Sources */,
 				FC24E5942B9CD33000CA419D /* Practice_CodableConformance.swift in Sources */,
 				FCA8C3EB2B9C2BF500774D88 /* Practice_URLSession_1.swift in Sources */,
