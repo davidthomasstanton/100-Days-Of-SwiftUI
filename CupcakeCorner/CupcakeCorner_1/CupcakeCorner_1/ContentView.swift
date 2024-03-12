@@ -43,7 +43,7 @@ struct ContentView: View {
                     NavigationLink("Delivery Details", destination: AddressView(order: order))
                 }
             }
-            .navigationTitle("Cupcake Corner")
+            .navigationTitle("Cupcake Corner_1")
         }
     }
 }

@@ -13,6 +13,7 @@
 		FC24E5A92B9CD85500CA419D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC24E5A82B9CD85500CA419D /* Preview Assets.xcassets */; };
 		FC24E5B02B9CDAA000CA419D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5AF2B9CDAA000CA419D /* Order.swift */; };
 		FC24E5B42B9CDD6E00CA419D /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5B32B9CDD6E00CA419D /* AddressView.swift */; };
+		FCC75B092B9F611F00431BF5 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC75B082B9F611F00431BF5 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FC24E5A82B9CD85500CA419D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC24E5AF2B9CDAA000CA419D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FC24E5B32B9CDD6E00CA419D /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FCC75B082B9F611F00431BF5 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			children = (
 				FC24E5A12B9CD85500CA419D /* CupcakeCorner_1App.swift */,
 				FC24E5A32B9CD85500CA419D /* ContentView.swift */,
-				FC24E5B32B9CDD6E00CA419D /* AddressView.swift */,
+				FCC75B082B9F611F00431BF5 /* CheckoutView.swift */,
 				FC24E5AF2B9CDAA000CA419D /* Order.swift */,
+				FC24E5B32B9CDD6E00CA419D /* AddressView.swift */,
 				FC24E5A52B9CD85500CA419D /* Assets.xcassets */,
 				FC24E5A72B9CD85500CA419D /* Preview Content */,
 			);
@@ -145,6 +148,7 @@
 			files = (
 				FC24E5B02B9CDAA000CA419D /* Order.swift in Sources */,
 				FC24E5B42B9CDD6E00CA419D /* AddressView.swift in Sources */,
+				FCC75B092B9F611F00431BF5 /* CheckoutView.swift in Sources */,
 				FC24E5A42B9CD85500CA419D /* ContentView.swift in Sources */,
 				FC24E5A22B9CD85500CA419D /* CupcakeCorner_1App.swift in Sources */,
 			);
