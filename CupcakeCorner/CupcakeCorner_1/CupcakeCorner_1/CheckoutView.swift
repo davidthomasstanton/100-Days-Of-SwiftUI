@@ -11,6 +11,7 @@ struct CheckoutView: View {
     var order: Order
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    @State private var showingOrderFailed = false
     var body: some View {
         ScrollView {
             VStack {
@@ -36,7 +37,15 @@ struct CheckoutView: View {
         .scrollBounceBehavior(.basedOnSize)
         .alert("Thank You", isPresented: $showingConfirmation) {
             Button("OK") { }
-        } message: { Text(confirmationMessage) }
+        } message: {
+            Text(confirmationMessage)
+        }
+        .alert("Order Failed :( ", isPresented: $showingOrderFailed) {
+            Button("Reassessing Life Choices") { }
+        } message: {
+            Text(confirmationMessage)
+        }
+            
     }
     func placeOrder() async {
         // encode JSON data
@@ -49,7 +58,7 @@ struct CheckoutView: View {
         // create URLRequest of "Content-Type", "application/json", httpMethod of "POST"
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
+        //request.httpMethod = "POST"
         
         // upload encoded data in a URLSession for request
         // handle the result
@@ -63,6 +72,8 @@ struct CheckoutView: View {
             showingConfirmation = true
         } catch {
             print("Checkout failed: \(error.localizedDescription)")
+            confirmationMessage = "Failed to connect to the internet. Please try again."
+            showingOrderFailed = true
         }
     }
 }

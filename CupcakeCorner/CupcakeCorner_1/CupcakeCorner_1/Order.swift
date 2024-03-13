@@ -18,6 +18,22 @@ import Foundation
 
 @Observable
 class Order: Codable {
+    var user: User {
+        didSet {
+            let encoded = try? JSONEncoder().encode(user) {
+                UserDefaults.shared.set(encoded, forKey: "SavedUser")
+            }
+        }
+    }
+    
+    init() {
+        if let savedUser = try? UserDefaults.standard.data(forKey: "SavedUser") {
+            let decoded = try? JSONDecoder().decode(User.self, from: savedUser) {
+                user = decoded
+            }
+        }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case _type = "type"
         case _quantity = "quantity"
@@ -43,12 +59,13 @@ class Order: Codable {
     }
     var extraFrosting = false
     var addSprinkles = false
-    
-    var name = ""
-    var streetAddress = ""
-    var city = ""
-    var zip = ""
-    
+
+//
+//    var name = ""
+//    var streetAddress = ""
+//    var city = ""
+//    var zip = ""
+//    
     var cost: Decimal {
         var cost = Decimal(quantity) * 2
         cost += Decimal(type) / 2
@@ -62,7 +79,10 @@ class Order: Codable {
     }
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.trimmingCharacters(in: .whitespaces).isEmpty || 
+            streetAddress.trimmingCharacters(in: .whitespaces).isEmpty ||
+            city.trimmingCharacters(in: .whitespaces).isEmpty ||
+            zip.trimmingCharacters(in: .whitespaces).isEmpty {
             return false
         }
         return true

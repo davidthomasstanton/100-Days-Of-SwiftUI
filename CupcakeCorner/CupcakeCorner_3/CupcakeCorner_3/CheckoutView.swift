@@ -1,8 +1,8 @@
 //
 //  CheckoutView.swift
-//  CupcakeCorner_2
+//  CupcakeCorner_3
 //
-//  Created by David Stanton on 3/11/24.
+//  Created by David Stanton on 3/12/24.
 //
 
 import SwiftUI
@@ -13,27 +13,29 @@ struct CheckoutView: View {
     @State private var showingConfirmation = false
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack {
-                    AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(height: 233)
-                    
-                    Text("Your total cost is \(order.cost, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
-                    Button("Place Order") {
-                        Task {
-                            await placeOrder()
-                        }
+            VStack {
+                AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(height: 233)
+                
+                Text("Your total is: \(order.totalCost, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
+                    .font(.body.bold())
+                
+                Button("Place Order") {
+                    Task {
+                        await placeOrder()
                     }
                 }
+                .font(.title)
+                Spacer()
             }
             .navigationTitle("Checkout")
-            .scrollBounceBehavior(.basedOnSize)
+            .navigationBarTitleDisplayMode(.inline)
             .alert("Thank You!", isPresented: $showingConfirmation) {
                 Button("OK") { }
             } message: {
@@ -41,14 +43,15 @@ struct CheckoutView: View {
             }
         }
     }
+    
     func placeOrder() async {
         // encode JSON data
         guard let encoded = try? JSONEncoder().encode(order) else {
-            print("Failed to encode data")
+            print("Failed to encode data into JSON")
             return
         }
         
-        // force unwrap string into URL "https://reqres.in/api/cupcakes"
+        // force unwrap string into URL: "https://reqres.in/api/cupcakes"
         let url = URL(string: "https://reqres.in/api/cupcakes")!
         
         // create URLRequest of "Content-Type", "application/json", httpMethod of "POST"
@@ -63,11 +66,12 @@ struct CheckoutView: View {
         // catch any errors
         do {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
-            let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order of \(decodedOrder.quantity)x \(Order.types[decodedOrder.type]) cupcakes is on its way!"
+            let decoded = try JSONDecoder().decode(Order.self, from: data)
+            confirmationMessage = "Your order of \(decoded.quantity)x \(Order.types[decoded.type]) cupcakes is on its way!"
             showingConfirmation = true
+            
         } catch {
-            print("Checkout Failed \(error.localizedDescription)")
+            print("Failed to connect \(error.localizedDescription)")
         }
     }
 }

@@ -8,16 +8,93 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupcakeCorner_1/CheckoutView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "placeOrder()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9 - 7cbe19934b815782"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for CupcakeCorner_1.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "CupcakeCorner_1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidthomasstanton/Documents/100-Days-of-SwiftUI/CupcakeCorner/CupcakeCorner_1/CupcakeCorner_1/CheckoutView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9 - 7cab00e1176166f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for CupcakeCorner_1.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "CupcakeCorner_1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidthomasstanton/Documents/100-Days-of-SwiftUI/CupcakeCorner/CupcakeCorner_1/CupcakeCorner_1/CheckoutView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9 - 62edee19b1808184"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CupcakeCorner_1.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "CupcakeCorner_1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidthomasstanton/Documents/100-Days-of-SwiftUI/CupcakeCorner/CupcakeCorner_1/CupcakeCorner_1/CheckoutView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9 - 9bc4295b7c8f2685"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for CupcakeCorner_1.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "CupcakeCorner_1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidthomasstanton/Documents/100-Days-of-SwiftUI/CupcakeCorner/CupcakeCorner_1/CupcakeCorner_1/CheckoutView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "3C99C0D8-CF00-41F1-8FBB-581D7B53E6E9 - 7cbe19934b8157e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for CupcakeCorner_1.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "CupcakeCorner_1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidthomasstanton/Documents/100-Days-of-SwiftUI/CupcakeCorner/CupcakeCorner_1/CupcakeCorner_1/CheckoutView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
