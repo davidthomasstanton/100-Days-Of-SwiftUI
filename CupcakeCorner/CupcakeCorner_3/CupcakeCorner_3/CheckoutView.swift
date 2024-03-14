@@ -11,6 +11,7 @@ struct CheckoutView: View {
     var order: Order
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    @State private var showingError = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -37,6 +38,11 @@ struct CheckoutView: View {
             .navigationTitle("Checkout")
             .navigationBarTitleDisplayMode(.inline)
             .alert("Thank You!", isPresented: $showingConfirmation) {
+                Button("OK") { }
+            } message: {
+                Text(confirmationMessage)
+            }
+            .alert("Oops", isPresented: $showingError) {
                 Button("OK") { }
             } message: {
                 Text(confirmationMessage)
@@ -71,7 +77,8 @@ struct CheckoutView: View {
             showingConfirmation = true
             
         } catch {
-            print("Failed to connect \(error.localizedDescription)")
+            confirmationMessage = "Failed to connect \(error.localizedDescription)"
+            showingError = true
         }
     }
 }

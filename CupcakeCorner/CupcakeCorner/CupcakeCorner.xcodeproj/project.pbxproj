@@ -12,6 +12,7 @@
 		FC24E5922B9CD17500CA419D /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5912B9CD17500CA419D /* AddressView.swift */; };
 		FC24E5942B9CD33000CA419D /* Practice_CodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5932B9CD33000CA419D /* Practice_CodableConformance.swift */; };
 		FC24E5D42B9CE17400CA419D /* AnkiBreakouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24E5D32B9CE17400CA419D /* AnkiBreakouts.swift */; };
+		FC8533142BA2013900A4B36F /* String-EmptyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8533132BA2013900A4B36F /* String-EmptyChecking.swift */; };
 		FCA8C3D52B9B742E00774D88 /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */; };
 		FCA8C3D72B9B742E00774D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D62B9B742E00774D88 /* ContentView.swift */; };
 		FCA8C3D92B9B742F00774D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3D82B9B742F00774D88 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		FC24E5912B9CD17500CA419D /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		FC24E5932B9CD33000CA419D /* Practice_CodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_CodableConformance.swift; sourceTree = "<group>"; };
 		FC24E5D32B9CE17400CA419D /* AnkiBreakouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiBreakouts.swift; sourceTree = "<group>"; };
+		FC8533132BA2013900A4B36F /* String-EmptyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-EmptyChecking.swift"; sourceTree = "<group>"; };
 		FCA8C3D12B9B742E00774D88 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		FCA8C3D62B9B742E00774D88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				FCA8C3D42B9B742E00774D88 /* CupcakeCornerApp.swift */,
 				FCA8C3D62B9B742E00774D88 /* ContentView.swift */,
 				FCC75B062B9F576900431BF5 /* CheckoutView.swift */,
+				FC8533132BA2013900A4B36F /* String-EmptyChecking.swift */,
 				FC24E58F2B9CCF6A00CA419D /* Order.swift */,
 				FC24E5912B9CD17500CA419D /* AddressView.swift */,
 				FCA8C3F02B9C3FC500774D88 /* Practice */,
@@ -188,6 +191,7 @@
 				FCA8C3E72B9C0A0600774D88 /* Practice_DisabledForm.swift in Sources */,
 				FCC75B072B9F576900431BF5 /* CheckoutView.swift in Sources */,
 				FC24E58E2B9CC97700CA419D /* Practice_HapticEffects.swift in Sources */,
+				FC8533142BA2013900A4B36F /* String-EmptyChecking.swift in Sources */,
 				FC24E5942B9CD33000CA419D /* Practice_CodableConformance.swift in Sources */,
 				FCA8C3EB2B9C2BF500774D88 /* Practice_URLSession_1.swift in Sources */,
 				FC24E5D42B9CE17400CA419D /* AnkiBreakouts.swift in Sources */,
