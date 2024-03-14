@@ -1,31 +1,24 @@
 //
 //  Order.swift
-//  CupcakeCorner_2
+//  CupcakeCorner_4
 //
-//  Created by David Stanton on 3/9/24.
+//  Created by David Stanton on 3/13/24.
 //
-// Order :: Observable class
+// Observable class
 // static types of Vanilla, Strawberry, Chocolate, Rainbow
 // type, quantity, specialRequestEnabled, extraFrosting, addSprinkles
 // specialRequestEnabled sets others to false if false
+// name, streetAddress, city, zip
+// computed property for hasValidAddress
+// Computed property for cost
+// $2 per cake, complicated cakes cost more,
+// $1/cake for extra frosting, $0.50/cake for extra spinkles
+
 import Foundation
 import SwiftUI
 
 @Observable
 class Order: Codable {
-    enum CodingKeys: String, CodingKey {
-        case _type = "type"
-        case _quantity = "quantity"
-        case _specialRequestEnabled = "specialRequestEnabled"
-        case _extraFrosting = "extraFrosting"
-        case _addSprinkles = "addSprinkles"
-        case _name = "name"
-        case _city = "city"
-        case _streetAddress = "streetAdress"
-        case _zip = "zip"
-    }
-    
-    
     static var types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
     var type = 0
     var quantity = 3
@@ -61,7 +54,14 @@ class Order: Codable {
         }
     }
     
-    var isValidAddress: Bool {
+    init() {
+        name = UserDefaults.standard.string(forKey: "name") ?? ""
+        streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
+        city = UserDefaults.standard.string(forKey: "city") ?? ""
+        zip = UserDefaults.standard.string(forKey: "zip") ?? ""
+    }
+    
+    var hasValidAddress: Bool {
         if name.isReallyEmpty || streetAddress.isReallyEmpty || city.isReallyEmpty || zip.isReallyEmpty {
             return false
         }
@@ -73,13 +73,10 @@ class Order: Codable {
         if extraFrosting {
             cost += Decimal(quantity)
         }
+        if addSprinkles {
+            cost += Decimal(quantity / 2)
+        }
         return cost
     }
     
-    init() {
-        name = UserDefaults.standard.string(forKey: "name") ?? ""
-        streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
-        city = UserDefaults.standard.string(forKey: "city") ?? ""
-        zip = UserDefaults.standard.string(forKey: "zip") ?? ""
-    }
 }

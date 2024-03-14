@@ -1,14 +1,14 @@
 //
 //  CheckoutView.swift
-//  CupcakeCorner
+//  CupcakeCorner_4
 //
-//  Created by David Stanton on 3/11/24.
+//  Created by David Stanton on 3/13/24.
 //
 // Load Image "https://hws.dev/img/cupcakes@3x.jpg" with a placeholder spinny-wheel
 // Display total cost in local currency
 // Button to place order
 // handle alerts for successful order and failed order
-// 
+//
 // placeOrder function
 // encode the order
 // create a url request for "https://reqres.in/api/cupcakes"
@@ -26,9 +26,9 @@ struct CheckoutView: View {
     @State private var showingConfirmation = false
     @State private var showingError = false
     var body: some View {
-        ScrollView {
-            VStack {
-                AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
+        NavigationStack {
+            ScrollView {
+                AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg")) { image in
                     image
                         .resizable()
                         .scaledToFit()
@@ -37,32 +37,31 @@ struct CheckoutView: View {
                 }
                 .frame(height: 233)
                 
-                Text("Your total cost is \(order.cost, format: .currency(code: "USD"))")
-                    .font(.title)
+                Text("Your order total for \(order.quantity) \(Order.types[order.type]) cupcakes is \(order.cost, format: .currency(code: Locale.current.currency?.identifier ?? "USD")).")
                 
-                Button("Place Order") {
+                Button {
                     Task {
                         await placeOrder()
                     }
+                } label: {
+                    Text("Place Order")
+                        .font(.title)
                 }
-                    .padding()
+            }
+            .navigationTitle("Checkout")
+            .navigationBarTitleDisplayMode(.inline)
+            .alert("Success!", isPresented: $showingConfirmation) {
+                Button("OK") { }
+            } message: {
+                Text(confirmationMessage)
+            }
+            .alert("Oops!", isPresented: $showingError) {
+                Button("Try Again") { }
+            } message: {
+                Text(confirmationMessage)
             }
         }
-        .navigationTitle("Checkout")
-        .navigationBarTitleDisplayMode(.inline)
-        .scrollBounceBehavior(.basedOnSize)
-        .alert("Thank You!", isPresented: $showingConfirmation) {
-            Button("OK") { }
-        } message: {
-            Text(confirmationMessage)
-        }
-        .alert("Oops", isPresented: $showingError) {
-            Button("OK") { }
-        } message: {
-            Text(confirmationMessage)
-        }
     }
-    
     func placeOrder() async {
         // encode the order
         // create a url request for "https://reqres.in/api/cupcakes"
@@ -72,7 +71,7 @@ struct CheckoutView: View {
         // decode results
         // handle errors and create confirmation Message
         guard let encoded = try? JSONEncoder().encode(order) else {
-            print("Failed to encode data to JSON")
+            print("Failed to encode order as JSON")
             return
         }
         
@@ -83,15 +82,13 @@ struct CheckoutView: View {
         
         do {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
-            // handle the result
-            let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            let decoded = try JSONDecoder().decode(Order.self, from: data)
+            confirmationMessage = "Your order of \(decoded.quantity) \(Order.types[decoded.type]) cupcakes is on its way!"
             showingConfirmation = true
         } catch {
+            confirmationMessage = "Oops! \(error.localizedDescription)"
             showingError = true
-            confirmationMessage = "Sorry, checkout failed.\n\nMessage: \(error.localizedDescription)"
         }
-        
     }
 }
 

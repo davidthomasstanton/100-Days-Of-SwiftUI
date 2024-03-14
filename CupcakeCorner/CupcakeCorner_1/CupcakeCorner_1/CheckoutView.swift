@@ -58,7 +58,7 @@ struct CheckoutView: View {
         // create URLRequest of "Content-Type", "application/json", httpMethod of "POST"
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //request.httpMethod = "POST"
+        request.httpMethod = "POST"
         
         // upload encoded data in a URLSession for request
         // handle the result
