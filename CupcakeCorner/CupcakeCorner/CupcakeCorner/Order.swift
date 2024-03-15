@@ -11,11 +11,13 @@ import SwiftUI
 // static types of Vanilla, Strawberry, Chocolate, Rainbow
 // type, quantity, specialRequestEnabled, extraFrosting, addSprinkles
 // specialRequestEnabled sets others to false if false
-// name, streetAddress, city, zip
+// computed properties for name, streetAddress, city, zip that save to UserDefaults
+// initializer that loads strings for above
 // computed property for hasValidAddress
 // Computed property for cost
 // $2 per cake, complicated cakes cost more,
 // $1/cake for extra frosting, $0.50/cake for extra spinkles
+// enum: CodingKey to remove _ from variables
 
 @Observable
 class Order: Codable {
