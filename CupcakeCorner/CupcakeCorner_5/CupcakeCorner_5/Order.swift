@@ -1,8 +1,8 @@
 //
 //  Order.swift
-//  CupcakeCorner_4
+//  CupcakeCorner_5
 //
-//  Created by David Stanton on 3/13/24.
+//  Created by David Stanton on 3/14/24.
 //
 // Observable class
 // static types of Vanilla, Strawberry, Chocolate, Rainbow
@@ -17,13 +17,37 @@
 // enum: CodingKey to remove _ from variables
 
 import Foundation
-import SwiftUI
 
 @Observable
 class Order: Codable {
+    enum CodingKeys: String, CodingKey {
+        case _type = "type"
+        case _quantity = "quantity"
+        case _specialRequestEnabled = "specialRequestEnabled"
+        case _extraFrosting = "extraFrosting"
+        case _addSprinkles = "addSprinkles"
+        case _name = "name"
+        case _streetAddress = "streetAddress"
+        case _city = "city"
+        case _zip = "zip"
+    }
     static var types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
+    
+    var cost: Decimal {
+        var cost = Decimal(quantity * 2)
+        if extraFrosting {
+            cost += Decimal(quantity)
+        }
+        if addSprinkles {
+            cost += Decimal(quantity / 2)
+        }
+        return cost
+    }
+    
+    
     var type = 0
     var quantity = 3
+    
     var specialRequestEnabled = false {
         didSet {
             if specialRequestEnabled == false {
@@ -56,13 +80,6 @@ class Order: Codable {
         }
     }
     
-    init() {
-        name = UserDefaults.standard.string(forKey: "name") ?? ""
-        streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
-        city = UserDefaults.standard.string(forKey: "city") ?? ""
-        zip = UserDefaults.standard.string(forKey: "zip") ?? ""
-    }
-    
     var hasValidAddress: Bool {
         if name.isReallyEmpty || streetAddress.isReallyEmpty || city.isReallyEmpty || zip.isReallyEmpty {
             return false
@@ -70,15 +87,12 @@ class Order: Codable {
         return true
     }
     
-    var cost: Decimal {
-        var cost = Decimal(quantity * 2)
-        if extraFrosting {
-            cost += Decimal(quantity)
-        }
-        if addSprinkles {
-            cost += Decimal(quantity / 2)
-        }
-        return cost
+    init() {
+        name = UserDefaults.standard.string(forKey: "name") ?? ""
+        streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
+        city  = UserDefaults.standard.string(forKey: "city") ?? ""
+        zip = UserDefaults.standard.string(forKey: "zip") ?? ""
     }
+    
     
 }
