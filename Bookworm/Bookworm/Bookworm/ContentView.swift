@@ -6,7 +6,9 @@
 //
 // ContentView
 // Property wrappers for modelContext, query for books, showingAddScreen
-// Nav Stack showing book count with button on toolbar to add book
+// Nav Stack with a List of books as Navlinks
+// items in list have the EmojiRating, title and author
+// toolbar with Button to add book
 import SwiftData
 import SwiftUI
 
@@ -17,7 +19,23 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Book Count: \(books.count)")
+            List {
+                ForEach(books) { book in
+                    NavigationLink(value: book) {
+                        HStack {
+                            EmojiRatingView(rating: book.rating)
+                                .font(.largeTitle)
+                            
+                            VStack(alignment: .leading) {
+                                Text(book.title)
+                                    .font(.headline)
+                                Text(book.author)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
+            }
                 .navigationTitle("Bookworm")
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
