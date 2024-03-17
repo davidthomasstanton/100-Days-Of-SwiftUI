@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Bookworm_2
+//  Bookworm_3
 //
-//  Created by David Stanton on 3/15/24.
+//  Created by David Stanton on 3/16/24.
 //
 // Book model
 // variables for title, author, genre, review, rating
@@ -30,31 +30,19 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query var books: [Book]
-    @State private var showingAddScreen = false
+    @State private var showingAddBook = false
     var body: some View {
         NavigationStack {
-            List(books) { book in
-                NavigationLink(value: book) {
-                    HStack {
-                        EmojiRatingView(rating: book.rating)
-                        VStack(alignment: .leading) {
-                            Text(book.title)
-                                .font(.title)
-                            Text(book.author)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                }
-            }
+            Text("Book Count: \(books.count)")
                 .navigationTitle("Bookworm")
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Add Book", systemImage: "plus") {
-                            showingAddScreen.toggle()
+                            showingAddBook.toggle()
                         }
                     }
                 }
-                .sheet(isPresented: $showingAddScreen) {
+                .sheet(isPresented: $showingAddBook) {
                     AddBookView()
                 }
         }
