@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC10A8C52BA909BA00B2F04C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC10A8C42BA909BA00B2F04C /* DetailView.swift */; };
 		FC35065B2BA5F9CC00FFECA0 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35065A2BA5F9CC00FFECA0 /* RatingView.swift */; };
 		FC3506612BA6089C00FFECA0 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3506602BA6089C00FFECA0 /* EmojiRatingView.swift */; };
 		FC570DDE2BA52B9B00EA8AE0 /* Student_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC570DDD2BA52B9B00EA8AE0 /* Student_1.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC10A8C42BA909BA00B2F04C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FC35065A2BA5F9CC00FFECA0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		FC3506602BA6089C00FFECA0 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		FC570DDD2BA52B9B00EA8AE0 /* Student_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student_1.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				FCE019792BA3487100F62C26 /* BookwormApp.swift */,
 				FC570DE32BA533D700EA8AE0 /* AddBookView.swift */,
 				FC35065A2BA5F9CC00FFECA0 /* RatingView.swift */,
+				FC10A8C42BA909BA00B2F04C /* DetailView.swift */,
 				FCE0197B2BA3487100F62C26 /* ContentView.swift */,
 				FC3506602BA6089C00FFECA0 /* EmojiRatingView.swift */,
 				FC570DE12BA532EA00EA8AE0 /* Book.swift */,
@@ -174,6 +177,7 @@
 				FC570DE02BA52BCE00EA8AE0 /* CreateRandomStudent_1.swift in Sources */,
 				FC570DE22BA532EA00EA8AE0 /* Book.swift in Sources */,
 				FC35065B2BA5F9CC00FFECA0 /* RatingView.swift in Sources */,
+				FC10A8C52BA909BA00B2F04C /* DetailView.swift in Sources */,
 				FC570DE42BA533D700EA8AE0 /* AddBookView.swift in Sources */,
 				FCE0197C2BA3487100F62C26 /* ContentView.swift in Sources */,
 				FCE0197A2BA3487100F62C26 /* BookwormApp.swift in Sources */,

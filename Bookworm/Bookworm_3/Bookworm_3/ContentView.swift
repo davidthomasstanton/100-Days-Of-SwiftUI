@@ -33,7 +33,19 @@ struct ContentView: View {
     @State private var showingAddBook = false
     var body: some View {
         NavigationStack {
-            Text("Book Count: \(books.count)")
+            List(books) { book in
+                NavigationLink(value: book) {
+                    HStack {
+                        EmojiRatingView(rating: book.rating)
+                            .font(.title)
+                        VStack(alignment: .leading) {
+                            Text(book.title)
+                            Text(book.author)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
                 .navigationTitle("Bookworm")
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {

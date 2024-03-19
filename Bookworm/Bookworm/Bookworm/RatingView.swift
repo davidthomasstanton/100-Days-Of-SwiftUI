@@ -5,7 +5,7 @@
 //  Created by David Stanton on 3/16/24.
 //
 // Rating View
-// variables for rating (binded), maximumRating, offImage, onImage, offColor, onColor
+// variables for rating (binded), label, maximumRating, offImage, onImage, offColor, onColor
 // HStack that displays the label if it's not empty
 // Go through the rating, 1->max rating (+1) and place a Button that sends back the number tapped, and displays the onColor if the star is equal or more than the number tapped
 // function that sends an offImage in place of the onImage if it's number is higher than the rating

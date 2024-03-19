@@ -9,7 +9,6 @@ import Foundation
 
 // Book model
 // variables for title, author, genre, review, rating
-
 @Model
 class Book {
     var title: String
