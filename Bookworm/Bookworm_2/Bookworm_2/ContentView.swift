@@ -33,33 +33,42 @@ struct ContentView: View {
     @State private var showingAddScreen = false
     var body: some View {
         NavigationStack {
-            List(books) { book in
-                NavigationLink(value: book) {
-                    HStack {
-                        EmojiRatingView(rating: book.rating)
-                        VStack(alignment: .leading) {
-                            Text(book.title)
-                                .font(.title)
-                            Text(book.author)
-                                .foregroundStyle(.secondary)
+            List {
+                ForEach(books) { book in
+                    NavigationLink(value: book) {
+                        HStack {
+                            EmojiRatingView(rating: book.rating)
+                            VStack(alignment: .leading) {
+                                Text(book.title)
+                                    .font(.title)
+                                Text(book.author)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
+                    .navigationDestination(for: Book.self) { book in
+                        DetailView(book: book)
+                    }
                 }
-                .navigationDestination(for: Book.self) { book in
-                    DetailView(book: book)
+                .onDelete(perform: deleteBook)
+            }
+            .navigationTitle("Bookworm")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Book", systemImage: "plus") {
+                        showingAddScreen.toggle()
+                    }
                 }
             }
-                .navigationTitle("Bookworm")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add Book", systemImage: "plus") {
-                            showingAddScreen.toggle()
-                        }
-                    }
-                }
-                .sheet(isPresented: $showingAddScreen) {
-                    AddBookView()
-                }
+            .sheet(isPresented: $showingAddScreen) {
+                AddBookView()
+            }
+        }
+    }
+    func deleteBook(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            modelContext.delete(book)
         }
     }
 }

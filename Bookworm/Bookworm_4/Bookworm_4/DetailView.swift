@@ -1,8 +1,8 @@
 //
 //  DetailView.swift
-//  Bookworm_3
+//  Bookworm_4
 //
-//  Created by David Stanton on 3/18/24.
+//  Created by David Stanton on 3/19/24.
 //
 // DetailView
 // Image of genre underneath the text of the genre
@@ -22,24 +22,23 @@ struct DetailView: View {
                     .scaledToFit()
                 Text(book.genre)
                     .font(.title)
-                    .fontWeight(.bold)
                     .foregroundStyle(.white)
-                    .padding(8)
-                    .background(.black.opacity(0.75))
-                    .clipShape(.rect(cornerRadius: 10))
+                    .padding()
+                    .background(.black.opacity(0.5))
+                    .clipShape(.capsule)
                     .offset(x: -5, y: -5)
             }
             Text(book.author)
-                .font(.title.bold())
-                .padding()
+                .font(.system(size: 30))
                 .foregroundStyle(.secondary)
+                .padding()
             Text(book.review)
+                .font(.body)
                 .padding()
             RatingView(rating: .constant(book.rating))
-                .font(.title)
+                .font(.system(size: 25))
+            
         }
-        .navigationTitle(book.title)
-        .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
     }
 }
@@ -48,10 +47,11 @@ struct DetailView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let example = Book(title: "Title", author: "Author", genre: "Thriller", review: "meh", rating: 2)
+        let example = Book(title: "Demo Title", author: "Person", genre: "Horror", review: "Scary!", rating: 2)
         return DetailView(book: example)
             .modelContainer(container)
+
     } catch {
-        return Text("Failed to create preview \(error.localizedDescription)")
+        return Text("Could not create preview")
     }
 }

@@ -35,7 +35,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            List(books) { book in
+            List {
+                ForEach(books) { book in
                 NavigationLink(value: book) {
                     HStack {
                         EmojiRatingView(rating: book.rating)
@@ -51,17 +52,29 @@ struct ContentView: View {
                     DetailView(book: book)
                 }
             }
-                .navigationTitle("Bookworm")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add Book", systemImage: "plus") {
-                            showingAddScreen.toggle()
-                        }
-                    }
+                .onDelete(perform: deleteBook)
+            
+        }
+        .navigationTitle("Bookworm")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add Book", systemImage: "plus") {
+                    showingAddScreen.toggle()
                 }
-                .sheet(isPresented: $showingAddScreen) {
-                    AddBookView()
-                }
+            }
+        }
+        .sheet(isPresented: $showingAddScreen) {
+            AddBookView()
+        }
+        }
+    }
+    func deleteBook(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            modelContext.delete(book)
         }
     }
 }
