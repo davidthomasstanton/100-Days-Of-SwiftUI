@@ -5,11 +5,11 @@
 //  Created by David Stanton on 3/15/24.
 //
 // Book model
-// variables for title, author, genre, review, rating
+// variables for title, author, genre, review, rating, date
 // ContentView
 // Property wrappers for modelContext, query for books, showingAddScreen
 // Nav Stack with a List of books as Navlinks
-// items in list have the EmojiRating, title and author
+// items in list have the EmojiRating, title and author, change if rating == 1
 // toolbar with Button to add book
 // AddBookView
 // add modelContext, add dismiss
@@ -23,6 +23,12 @@
 // function that sends an offImage in place of the onImage if it's number is higher than the rating
 // EmojiRatingView
 // switch that returns Emojis that correspond to the rating
+// DetailView
+// Image of genre, text of the genre on top of it
+// Text of author, reivew, star rating
+// Preview do/try/catch
+// set Modeal config, container, create example book, return the view with example book and modelContainer
+// function to delete book with confirmation button and programmatic dismiss
 
 import SwiftData
 import SwiftUI
@@ -43,6 +49,8 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             Text(book.title)
                                 .font(.largeTitle)
+                                .foregroundStyle(book.rating == 1 ? .red : .black)
+                                .opacity(book.rating == 1 ? 0.50 : 1.0)
                             Text(book.author)
                                 .foregroundStyle(.secondary)
                         }

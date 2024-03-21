@@ -11,11 +11,13 @@
 // Nav Stack with a List of books as Navlinks
 // items in list have the EmojiRating, title and author
 // toolbar with Button to add book
+// display title in soft red if rating is 1
 // AddBookView
 // add modelContext, add dismiss
 // Variables and fields to add title, author, genre, review, rating
 // Button to add book, insert into modelContext, dismiss
 // let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+// validate Save by creating a String extension to check for empty title and author
 // Rating View
 // variables for rating (binded), maximumRating, offImage, onImage, offColor, onColor
 // HStack that displays the label if it's not empty
@@ -41,6 +43,7 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.title)
+                                    .foregroundStyle(book.rating == 1 ? .red.opacity(0.5) : .black)
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }

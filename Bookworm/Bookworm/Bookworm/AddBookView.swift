@@ -11,6 +11,8 @@ import SwiftUI
 // add modelContext, add dismiss
 // Variables and fields to add title, author, genre, review, rating
 // Button to add book, insert into modelContext, dismiss
+// disabled save unless there is a title and author
+// extension on string to check if String is reallyEmpty
 struct AddBookView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
@@ -39,14 +41,21 @@ struct AddBookView: View {
                 Section {
                     Button("Save") {
                         // add the book
-                        let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
+                        let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating, date: .now)
                         modelContext.insert(newBook)
                         dismiss()
                     }
                 }
+                .disabled(title.isReallyEmpty || author.isReallyEmpty)
             }
             .navigationTitle("Add Book")
         }
+    }
+}
+
+extension String {
+    var isReallyEmpty: Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
 

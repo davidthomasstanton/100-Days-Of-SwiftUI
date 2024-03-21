@@ -10,6 +10,7 @@
 // items in list have the EmojiRating, title and author
 // toolbar with Button to add book
 // function to delete books
+// display title in soft red if rating is 1 star
 import SwiftData
 import SwiftUI
 
@@ -34,6 +35,7 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
+                                    .foregroundStyle(book.rating == 1 ? .red.opacity(0.5) : .black)
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }
