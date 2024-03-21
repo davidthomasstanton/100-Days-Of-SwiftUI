@@ -46,10 +46,15 @@ struct ContentView: View {
                                 .font(.title)
                             VStack(alignment: .leading) {
                                 Text(book.title)
+                                    .foregroundStyle(book.rating == 1 ? .red : .black)
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }
+                            .opacity(book.rating == 1 ? 0.5 : 1.0)
                         }
+                    }
+                    .navigationDestination(for: Book.self) { selection in
+                        DetailView(book: selection)
                     }
                 }
                 .onDelete(perform: deleteBook)

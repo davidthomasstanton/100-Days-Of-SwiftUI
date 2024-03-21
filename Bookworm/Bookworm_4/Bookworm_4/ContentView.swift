@@ -26,9 +26,11 @@ struct ContentView: View {
                                 .font(.title)
                             VStack {
                                 Text(book.title)
+                                    .foregroundStyle(book.rating == 1 ? .red : .black)
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }
+                            .opacity(book.rating == 1 ? 0.5 : 1.0)
                         }
                     }
                     .navigationDestination(for: Book.self) { book in
