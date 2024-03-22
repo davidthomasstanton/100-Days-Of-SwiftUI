@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC72A3272BABCAA200CED696 /* SwiftDataProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72A3262BABCAA200CED696 /* SwiftDataProjectApp.swift */; };
-		FC72A3292BABCAA200CED696 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72A3282BABCAA200CED696 /* ContentView.swift */; };
-		FC72A32B2BABCAA300CED696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC72A32A2BABCAA300CED696 /* Assets.xcassets */; };
-		FC72A32E2BABCAA300CED696 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC72A32D2BABCAA300CED696 /* Preview Assets.xcassets */; };
-		FC934BA82BAC91BB00479266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BA72BAC91BB00479266 /* User.swift */; };
-		FC934BAA2BAC921900479266 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BA92BAC921900479266 /* EditUserView.swift */; };
+		FC934BB82BAC959700479266 /* SwiftDataProject_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BB72BAC959700479266 /* SwiftDataProject_1App.swift */; };
+		FC934BBA2BAC959700479266 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BB92BAC959700479266 /* ContentView.swift */; };
+		FC934BBC2BAC959700479266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC934BBB2BAC959700479266 /* Assets.xcassets */; };
+		FC934BBF2BAC959700479266 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC934BBE2BAC959700479266 /* Preview Assets.xcassets */; };
+		FC934BC62BAC95B800479266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BC52BAC95B800479266 /* User.swift */; };
+		FC934BC82BAC95EF00479266 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC934BC72BAC95EF00479266 /* EditUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC72A3232BABCAA200CED696 /* SwiftDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC72A3262BABCAA200CED696 /* SwiftDataProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProjectApp.swift; sourceTree = "<group>"; };
-		FC72A3282BABCAA200CED696 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FC72A32A2BABCAA300CED696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC72A32D2BABCAA300CED696 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FC934BA72BAC91BB00479266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FC934BA92BAC921900479266 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		FC934BB42BAC959700479266 /* SwiftDataProject_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataProject_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC934BB72BAC959700479266 /* SwiftDataProject_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProject_1App.swift; sourceTree = "<group>"; };
+		FC934BB92BAC959700479266 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC934BBB2BAC959700479266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC934BBE2BAC959700479266 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC934BC52BAC95B800479266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FC934BC72BAC95EF00479266 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC72A3202BABCAA200CED696 /* Frameworks */ = {
+		FC934BB12BAC959700479266 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,39 +36,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC72A31A2BABCAA200CED696 = {
+		FC934BAB2BAC959700479266 = {
 			isa = PBXGroup;
 			children = (
-				FC72A3252BABCAA200CED696 /* SwiftDataProject */,
-				FC72A3242BABCAA200CED696 /* Products */,
+				FC934BB62BAC959700479266 /* SwiftDataProject_1 */,
+				FC934BB52BAC959700479266 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FC72A3242BABCAA200CED696 /* Products */ = {
+		FC934BB52BAC959700479266 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC72A3232BABCAA200CED696 /* SwiftDataProject.app */,
+				FC934BB42BAC959700479266 /* SwiftDataProject_1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC72A3252BABCAA200CED696 /* SwiftDataProject */ = {
+		FC934BB62BAC959700479266 /* SwiftDataProject_1 */ = {
 			isa = PBXGroup;
 			children = (
-				FC72A3262BABCAA200CED696 /* SwiftDataProjectApp.swift */,
-				FC934BA92BAC921900479266 /* EditUserView.swift */,
-				FC72A3282BABCAA200CED696 /* ContentView.swift */,
-				FC934BA72BAC91BB00479266 /* User.swift */,
-				FC72A32A2BABCAA300CED696 /* Assets.xcassets */,
-				FC72A32C2BABCAA300CED696 /* Preview Content */,
+				FC934BB72BAC959700479266 /* SwiftDataProject_1App.swift */,
+				FC934BB92BAC959700479266 /* ContentView.swift */,
+				FC934BC72BAC95EF00479266 /* EditUserView.swift */,
+				FC934BC52BAC95B800479266 /* User.swift */,
+				FC934BBB2BAC959700479266 /* Assets.xcassets */,
+				FC934BBD2BAC959700479266 /* Preview Content */,
 			);
-			path = SwiftDataProject;
+			path = SwiftDataProject_1;
 			sourceTree = "<group>";
 		};
-		FC72A32C2BABCAA300CED696 /* Preview Content */ = {
+		FC934BBD2BAC959700479266 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FC72A32D2BABCAA300CED696 /* Preview Assets.xcassets */,
+				FC934BBE2BAC959700479266 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -76,39 +76,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC72A3222BABCAA200CED696 /* SwiftDataProject */ = {
+		FC934BB32BAC959700479266 /* SwiftDataProject_1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC72A3312BABCAA300CED696 /* Build configuration list for PBXNativeTarget "SwiftDataProject" */;
+			buildConfigurationList = FC934BC22BAC959700479266 /* Build configuration list for PBXNativeTarget "SwiftDataProject_1" */;
 			buildPhases = (
-				FC72A31F2BABCAA200CED696 /* Sources */,
-				FC72A3202BABCAA200CED696 /* Frameworks */,
-				FC72A3212BABCAA200CED696 /* Resources */,
+				FC934BB02BAC959700479266 /* Sources */,
+				FC934BB12BAC959700479266 /* Frameworks */,
+				FC934BB22BAC959700479266 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftDataProject;
-			productName = SwiftDataProject;
-			productReference = FC72A3232BABCAA200CED696 /* SwiftDataProject.app */;
+			name = SwiftDataProject_1;
+			productName = SwiftDataProject_1;
+			productReference = FC934BB42BAC959700479266 /* SwiftDataProject_1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FC72A31B2BABCAA200CED696 /* Project object */ = {
+		FC934BAC2BAC959700479266 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
-					FC72A3222BABCAA200CED696 = {
+					FC934BB32BAC959700479266 = {
 						CreatedOnToolsVersion = 15.1;
 					};
 				};
 			};
-			buildConfigurationList = FC72A31E2BABCAA200CED696 /* Build configuration list for PBXProject "SwiftDataProject" */;
+			buildConfigurationList = FC934BAF2BAC959700479266 /* Build configuration list for PBXProject "SwiftDataProject_1" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,44 +116,44 @@
 				en,
 				Base,
 			);
-			mainGroup = FC72A31A2BABCAA200CED696;
-			productRefGroup = FC72A3242BABCAA200CED696 /* Products */;
+			mainGroup = FC934BAB2BAC959700479266;
+			productRefGroup = FC934BB52BAC959700479266 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC72A3222BABCAA200CED696 /* SwiftDataProject */,
+				FC934BB32BAC959700479266 /* SwiftDataProject_1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC72A3212BABCAA200CED696 /* Resources */ = {
+		FC934BB22BAC959700479266 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC72A32E2BABCAA300CED696 /* Preview Assets.xcassets in Resources */,
-				FC72A32B2BABCAA300CED696 /* Assets.xcassets in Resources */,
+				FC934BBF2BAC959700479266 /* Preview Assets.xcassets in Resources */,
+				FC934BBC2BAC959700479266 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC72A31F2BABCAA200CED696 /* Sources */ = {
+		FC934BB02BAC959700479266 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC72A3292BABCAA200CED696 /* ContentView.swift in Sources */,
-				FC934BAA2BAC921900479266 /* EditUserView.swift in Sources */,
-				FC72A3272BABCAA200CED696 /* SwiftDataProjectApp.swift in Sources */,
-				FC934BA82BAC91BB00479266 /* User.swift in Sources */,
+				FC934BBA2BAC959700479266 /* ContentView.swift in Sources */,
+				FC934BC82BAC95EF00479266 /* EditUserView.swift in Sources */,
+				FC934BB82BAC959700479266 /* SwiftDataProject_1App.swift in Sources */,
+				FC934BC62BAC95B800479266 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FC72A32F2BABCAA300CED696 /* Debug */ = {
+		FC934BC02BAC959700479266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		FC72A3302BABCAA300CED696 /* Release */ = {
+		FC934BC12BAC959700479266 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,14 +272,14 @@
 			};
 			name = Release;
 		};
-		FC72A3322BABCAA300CED696 /* Debug */ = {
+		FC934BC32BAC959700479266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject_1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -292,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.SwiftDataProject;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Stanton.David.SwiftDataProject-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -300,14 +300,14 @@
 			};
 			name = Debug;
 		};
-		FC72A3332BABCAA300CED696 /* Release */ = {
+		FC934BC42BAC959700479266 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject_1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -320,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.SwiftDataProject;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Stanton.David.SwiftDataProject-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,25 +331,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC72A31E2BABCAA200CED696 /* Build configuration list for PBXProject "SwiftDataProject" */ = {
+		FC934BAF2BAC959700479266 /* Build configuration list for PBXProject "SwiftDataProject_1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC72A32F2BABCAA300CED696 /* Debug */,
-				FC72A3302BABCAA300CED696 /* Release */,
+				FC934BC02BAC959700479266 /* Debug */,
+				FC934BC12BAC959700479266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC72A3312BABCAA300CED696 /* Build configuration list for PBXNativeTarget "SwiftDataProject" */ = {
+		FC934BC22BAC959700479266 /* Build configuration list for PBXNativeTarget "SwiftDataProject_1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC72A3322BABCAA300CED696 /* Debug */,
-				FC72A3332BABCAA300CED696 /* Release */,
+				FC934BC32BAC959700479266 /* Debug */,
+				FC934BC42BAC959700479266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FC72A31B2BABCAA200CED696 /* Project object */;
+	rootObject = FC934BAC2BAC959700479266 /* Project object */;
 }

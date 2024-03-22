@@ -1,14 +1,14 @@
 //
-//  SwiftDataProjectApp.swift
-//  SwiftDataProject
+//  SwiftDataProject_1App.swift
+//  SwiftDataProject_1
 //
-//  Created by David Stanton on 3/20/24.
+//  Created by David Stanton on 3/21/24.
 //
-import SwiftData
+
 import SwiftUI
 
 @main
-struct SwiftDataProjectApp: App {
+struct SwiftDataProject_1App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
