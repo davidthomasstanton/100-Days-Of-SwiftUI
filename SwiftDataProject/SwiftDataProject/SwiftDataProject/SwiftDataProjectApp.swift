@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftDataProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            PredicateFilterView()
         }
         .modelContainer(for: User.self)
     }
