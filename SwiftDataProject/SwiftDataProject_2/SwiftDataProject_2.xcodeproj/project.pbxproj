@@ -13,6 +13,8 @@
 		FC6B0AD52BAE7E05008DFB91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6B0AD42BAE7E05008DFB91 /* Preview Assets.xcassets */; };
 		FC6B0ADC2BAE7E16008DFB91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6B0ADB2BAE7E16008DFB91 /* User.swift */; };
 		FC6B0ADE2BAE7E81008DFB91 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6B0ADD2BAE7E81008DFB91 /* EditUserView.swift */; };
+		FCBC94872BAF3AB2002E1DCA /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC94862BAF3AB2002E1DCA /* UsersView.swift */; };
+		FCBC94AD2BAF5133002E1DCA /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC94AC2BAF5133002E1DCA /* Job.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		FC6B0AD42BAE7E05008DFB91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC6B0ADB2BAE7E16008DFB91 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC6B0ADD2BAE7E81008DFB91 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		FCB872CC2BAFB25100CD799F /* SwiftDataProject_2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDataProject_2.entitlements; sourceTree = "<group>"; };
+		FCB872CD2BAFB26D00CD799F /* SwiftDataProject-2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftDataProject-2-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FCBC94862BAF3AB2002E1DCA /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		FCBC94AC2BAF5133002E1DCA /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +61,14 @@
 		FC6B0ACC2BAE7E04008DFB91 /* SwiftDataProject_2 */ = {
 			isa = PBXGroup;
 			children = (
+				FCB872CD2BAFB26D00CD799F /* SwiftDataProject-2-Info.plist */,
+				FCB872CC2BAFB25100CD799F /* SwiftDataProject_2.entitlements */,
 				FC6B0ACD2BAE7E04008DFB91 /* SwiftDataProject_2App.swift */,
 				FC6B0ACF2BAE7E04008DFB91 /* ContentView.swift */,
+				FCBC94862BAF3AB2002E1DCA /* UsersView.swift */,
 				FC6B0ADD2BAE7E81008DFB91 /* EditUserView.swift */,
 				FC6B0ADB2BAE7E16008DFB91 /* User.swift */,
+				FCBC94AC2BAF5133002E1DCA /* Job.swift */,
 				FC6B0AD12BAE7E05008DFB91 /* Assets.xcassets */,
 				FC6B0AD32BAE7E05008DFB91 /* Preview Content */,
 			);
@@ -143,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBC94872BAF3AB2002E1DCA /* UsersView.swift in Sources */,
+				FCBC94AD2BAF5133002E1DCA /* Job.swift in Sources */,
 				FC6B0AD02BAE7E04008DFB91 /* ContentView.swift in Sources */,
 				FC6B0ADE2BAE7E81008DFB91 /* EditUserView.swift in Sources */,
 				FC6B0ACE2BAE7E04008DFB91 /* SwiftDataProject_2App.swift in Sources */,
@@ -277,11 +289,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftDataProject_2/SwiftDataProject_2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject_2/Preview Content\"";
+				DEVELOPMENT_TEAM = 8BB62M42W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftDataProject-2-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,11 +320,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftDataProject_2/SwiftDataProject_2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataProject_2/Preview Content\"";
+				DEVELOPMENT_TEAM = 8BB62M42W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftDataProject-2-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
