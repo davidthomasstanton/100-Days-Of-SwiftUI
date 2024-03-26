@@ -8,14 +8,37 @@
 import SwiftUI
 import Observation
 
-// Struct of a single expense
-// observe a class of an array of single expenses
-// with a didSet, encode the addition to a JSON file then save with a key
-// with a custom initializer, load the data then decode the JSON file
-// List that iterates through the expenses by name and displays them
-// toolbar button + that adds new expenses
-// function to remove items
-// .onDelete modifier to ForEach to remove items
+// ==== ExpenseItem ====
+// struct that is Identifiable, Codable, Equatable
+// var: id, name, type, amount
+// ==== Expenses ====
+// class that is observable
+// var: items that encodes as a JSON and set in UserDefaults with a key
+// var: personalItems, businessItems that filters from items
+// init that gets data for items from UserDefaults or sets empty array
+// ==== ContentView ====
+// var: expenses, showingAddExpense
+// NavStack with a List that iterates through the expenses by name and displays them
+// toolbar button + that goes to navlink AddView passing in expenses
+// functions to remove items at index
+// removeItems, removePersonalItems, removeBusinessItems
+// func removeItems()
+// create blank IndexSet of objects to delete
+// iterate through offsets, assign the offset of the inputArray to an item
+// find the first index of that item in the general expenses array
+// if it's there, add it to the blank Index
+// remove all the items from the objects to delete IndexSet
+// ==== ExpenseSection ====
+// constants for title, expenses, deleteItems, localCurrency
+// Section with a ForEach that displays all expenses: name, type, currency
+// .onDelete will perform removefunction for item type
+// ==== AddView ====
+// Environment tag to dismiss sheet
+// var: expenses, name, type, amount, types [Personal, Business], localCurrency
+// NavStack with a form for adding new expenses
+// toolbar with toolbaritems for save and cancel
+// have a variable for expenses and types
+// include a button on the toolbar to add item
 struct ExpenseItem: Identifiable, Codable, Equatable {
     var id = UUID()
     let name: String
@@ -60,7 +83,6 @@ class Expenses {
     }
 }
 
-
 struct ContentView: View {
     @State private var showingAddExpense = false
     @State private var expenses = Expenses()
@@ -88,6 +110,12 @@ struct ContentView: View {
             }
         }
     }
+    // func removeItems
+    // create blank IndexSet of objects to delete
+    // iterate through offsets, assign the offset of the inputArray to an item
+    // find the first index of that item in the general expenses array
+    // if it's there, add it to the blank Index
+    // remove all the items from the objects to delete IndexSet
     func removeItems(at offsets: IndexSet, in inputArray: [ExpenseItem]) {
 //        expenses.items.remove(atOffsets: offsets)
         var objectsToDelete = IndexSet()

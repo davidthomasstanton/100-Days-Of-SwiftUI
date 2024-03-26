@@ -4,7 +4,10 @@
 //
 //  Created by David Stanton on 2/19/24.
 //
-
+// ==== ExpenseSection ====
+// constants for title, expenses, deleteItems, localCurrency
+// Section with a ForEach that displays all expenses: name, type, currency
+// 
 import SwiftUI
 
 struct ExpenseSection: View {
