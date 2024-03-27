@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  iExpense_1
+//  iExpense_3
 //
-//  Created by David Stanton on 3/25/24.
+//  Created by David Stanton on 3/26/24.
 //
 // ==== ContentView ====
 // var: showingAddExpense, expenseType, sortOrder = [name, amount]
@@ -10,21 +10,6 @@
 // toolbar button to add expense, pulling up AddView sheet
 // Menu to filter expenses by type: All | Personal / Business
 // Menu to sort expenses by name / name.reverse / amount.low to high / amount.high to low
-// ==== ExpenseItem ====
-// class with name, type, amount
-// ==== ExpenseSection ====
-// modelContainer, expenses, localCurrency
-// List that iterates through all expenses, showing name/type/amount (in local currency)
-// init with type (defaulted to "All") and sortOrder of ExpenseItem
-// create a query with a filter of #Predicate type: if "All" else return the type
-// .onDelete will perform removefunction for item 
-// ==== AddView ====
-// var for modelContext, dismiss
-// var: name, type, amount, types [Personal, Business], localCurrency
-// NavStack with a form for adding new expenses
-// toolbar with toolbaritems for save and cancel
-// have a variable for expenses and types
-// include a button on the toolbar to add item
 import SwiftUI
 
 struct ContentView: View {

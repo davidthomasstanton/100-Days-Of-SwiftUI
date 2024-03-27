@@ -1,15 +1,15 @@
 //
 //  ExpenseView.swift
-//  iExpense_1
+//  iExpense_3
 //
-//  Created by David Stanton on 3/25/24.
+//  Created by David Stanton on 3/26/24.
 //
 // ==== ExpenseSection ====
 // modelContainer, expenses, localCurrency
 // List that iterates through all expenses, showing name/type/amount (in local currency)
 // init with type (defaulted to "All") and sortOrder of ExpenseItem
 // create a query with a filter of #Predicate type: if "All" else return the type
-// .onDelete will perform removefunction for item 
+// .onDelete will perform removefunction for item
 import SwiftData
 import SwiftUI
 
@@ -20,17 +20,17 @@ struct ExpenseView: View {
     
     var body: some View {
         List {
-            ForEach(expenses) { expense in
+            ForEach(expenses) { item in
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text(expense.name)
-                        Text(expense.type)
+                    VStack {
+                        Text(item.name)
+                        Text(item.type)
                     }
                     Spacer()
-                    Text(expense.amount, format: .currency(code: localCurrency))
+                    Text(item.amount, format: .currency(code: localCurrency))
                 }
             }
-            .onDelete(perform: removeItems)
+            .onDelete(perform: deleteItems)
         }
     }
     
@@ -42,9 +42,9 @@ struct ExpenseView: View {
                 return $0.type == type
             }
         }, sort: sortOrder)
-
     }
-    func removeItems(at offsets: IndexSet) {
+    
+    func deleteItems(at offsets: IndexSet) {
         for offset in offsets {
             let item = expenses[offset]
             modelContext.delete(item)

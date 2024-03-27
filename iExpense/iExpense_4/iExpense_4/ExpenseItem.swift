@@ -1,11 +1,12 @@
 //
 //  ExpenseItem.swift
-//  iExpense_1
+//  iExpense_4
 //
-//  Created by David Stanton on 3/25/24.
+//  Created by David Stanton on 3/26/24.
 //
 // ==== ExpenseItem ====
 // class with name, type, amount
+
 import Foundation
 import SwiftData
 
@@ -14,6 +15,8 @@ class ExpenseItem {
     var name: String
     var type: String
     var amount: Decimal
+    static let localCurrency = Locale.current.currency?.identifier ?? "USD"
+    static let types = ["Personal", "Business"]
     
     init(name: String, type: String, amount: Decimal) {
         self.name = name
