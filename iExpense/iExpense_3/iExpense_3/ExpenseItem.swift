@@ -1,14 +1,14 @@
 //
-//  ExpenseItem.swift
-//  iExpense_1
+//  Expenses.swift
+//  iExpense_3
 //
-//  Created by David Stanton on 3/25/24.
+//  Created by David Stanton on 3/26/24.
 //
 // ==== ExpenseItem ====
 // class with name, type, amount
+
 import Foundation
 import SwiftData
-
 @Model
 class ExpenseItem {
     var name: String

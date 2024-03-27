@@ -1,14 +1,14 @@
 //
-//  iExpense_1App.swift
-//  iExpense_1
+//  iExpense_3App.swift
+//  iExpense_3
 //
-//  Created by David Stanton on 3/25/24.
+//  Created by David Stanton on 3/26/24.
 //
 import SwiftData
 import SwiftUI
 
 @main
-struct iExpense_1App: App {
+struct iExpense_3App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -12,29 +12,4 @@
 // observe a class of an array of single expenses
 import Foundation
 
-@Observable
-class Expenses {
-    var items: [ExpenseItem] {
-        didSet {
-            let encoded = try? JSONEncoder().encode(items)
-            UserDefaults.standard.set(encoded, forKey: "Items")
-        }
-    }
-    var personalItems: [ExpenseItem] {
-        items.filter { $0.type == "Personal" }
-    }
-    
-    var businessItems: [ExpenseItem] {
-        items.filter { $0.type == "Business" }
-    }
-    
-    init() {
-        if let data = UserDefaults.standard.data(forKey: "Items") {
-            if let decoded = try? JSONDecoder().decode([ExpenseItem].self, from: data) {
-                items = decoded
-                return
-            }
-        }
-        items = []
-    }
-}
+
