@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  FriendFace
+//  FriendFace_5
 //
-//  Created by David Stanton on 3/27/24.
+//  Created by David Stanton on 3/28/24.
 //
 // ==== User ====
 // struct that is Codable, Identifiable, Hashable
@@ -27,43 +27,37 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var users = [User]()
+    
     var body: some View {
         NavigationStack {
             List(users) { user in
                 NavigationLink(value: user) {
-                    HStack {
-                        Circle()
-                            .fill(user.isActive ? .green : .red)
-                            .frame(width: 30)
-                        Text(user.name)
-                    }
+                    Circle()
+                        .frame(width: 30)
+                        .foregroundStyle(user.isActive ? .green : .red)
+                    Text(user.name)
                 }
             }
             .navigationTitle("FriendFace")
             .navigationDestination(for: User.self) { user in
-                UserView(user: user)
+                Text(user.name)
             }
             .task {
                 await fetchUsers()
             }
         }
     }
-    // check if data has alredy been fetched
-    // do block that gets url, creates a session to get data
-    // decodes the data into users with a decoding strategy of .iso8601 for the date
     func fetchUsers() async {
-        // Don't re-fetch data if we already have it
         guard users.isEmpty else { return }
         
         do {
-            let url = URL(string: "https://hws.dev/friendface.json")!
+            let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
             let (data, _) = try await URLSession.shared.data(from: url)
-            
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             users = try decoder.decode([User].self, from: data)
         } catch {
-            print("Download failed")
+            print("Could not load JSON \(error.localizedDescription)")
         }
     }
 }
