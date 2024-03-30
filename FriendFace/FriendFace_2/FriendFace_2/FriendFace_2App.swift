@@ -4,7 +4,7 @@
 //
 //  Created by David Stanton on 3/28/24.
 //
-
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +13,6 @@ struct FriendFace_2App: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: User.self)
     }
 }
