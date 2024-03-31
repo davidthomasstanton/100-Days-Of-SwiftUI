@@ -1,19 +1,9 @@
 //
 //  ContentView.swift
-//  FriendFace_4
+//  FriendFace_6
 //
-//  Created by David Stanton on 3/28/24.
+//  Created by David Stanton on 3/30/24.
 //
-// ==== User ====
-// struct that is Codable, Identifiable, Hashable
-// variables for each field of the JSON
-// create exampleUser
-// ==== Friend ====
-// struct that creates var for id and name
-// ==== UserView ====
-// pass in user to work with
-// Section for about, contact details, friends
-// listStyle is grouped
 // ==== ContentView ====
 // assign users, list them in a NavStack with a green circle for active, red for not
 // navdestination sends to a UserView
@@ -37,11 +27,11 @@ struct ContentView: View {
                 NavigationLink(value: user) {
                     Circle()
                         .frame(width: 30)
-                        .foregroundStyle(user.isActive ? .green : .red)
+                        .foregroundColor(user.isActive ? .green : .gray)
                     Text(user.name)
                 }
             }
-            .navigationTitle("FriendFace")
+            .navigationTitle("FriendFace_6")
             .navigationDestination(for: User.self) { user in
                 UserView(user: user)
             }
@@ -50,22 +40,26 @@ struct ContentView: View {
             }
         }
     }
-    
     func fetchUsers() async {
         guard users.isEmpty else { return }
+        
         do {
             let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
             let (data, _) = try await URLSession.shared.data(from: url)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            var downloadedUsers = try decoder.decode([User].self, from: data)
-            var insertContext = ModelContext(modelContext.container)
+            let downloadedUsers = try decoder.decode([User].self, from: data)
+            
+            let insertContext = ModelContext(modelContext.container)
+            
             for user in downloadedUsers {
                 insertContext.insert(user)
             }
+            
             try insertContext.save()
+            
         } catch {
-            print("Could not load JSON \(error.localizedDescription)")
+            print("Error loading JSON \(error.localizedDescription)")
         }
     }
 }
