@@ -1,9 +1,15 @@
 //
 //  User.swift
-//  FriendFace_5
+//  FriendFace_6
 //
-//  Created by David Stanton on 3/28/24.
+//  Created by David Stanton on 3/30/24.
 //
+// ==== User ====
+// struct that is Codable, Identifiable, Hashable
+// variables for each field of the JSON
+// create exampleUser
+// ==== Friend ====
+// struct that creates var for id and name
 
 import Foundation
 import SwiftData
@@ -42,10 +48,10 @@ class User: Codable {
     }
     
     required init(from decoder: Decoder) throws {
-        var container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
         isActive = try container.decode(Bool.self, forKey: .isActive)
+        name = try container.decode(String.self, forKey: .name)
         age = try container.decode(Int.self, forKey: .age)
         company = try container.decode(String.self, forKey: .company)
         email = try container.decode(String.self, forKey: .email)
@@ -70,11 +76,32 @@ class User: Codable {
         try container.encode(tags, forKey: .tags)
         try container.encode(friends, forKey: .friends)
     }
-    
-    static let exampleUser = User(id: UUID(), isActive: true, name: "name", age: 21, company: "company", email: "email", address: "address", about: "About", registered: .now, tags: ["tag1", "tag2"], friends: [])
+    static let exampleUser = User(id: UUID(), isActive: true, name: "Lalah Hathaway", age: 30, company: "Killer Vox", email: "email", address: "private Dr.", about: "Holy moley she can split her vocal chords", registered: .now, tags: ["Snarky Puppy"], friends: [])
 }
 
-struct Friend: Codable, Identifiable, Hashable {
+@Model
+class Friend: Codable {
     let id: UUID
     var name: String
+    
+    enum CodingKeys: CodingKey {
+        case id, name
+    }
+    
+    init(id: UUID, name: String) {
+        self.id = id
+        self.name = name
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+    }
 }
