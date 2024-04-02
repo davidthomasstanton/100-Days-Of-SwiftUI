@@ -12,7 +12,7 @@ struct InstafilterApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            BlurView()
+            //BlurView()
             //ConfirmationView()
         }
     }
