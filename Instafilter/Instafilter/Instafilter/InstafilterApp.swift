@@ -14,6 +14,7 @@ struct InstafilterApp: App {
             ContentView()
             //BlurView()
             //ConfirmationView()
+            //PhotosPickerView_2()
         }
     }
 }
