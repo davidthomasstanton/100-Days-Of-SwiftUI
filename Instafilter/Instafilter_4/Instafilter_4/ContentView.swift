@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Instafilter
+//  Instafilter_4
 //
-//  Created by David Stanton on 3/30/24.
+//  Created by David Stanton on 4/3/24.
 //
 // ==== ContentView ====
 // import CoreImage / ...CIFilterBuiltins / PhotosUI / SwiftUI
@@ -10,20 +10,6 @@
 // NavStack with a PhotosPicker showing processedImage or ContentUnavailable
 // Intensity Slider
 // Change Filter Button
-//
-// func loadImage()
-// asyncronously get raw data from selectedItem or return (imageData)
-// convert the raw image to UIImage or return (inputImage)
-// convert the UIImage to a CIImage (beginImage)
-// apply the currentFilter to the CIImage with a kCIInputImageKey
-// applyProcessing
-//
-// func applyProcessing()
-// set currentFilter intensity to the filterIntensity
-// apply currentFilter or return (outputImage)
-// create a cgImage from context of the output or return (cgImage)
-// create uiImage from the cgImage (uiImage)
-// assign it to the processedImage
 
 import CoreImage
 import CoreImage.CIFilterBuiltins
@@ -44,11 +30,9 @@ struct ContentView: View {
                 
                 PhotosPicker(selection: $selectedItem) {
                     if let processedImage {
-                        processedImage
-                            .resizable()
-                            .scaledToFit()
+                        processedImage.resizable().scaledToFit()
                     } else {
-                        ContentUnavailableView("No picture", systemImage: "photo.badge.plus", description: Text("Tap to import a photo"))
+                        ContentUnavailableView("Photo Unavailable", systemImage: "photo.badge.plus", description: Text("Tap to add photo"))
                     }
                 }
                 .buttonStyle(.plain)
@@ -62,23 +46,20 @@ struct ContentView: View {
                         .onChange(of: filterIntensity, applyProcessing)
                 }
                 
+                Spacer()
+                
                 HStack {
                     Button("Change Filter", action: changeFilter)
-                    
-                    Spacer()
-                    
-                    // share the picture
                 }
             }
             .padding([.horizontal, .bottom])
-            .navigationTitle("Instafilter")
+            .navigationTitle("Instafilter_4")
         }
     }
-    
     func changeFilter() {
         
     }
-    // func loadImage
+    // func loadImage()
     // asyncronously get raw data from selectedItem or return (imageData)
     // convert the raw image to UIImage or return (inputImage)
     // convert the UIImage to a CIImage (beginImage)
@@ -87,9 +68,7 @@ struct ContentView: View {
     func loadImage() {
         Task {
             guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
-            
             guard let inputImage = UIImage(data: imageData) else { return }
-            
             let beginImage = CIImage(image: inputImage)
             currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
             applyProcessing()
@@ -103,10 +82,8 @@ struct ContentView: View {
     // assign it to the processedImage
     func applyProcessing() {
         currentFilter.intensity = Float(filterIntensity)
-        
         guard let outputImage = currentFilter.outputImage else { return }
         guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return }
-        
         let uiImage = UIImage(cgImage: cgImage)
         processedImage = Image(uiImage: uiImage)
     }
