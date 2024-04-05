@@ -1,34 +1,17 @@
 //
 //  ContentView.swift
-//  Instafilter_3
+//  Instafilter_5
 //
-//  Created by David Stanton on 4/3/24.
+//  Created by David Stanton on 4/4/24.
 //
 // ==== ContentView ====
-// import CoreImage / ...CIFilterBuiltins / PhotosUI / SwiftUI
+// import CoreImage / ...CIFilterBuiltins / PhotosUI / StoreKit / SwiftUI
 // var for processedImage / filterIntensity / selectedItem / currentFilter (set to Sepia) / showingFilters / filterCount / requestReivew / context
 // NavStack with a PhotosPicker showing processedImage or ContentUnavailable
 // Intensity Slider
 // Change Filter Button
 // If we have a processedImage, create a link to show it
 // ConfirmationDialog with all options for changing filter: Crystallize, edges, gaussain blur, pixellate, sepia, unsharpen mask, vignette, cancel
-//
-// func changeFilter() toggles showingFilters
-//
-// func loadImage
-// asyncronously get raw data from selectedItem or return (imageData)
-// convert the raw image to UIImage or return (inputImage)
-// convert the UIImage to a CIImage (beginImage)
-// apply the currentFilter to the CIImage with a kCIInputImageKey
-// applyProcessing
-//
-// func applyProcessing()
-// set inputKeys to the currentFilter inputKeys
-// for kCIInputIntensity, Radius, Scale, set the filterItensity to that
-// apply currentFilter or return (outputImage)
-// create a cgImage from context of the output or return (cgImage)
-// create uiImage from the cgImage (uiImage)
-// assign it to the processedImage
 
 import CoreImage
 import CoreImage.CIFilterBuiltins
@@ -37,13 +20,12 @@ import StoreKit
 import SwiftUI
 
 struct ContentView: View {
-    @State private var processedImage: Image?
     @State private var filterIntensity = 0.5
+    @State private var processedImage: Image?
     @State private var selectedItem: PhotosPickerItem?
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
-    @State private var showingFilter = false
     let context = CIContext()
-    
+    @State private var showingFilter = false
     @AppStorage("filterCount") var filterCount = 0
     @Environment(\.requestReview) var requestReview
     
@@ -51,17 +33,13 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                
                 PhotosPicker(selection: $selectedItem) {
                     if let processedImage {
-                        processedImage
-                            .resizable()
-                            .scaledToFit()
+                        processedImage.resizable().scaledToFit()
                     } else {
-                        ContentUnavailableView("Photo Unavailable", systemImage: "photo.badge.plus", description: Text("Tap to upload Photo"))
+                        ContentUnavailableView("Image Filter", systemImage: "photo.badge.plus", description: Text("Tap to select an image"))
                     }
                 }
-                .buttonStyle(.plain)
                 .onChange(of: selectedItem, loadImage)
                 
                 Spacer()
@@ -76,27 +54,30 @@ struct ContentView: View {
                     Button("Change Filter", action: changeFilter)
                     Spacer()
                     if let processedImage {
-                        ShareLink(item: processedImage, preview: SharePreview("Instafilter Image", image: processedImage))
+                        ShareLink(item: processedImage, preview: SharePreview("Instafilter_5", image: processedImage))
                     }
                 }
             }
             .padding([.horizontal, .bottom])
-            .navigationTitle("Instafilter_3")
+            .navigationTitle("Instafilter_5")
             .confirmationDialog("Set Filter", isPresented: $showingFilter) {
-                //Crystallize, edges, gaussain blur, pixellate, sepia, unsharpen mask, vignette, cancel
+                // Crystallize, edges, gaussain blur, pixellate, sepia, unsharpen mask, vignette, cancel
                 Button("Crystallize") { setFilter(CIFilter.crystallize() )}
                 Button("Edges") { setFilter(CIFilter.edges() )}
                 Button("Gaussian Blur") { setFilter(CIFilter.gaussianBlur() )}
                 Button("Pixellate") { setFilter(CIFilter.pixellate() )}
                 Button("Sepia") { setFilter(CIFilter.sepiaTone() )}
+                Button("Unsharpen Mask") { setFilter(CIFilter.unsharpMask() )}
+                Button("Vignette") { setFilter(CIFilter.vignette() )}
                 Button("Cancel", role: .cancel) { }
             }
         }
     }
+    // func changeFilter() toggles showingFilters
     func changeFilter() {
         showingFilter.toggle()
     }
-    // func loadImage()
+    // func loadImage
     // asyncronously get raw data from selectedItem or return (imageData)
     // convert the raw image to UIImage or return (inputImage)
     // convert the UIImage to a CIImage (beginImage)
@@ -128,7 +109,6 @@ struct ContentView: View {
         let uiImage = UIImage(cgImage: cgImage)
         processedImage = Image(uiImage: uiImage)
     }
-    
     // func setFilter that accepts a CIFilter
     // sets the currentFilter to that filter, then loadImage()
     // increments filterCount, if filterCount >= 20, requestReview
@@ -140,7 +120,6 @@ struct ContentView: View {
         if filterCount == 3 {
             requestReview()
         }
-        
     }
 }
 
