@@ -43,6 +43,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var processedImage: Image?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 3.0
+    @State private var filterScale = 5.0
     @State private var selectedItem: PhotosPickerItem?
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     @State private var showingFilters = false
@@ -70,15 +72,37 @@ struct ContentView: View {
                 .onChange(of: selectedItem, loadImage)
                 
                 Spacer()
-                
-                HStack {
-                    Text("Intensity")
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity, applyProcessing)
+                if currentFilter.inputKeys.contains(kCIInputIntensityKey) {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: $filterIntensity)
+                            .onChange(of: filterIntensity, applyProcessing)
+                            .disabled(processedImage == nil)
+                    }
+                    .padding(.vertical, 1)
+                }
+                if currentFilter.inputKeys.contains(kCIInputRadiusKey) {
+                    HStack {
+                        Text("Radius")
+                        Slider(value: $filterRadius, in: 0...200)
+                            .onChange(of: filterRadius, applyProcessing)
+                            .disabled(processedImage == nil)
+                    }
+                    .padding(.vertical, 3)
+                }
+                if currentFilter.inputKeys.contains(kCIInputScaleKey) {
+                    HStack {
+                        Text("Scale")
+                        Slider(value: $filterScale, in: 0...10)
+                            .onChange(of: filterScale, applyProcessing)
+                            .disabled(processedImage == nil)
+                    }
+                    .padding(.vertical, 1)
                 }
                 
                 HStack {
                     Button("Change Filter", action: changeFilter)
+                        .disabled(processedImage == nil)
                     
                     Spacer()
                     
@@ -91,10 +115,13 @@ struct ContentView: View {
             .padding([.horizontal, .bottom])
             .navigationTitle("Instafilter")
             .confirmationDialog("Select a filter", isPresented: $showingFilters) {
+                Button("Bloom") { setFilter(CIFilter.bloom() )}
                 Button("Crystallize") { setFilter(CIFilter.crystallize() )}
                 Button("Edges") { setFilter(CIFilter.edges() )}
                 Button("Gaussaian Blur") { setFilter(CIFilter.gaussianBlur() )}
+                Button("Noir") { setFilter(CIFilter.photoEffectNoir() )}
                 Button("Pixellate") { setFilter(CIFilter.pixellate() )}
+                Button("Pointillize") { setFilter(CIFilter.pointillize() )}
                 Button("Sepia Tone") { setFilter(CIFilter.sepiaTone() )}
                 Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask() )}
                 Button("Vignette") { setFilter(CIFilter.vignette() )}
@@ -137,10 +164,10 @@ struct ContentView: View {
             currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
         }
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+            currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey)
         }
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(filterScale, forKey: kCIInputScaleKey)
         }
         
         guard let outputImage = currentFilter.outputImage else { return }
