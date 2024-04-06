@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC7A3D842BC1B7940005272C /* Map_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3D832BC1B7940005272C /* Map_View.swift */; };
 		FCC63DEB2BC054F3007CEF90 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */; };
 		FCC63DED2BC054F3007CEF90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC63DEC2BC054F3007CEF90 /* ContentView.swift */; };
 		FCC63DEF2BC054F3007CEF90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC63DEE2BC054F3007CEF90 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC7A3D832BC1B7940005272C /* Map_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map_View.swift; sourceTree = "<group>"; };
 		FCC63DE72BC054F3007CEF90 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		FCC63DEC2BC054F3007CEF90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		FCC63DFA2BC05A5F007CEF90 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				FC7A3D832BC1B7940005272C /* Map_View.swift */,
 				FCC63E032BC0DF45007CEF90 /* FileManager_Extension.swift */,
 				FCC63E052BC0E374007CEF90 /* EnumLoading_.swift */,
 				FCC63DF82BC05A5A007CEF90 /* CustomComparableConformance_1.swift */,
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC63E062BC0E374007CEF90 /* EnumLoading_.swift in Sources */,
+				FC7A3D842BC1B7940005272C /* Map_View.swift in Sources */,
 				FCC63DF92BC05A5A007CEF90 /* CustomComparableConformance_1.swift in Sources */,
 				FCC63DED2BC054F3007CEF90 /* ContentView.swift in Sources */,
 				FCC63DEB2BC054F3007CEF90 /* BucketListApp.swift in Sources */,
@@ -310,6 +314,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BucketList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,6 +344,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BucketList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

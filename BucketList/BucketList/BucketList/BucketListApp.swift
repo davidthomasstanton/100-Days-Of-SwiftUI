@@ -12,7 +12,7 @@ struct BucketListApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //DocumentsDirectoryView_2()
+            //Map_View()
         }
     }
 }
