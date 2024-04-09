@@ -7,7 +7,7 @@
 import MapKit
 import SwiftUI
 
-struct Location: Identifiable {
+struct LocationP: Identifiable {
     let id = UUID()
     var name: String
     var coordinates: CLLocationCoordinate2D
@@ -15,8 +15,8 @@ struct Location: Identifiable {
 
 struct Map_View: View {
     let locations = [
-        Location(name: "Buckingham Palace", coordinates: CLLocationCoordinate2D(latitude: 51.501, longitude: -0.141)),
-        Location(name: "Tower of London", coordinates:
+        LocationP(name: "Buckingham Palace", coordinates: CLLocationCoordinate2D(latitude: 51.501, longitude: -0.141)),
+        LocationP(name: "Tower of London", coordinates:
             CLLocationCoordinate2D(latitude: 51.508, longitude: -0.076))
     ]
     @State private var position = MapCameraPosition.region(
