@@ -1,8 +1,8 @@
 //
 //  EditView.swift
-//  BucketList
+//  BucketList_1
 //
-//  Created by David Stanton on 4/8/24.
+//  Created by David Stanton on 4/9/24.
 //
 // ==== EditView ====
 // var: dismiss, location, name, description, onSave
@@ -16,27 +16,25 @@ import SwiftUI
 struct EditView: View {
     @Environment(\.dismiss) var dismiss
     var location: Location
-    
     @State private var name: String
     @State private var description: String
-    var onSave: (Location) -> Void
+    let onSave: (Location) -> Void
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Place name", text: $name)
+                    TextField("Name", text: $name)
                     TextField("Description", text: $description)
                 }
             }
-            .navigationTitle("Place details")
+            .navigationTitle("Edit Location")
             .toolbar {
-                Button("Save") {
+                Button("Save", systemImage: "plus") {
                     var newLocation = location
                     newLocation.id = UUID()
                     newLocation.name = name
                     newLocation.description = description
-
                     onSave(newLocation)
                     dismiss()
                 }
@@ -54,5 +52,5 @@ struct EditView: View {
 }
 
 #Preview {
-    EditView(location: .example) { _ in }
+    EditView(location: Location.example) { _ in }
 }
