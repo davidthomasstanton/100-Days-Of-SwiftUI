@@ -1,8 +1,8 @@
 //
 //  Location.swift
-//  BucketList
+//  BucketList_1
 //
-//  Created by David Stanton on 4/8/24.
+//  Created by David Stanton on 4/9/24.
 //
 // ==== Location struct ====
 // Codable, Equatable, Identifiable
@@ -20,16 +20,15 @@ struct Location: Codable, Equatable, Identifiable {
     var description: String
     var latitude: Double
     var longitude: Double
-    
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
-    #if DEBUG
-    static let example = Location(id: UUID(), name: "Buckingham Palace", description: "Lit by over 40,000 lightbulbs.", latitude: 51.501, longitude: -0.141)
-    #endif
-    
     static func ==(lhs: Location, rhs: Location) -> Bool {
         lhs.id == rhs.id
     }
+    
+    #if DEBUG
+    static let example = Location(id: UUID(), name: "Place", description: "Land of a thousand lakes", latitude: 46.7296, longitude: 94.6859)
+    #endif
 }
