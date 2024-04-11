@@ -11,6 +11,7 @@
 		FC6CEC112BC440560038053C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6CEC102BC440560038053C /* Location.swift */; };
 		FC6CEC132BC44A0E0038053C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6CEC122BC44A0E0038053C /* EditView.swift */; };
 		FC7A3D842BC1B7940005272C /* Map_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3D832BC1B7940005272C /* Map_View.swift */; };
+		FCC436CC2BC75CED00DC47C5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC436CB2BC75CED00DC47C5 /* Result.swift */; };
 		FCC63DEB2BC054F3007CEF90 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */; };
 		FCC63DED2BC054F3007CEF90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC63DEC2BC054F3007CEF90 /* ContentView.swift */; };
 		FCC63DEF2BC054F3007CEF90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC63DEE2BC054F3007CEF90 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		FC6CEC102BC440560038053C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FC6CEC122BC44A0E0038053C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		FC7A3D832BC1B7940005272C /* Map_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map_View.swift; sourceTree = "<group>"; };
+		FCC436CB2BC75CED00DC47C5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FCC63DE72BC054F3007CEF90 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		FCC63DEC2BC054F3007CEF90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */,
 				FCC63DEC2BC054F3007CEF90 /* ContentView.swift */,
+				FCC436CB2BC75CED00DC47C5 /* Result.swift */,
 				FC6CEC122BC44A0E0038053C /* EditView.swift */,
 				FC6CEC102BC440560038053C /* Location.swift */,
 				FCC63DFA2BC05A5F007CEF90 /* Practice */,
@@ -182,6 +185,7 @@
 				FC7A3D842BC1B7940005272C /* Map_View.swift in Sources */,
 				FCC63DF92BC05A5A007CEF90 /* CustomComparableConformance_1.swift in Sources */,
 				FCC63DED2BC054F3007CEF90 /* ContentView.swift in Sources */,
+				FCC436CC2BC75CED00DC47C5 /* Result.swift in Sources */,
 				FCC63DEB2BC054F3007CEF90 /* BucketListApp.swift in Sources */,
 				FCC63DFE2BC0DC21007CEF90 /* DocumentsDirectoryView_.swift in Sources */,
 				FCC63DFC2BC05B82007CEF90 /* CustomComparableConformance_2.swift in Sources */,

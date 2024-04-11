@@ -11,6 +11,8 @@
 		FC8024702BC5C19A00817E98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80246F2BC5C19A00817E98 /* ContentView.swift */; };
 		FC8024722BC5C19A00817E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8024712BC5C19A00817E98 /* Assets.xcassets */; };
 		FC8024752BC5C19A00817E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8024742BC5C19A00817E98 /* Preview Assets.xcassets */; };
+		FCC436AA2BC7107600DC47C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC436A92BC7107600DC47C5 /* Location.swift */; };
+		FCC436AC2BC7119E00DC47C5 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC436AB2BC7119E00DC47C5 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		FC80246F2BC5C19A00817E98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC8024712BC5C19A00817E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC8024742BC5C19A00817E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FCC436A92BC7107600DC47C5 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FCC436AB2BC7119E00DC47C5 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				FC80246D2BC5C19A00817E98 /* BucketList_2App.swift */,
 				FC80246F2BC5C19A00817E98 /* ContentView.swift */,
+				FCC436AB2BC7119E00DC47C5 /* EditView.swift */,
+				FCC436A92BC7107600DC47C5 /* Location.swift */,
 				FC8024712BC5C19A00817E98 /* Assets.xcassets */,
 				FC8024732BC5C19A00817E98 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8024702BC5C19A00817E98 /* ContentView.swift in Sources */,
+				FCC436AA2BC7107600DC47C5 /* Location.swift in Sources */,
+				FCC436AC2BC7119E00DC47C5 /* EditView.swift in Sources */,
 				FC80246E2BC5C19A00817E98 /* BucketList_2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
