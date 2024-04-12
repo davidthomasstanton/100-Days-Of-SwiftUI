@@ -6,14 +6,14 @@
 //
 // ==== ContentView ====
 // create startPosition (L&L: 56 / -3; span: 10 / 10)
-// var: array of Location (locations), optional Location (selectedPlace)
+// create ViewModel
 // Inside a MapReader, create a map with the start position
 // ForEach location, create an Annotation with an Image
 // On a longPress, assign the location to selectedPlace
-// On a TapGesture, create a coordinate from the tap position
-// Create a newLocation and append it to locations
-// Slide in a sheet for the longPress, go to the EditView passing in the place and
-// ...the newLocation, replace the index if it's there already
+// On a TapGesture, convert the position to a coordinate and add the location
+// when sheet is pulled up, set the item to the selectedPlace
+// send that place to the EditView location and have the viewModel update
+
 import MapKit
 import SwiftUI
 
@@ -21,35 +21,34 @@ struct ContentView: View {
     let startPosition = MapCameraPosition.region(MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 56, longitude: -3),
         span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)))
-    @State private var locations = [Location]()
-    @State private var selectedPlace: Location?
+    
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
-                ForEach(locations) { location in
+                ForEach(viewModel.locations) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
-                        Image("star.circle")
+                        Image(systemName: "star.circle")
                             .resizable()
                             .foregroundStyle(.red)
                             .frame(width: 44, height: 44)
                             .background(.white)
                             .clipShape(.circle)
                             .onLongPressGesture {
-                                selectedPlace = location
+                                viewModel.selectedPlace = location
                             }
                     }
                 }
             }
             .onTapGesture { position in
                 if let coordinate = proxy.convert(position, from: .local) {
-                    let newLocation = Location(id: UUID(), name: "New Location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude) }
+                    viewModel.addLocation(at: coordinate)
+                }
             }
-            .sheet(item: $selectedPlace) { place in
-                EditView(location: place) { newLocation in
-                    if let index = locations.firstIndex(of: place) {
-                        locations[index] = newLocation
-                    }
+            .sheet(item: $viewModel.selectedPlace) { place in
+                EditView(location: place) {
+                    viewModel.update(location: $0)
                 }
                 
             }

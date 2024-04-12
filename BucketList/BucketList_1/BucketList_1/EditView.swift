@@ -12,7 +12,7 @@
 // Section that shows nearby wikipedia entries, switch case for each enum
 // Button to save the new location, assigning a new UUID, and the name/description
 // task that executes fetchNearbyPlaces
-// func fetchNearbyPlaces
+// fetchNearbyPlaces()
 // set urlString, make it into a url
 // in a do block, get data, decode into items
 // assign sorted values to pages
@@ -35,6 +35,7 @@ struct EditView: View {
     
     @State private var loadingState = LoadingState.loading
     @State private var pages = [Page]()
+    
     var body: some View {
         NavigationStack {
             Form {
