@@ -1,34 +1,34 @@
 //
 //  ContentView.swift
-//  BucketList_3
+//  BucketList_4
 //
-//  Created by David Stanton on 4/10/24.
+//  Created by David Stanton on 4/11/24.
 //
 // ==== ContentView ====
 // create startPosition (L&L: 56 / -3; span: 10 / 10)
-// var: array of Location (locations), optional Location (selectedPlace)
+// create ViewModel
 // Inside a MapReader, create a map with the start position
 // ForEach location, create an Annotation with an Image
 // On a longPress, assign the location to selectedPlace
-// On a TapGesture, create a coordinate from the tap position
-// Create a newLocation and append it to locations
-// Slide in a sheet for the longPress, go to the EditView passing in the place and
-// ...the newLocation, replace the index if it's there already
-import MapKit
+// On a TapGesture, convert the position to a coordinate and add the location
+// when sheet is pulled up, set the item to the selectedPlace
+// send that place to the EditView location and have the viewModel update
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
-    let startPosition = MapCameraPosition.region(MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 56, longitude: -3),
-        span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)))
-    
+    let startPosition = MapCameraPosition.region(
+           MKCoordinateRegion(
+               center: CLLocationCoordinate2D(latitude: 31.7619, longitude: -106.4850),
+               span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)))
     @State private var viewModel = ViewModel()
+    
     var body: some View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
                 ForEach(viewModel.locations) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
-                        Image(systemName: "star.circle")
+                        Image(systemName: "star.cirlce")
                             .resizable()
                             .foregroundStyle(.red)
                             .frame(width: 44, height: 44)
@@ -40,16 +40,9 @@ struct ContentView: View {
                     }
                 }
             }
-            .onTapGesture { position in
-                if let coordinate = proxy.convert(position, from: .local) {
-                    viewModel.addLocation(at: coordinate)
-                }
-            }
-            .sheet(item: $viewModel.selectedPlace) { place in
-                EditView(location: place) {
-                    viewModel.update(location: $0)
-                }
-            }
+//            .onTapGesture {
+//                let coordinate = proxy.convert
+//            }
         }
     }
 }
