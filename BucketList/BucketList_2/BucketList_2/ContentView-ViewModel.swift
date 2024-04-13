@@ -14,7 +14,9 @@
 // update() locations
 // make sure the selectedPlace exists
 // set the index to the first Index of locations, add the location at that index & save
+import CoreLocation
 import Foundation
+import LocalAuthentication
 import MapKit
 
 extension ContentView {
@@ -23,6 +25,9 @@ extension ContentView {
         private(set) var locations: [Location]
         var selectedPlace: Location?
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
+        var isShowingAuthenticationError = false
+        var authenticationError = "Unknown Error"
+        var isUnlocked = false
         
         init() {
             do {
@@ -53,6 +58,27 @@ extension ContentView {
             if let index = locations.firstIndex(of: selectedPlace) {
                 locations[index] = location
                 save()
+            }
+        }
+        
+        func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Please authenticate."
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                    if success {
+                        self.isUnlocked = true
+                    } else {
+                        self.authenticationError = "Not authorized. Please try again."
+                        self.isShowingAuthenticationError = true
+                    }
+                }
+            } else {
+                self.authenticationError = "No biometric data"
+                self.isShowingAuthenticationError = true
+//                self.isUnlocked = true
             }
         }
     }
