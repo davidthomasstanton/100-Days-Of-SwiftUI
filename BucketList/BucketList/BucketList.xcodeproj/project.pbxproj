@@ -10,6 +10,7 @@
 		FC6CEC0F2BC43B7F0038053C /* LocalAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6CEC0E2BC43B7F0038053C /* LocalAuthenticationView.swift */; };
 		FC6CEC112BC440560038053C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6CEC102BC440560038053C /* Location.swift */; };
 		FC6CEC132BC44A0E0038053C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6CEC122BC44A0E0038053C /* EditView.swift */; };
+		FC73F2072BCA45CD00ED4153 /* EditView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73F2062BCA45CD00ED4153 /* EditView-ViewModel.swift */; };
 		FC7A3D842BC1B7940005272C /* Map_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3D832BC1B7940005272C /* Map_View.swift */; };
 		FC7A56352BC836E100A77294 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A56342BC836E100A77294 /* ContentView-ViewModel.swift */; };
 		FCC436CC2BC75CED00DC47C5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC436CB2BC75CED00DC47C5 /* Result.swift */; };
@@ -30,6 +31,7 @@
 		FC6CEC0E2BC43B7F0038053C /* LocalAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationView.swift; sourceTree = "<group>"; };
 		FC6CEC102BC440560038053C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FC6CEC122BC44A0E0038053C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		FC73F2062BCA45CD00ED4153 /* EditView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditView-ViewModel.swift"; sourceTree = "<group>"; };
 		FC7A3D832BC1B7940005272C /* Map_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map_View.swift; sourceTree = "<group>"; };
 		FC7A56342BC836E100A77294 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		FCC436CB2BC75CED00DC47C5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -80,8 +82,9 @@
 				FCC63DEA2BC054F3007CEF90 /* BucketListApp.swift */,
 				FCC63DEC2BC054F3007CEF90 /* ContentView.swift */,
 				FC7A56342BC836E100A77294 /* ContentView-ViewModel.swift */,
-				FCC436CB2BC75CED00DC47C5 /* Result.swift */,
 				FC6CEC122BC44A0E0038053C /* EditView.swift */,
+				FC73F2062BCA45CD00ED4153 /* EditView-ViewModel.swift */,
+				FCC436CB2BC75CED00DC47C5 /* Result.swift */,
 				FC6CEC102BC440560038053C /* Location.swift */,
 				FCC63DFA2BC05A5F007CEF90 /* Practice */,
 				FCC63DEE2BC054F3007CEF90 /* Assets.xcassets */,
@@ -197,6 +200,7 @@
 				FCC63E042BC0DF45007CEF90 /* FileManager_Extension.swift in Sources */,
 				FCC63E022BC0DE7C007CEF90 /* DocumentsDirectoryView_2.swift in Sources */,
 				FCC63E002BC0DD1F007CEF90 /* DocumentsDirectoryView_1.swift in Sources */,
+				FC73F2072BCA45CD00ED4153 /* EditView-ViewModel.swift in Sources */,
 				FC6CEC112BC440560038053C /* Location.swift in Sources */,
 				FC6CEC0F2BC43B7F0038053C /* LocalAuthenticationView.swift in Sources */,
 			);
