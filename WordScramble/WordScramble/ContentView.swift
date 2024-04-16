@@ -37,9 +37,13 @@ struct ContentView: View {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
                             // Add an SFSymbol to display the character count of word
+                            
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("\(word)")
+                        .accessibilityHint("\(word.count) letters")
                     }
                 }
             }

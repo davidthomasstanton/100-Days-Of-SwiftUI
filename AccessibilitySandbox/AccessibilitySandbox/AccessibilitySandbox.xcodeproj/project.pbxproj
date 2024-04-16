@@ -12,6 +12,8 @@
 		FC2064A52BCB5A3A00BE5983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2064A42BCB5A3A00BE5983 /* Assets.xcassets */; };
 		FC2064A82BCB5A3A00BE5983 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2064A72BCB5A3A00BE5983 /* Preview Assets.xcassets */; };
 		FC2064AF2BCB661A00BE5983 /* AccessibilityLabel_.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2064AE2BCB661A00BE5983 /* AccessibilityLabel_.swift */; };
+		FC9D408C2BCD7EA900A3E71C /* AccessibilityAdjustableAction_.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D408B2BCD7EA900A3E71C /* AccessibilityAdjustableAction_.swift */; };
+		FC9D408E2BCD802F00A3E71C /* AccessibilityInputLabels_.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D408D2BCD802F00A3E71C /* AccessibilityInputLabels_.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		FC2064A42BCB5A3A00BE5983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC2064A72BCB5A3A00BE5983 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC2064AE2BCB661A00BE5983 /* AccessibilityLabel_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLabel_.swift; sourceTree = "<group>"; };
+		FC9D408B2BCD7EA900A3E71C /* AccessibilityAdjustableAction_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAdjustableAction_.swift; sourceTree = "<group>"; };
+		FC9D408D2BCD802F00A3E71C /* AccessibilityInputLabels_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInputLabels_.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				FC2064AE2BCB661A00BE5983 /* AccessibilityLabel_.swift */,
+				FC9D408B2BCD7EA900A3E71C /* AccessibilityAdjustableAction_.swift */,
+				FC9D408D2BCD802F00A3E71C /* AccessibilityInputLabels_.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -149,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2064A32BCB5A3900BE5983 /* ContentView.swift in Sources */,
+				FC9D408E2BCD802F00A3E71C /* AccessibilityInputLabels_.swift in Sources */,
 				FC2064A12BCB5A3900BE5983 /* AccessibilitySandboxApp.swift in Sources */,
 				FC2064AF2BCB661A00BE5983 /* AccessibilityLabel_.swift in Sources */,
+				FC9D408C2BCD7EA900A3E71C /* AccessibilityAdjustableAction_.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
