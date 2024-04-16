@@ -13,6 +13,19 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var gameOverText = ""
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
+    let labels = [
+        "Estonia": "Flag with three horizontal stripes. Top stripe blue, middle stripe black, bottom stripe white.",
+        "France": "Flag with three vertical stripes. Left stripe blue, middle stripe whie, right stripe red.",
+        "Germany": "Flag with three horizontal stripes. Top stripe black, middle stripe red, bottom stripe gold.",
+        "Ireland": "Flag with three vertical stripes. Left stripe green, middle stripe whie, right stripe orange.",
+        "Italy": "Flag with three vertical stripes. Left stripe green, middle stripe whie, right stripe red.",
+        "Nigeria": "Flag with three vertical stripes. Left stripe green, middle stripe whie, right stripe green.",
+        "Poland": "Flag with two horizontal stripes. Top stripe whie, bottom stripe red.",
+        "Spain": "Flag with three horizontal stripes. Top thin stripe red, middle thick stripe is gold with crest on the left, bottom thin stripe red.",
+        "UK": "Flag with overlapping red and white crosses, both straight and diagonally, on a blue background.",
+        "Ukraine": "Flag with two horizontal stripes. Top stripe blue, bottom stripe yellow.",
+        "US": "Flag with many red and white stripes, with white stars on a blue background in the top-left corner."
+    ]
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var correctAnswers = 0
     @State private var questionNumber = 0
@@ -53,6 +66,7 @@ struct ContentView: View {
                                     .clipShape(.rect(cornerRadius: 20))
                                     .shadow(radius: 5)
                             }
+                            .accessibilityLabel(labels[countries[number]], default: "Unknown Flag")
                             .rotation3DEffect(
                                 .degrees(selectedFlag == number ? 360 : 0), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/
                             )
