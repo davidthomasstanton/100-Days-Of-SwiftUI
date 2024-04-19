@@ -4,19 +4,27 @@
 //
 //  Created by David Stanton on 4/17/24.
 //
-
+import PhotosUI
 import SwiftUI
 
 struct ContentView: View {
-
+    @State private var selectedItem: PhotosPickerItem?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                Text("allo")
+                Image("SquirtleHeadShot")
+                    .resizable()
+                    .scaledToFit()
+            }
         }
-        .padding()
+        .navigationTitle("ConventionContacts")
+        .toolbar {
+            Button("Add Contact", systemImage: "plus") {
+               PhotosPicker("Selected Photo", selection: $selectedItem)
+            }
+        }
         
 
     }
