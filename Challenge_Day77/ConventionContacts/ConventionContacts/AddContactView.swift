@@ -5,13 +5,18 @@
 //  Created by David Stanton on 4/18/24.
 //
 import PhotosUI
+import SwiftData
 import SwiftUI
 
 struct AddContactView: View {
     @State private var name: String = ""
     @State private var company: String = ""
     @State private var selectedItem: PhotosPickerItem?
+    @State private var imageData: Data?
+    @State private var uiImage: UIImage?
     @State private var processedImage: Image?
+
+    
     var body: some View {
         NavigationStack {
             PhotosPicker(selection: $selectedItem) {
@@ -29,7 +34,7 @@ struct AddContactView: View {
                 TextField("Company", text: $company)
             }
             Button("Add Contact") {
-                
+                let newContact = Contact(id: UUID(), name: name, company: company, photo: imageData!)
             }
         }
         .navigationTitle("Add Contact")
@@ -40,7 +45,6 @@ struct AddContactView: View {
             guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
             guard let uiImage = UIImage(data: imageData) else { return }
             processedImage = Image(uiImage: uiImage)
-            
         }
     }
 }
