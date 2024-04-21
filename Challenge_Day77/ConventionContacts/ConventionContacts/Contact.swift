@@ -22,7 +22,7 @@ class Contact: Codable {
     @Attribute(.externalStorage) var photo: Data
     
     static let examplePhoto = UIImage(imageLiteralResourceName: "SquirtleHeadShot")
-    static let photoData = examplePhoto.jpegData(compressionQuality: 1.0)!
+    static let examplePhotoData = examplePhoto.jpegData(compressionQuality: 1.0)!
     
     init(id: UUID, name: String, company: String, photo: Data) {
         self.id = id
@@ -32,7 +32,7 @@ class Contact: Codable {
     }
     
     required init(from decoder: Decoder) throws {
-        var container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         company = try container.decode(String.self, forKey: .company)
@@ -48,6 +48,6 @@ class Contact: Codable {
     }
     
     #if DEBUG
-    static let exampleContact = Contact(id: UUID(), name: "Squirtle", company: "Nintendo", photo: photoData)
+    static let exampleContact = Contact(id: UUID(), name: "Squirtle", company: "Nintendo", photo: examplePhotoData)
     #endif
 }
