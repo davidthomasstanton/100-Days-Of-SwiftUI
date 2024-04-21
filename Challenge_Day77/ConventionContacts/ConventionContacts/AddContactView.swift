@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct AddContactView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     @State private var name: String = ""
     @State private var company: String = ""
     @State private var selectedItem: PhotosPickerItem?
@@ -35,6 +37,8 @@ struct AddContactView: View {
             }
             Button("Add Contact") {
                 let newContact = Contact(id: UUID(), name: name, company: company, photo: imageData!)
+                modelContext.insert(newContact)
+                dismiss()
             }
         }
         .navigationTitle("Add Contact")
@@ -42,6 +46,12 @@ struct AddContactView: View {
     
     func loadImage() {
         Task {
+            do {
+                imageData = try await selectedItem?.loadTransferable(type: Data.self)
+            } catch {
+                
+            }
+            
             guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
             guard let uiImage = UIImage(data: imageData) else { return }
             processedImage = Image(uiImage: uiImage)
