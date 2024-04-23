@@ -18,11 +18,20 @@ struct ContentView: View {
             List {
                 ForEach(contacts) { contact in
                     NavigationLink(value: contact) {
-                        VStack {
-                            Text(contact.name)
-                            Text(contact.company)
-                            loadImage(for: contact)
+                        HStack {
+                            VStack {
+                                Text(contact.name)
+                                Text(contact.company)
+                            }
+                            Spacer()
+                                loadImage(for: contact)
+                                    .resizable()
+                                    .scaledToFit()
                         }
+                        .frame(width: 250, height: 50)
+                    }
+                    .navigationDestination(for: Contact.self) { contact in
+                        ContactView(contact: contact)
                     }
                 }
             }
