@@ -7,32 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC0261582BD028CD004B5B62 /* ConventionContactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0261572BD028CD004B5B62 /* ConventionContactsApp.swift */; };
-		FC02615A2BD028CD004B5B62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0261592BD028CD004B5B62 /* ContentView.swift */; };
-		FC02615C2BD028CE004B5B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC02615B2BD028CE004B5B62 /* Assets.xcassets */; };
-		FC02615F2BD028CE004B5B62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC02615E2BD028CE004B5B62 /* Preview Assets.xcassets */; };
-		FC0261662BD028F9004B5B62 /* NonNegative_.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0261652BD028F9004B5B62 /* NonNegative_.swift */; };
-		FC0261682BD02BA3004B5B62 /* Extention_BinaryInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0261672BD02BA3004B5B62 /* Extention_BinaryInteger.swift */; };
-		FC02CE702BD6AA4F006F6D07 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE6F2BD6AA4F006F6D07 /* ContactView.swift */; };
-		FC21B3A62BD171C9005F9DE0 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21B3A52BD171C9005F9DE0 /* AddContactView.swift */; };
-		FC21B3A82BD176B6005F9DE0 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21B3A72BD176B6005F9DE0 /* Contact.swift */; };
+		FC02CE7E2BD6B2BE006F6D07 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE7D2BD6B2BE006F6D07 /* HotProspectsApp.swift */; };
+		FC02CE802BD6B2BE006F6D07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE7F2BD6B2BE006F6D07 /* ContentView.swift */; };
+		FC02CE822BD6B2BF006F6D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC02CE812BD6B2BF006F6D07 /* Assets.xcassets */; };
+		FC02CE852BD6B2BF006F6D07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC02CE842BD6B2BF006F6D07 /* Preview Assets.xcassets */; };
+		FC02CE8C2BD6B4CD006F6D07 /* SelectionMultiple_.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE8B2BD6B4CD006F6D07 /* SelectionMultiple_.swift */; };
+		FC02CE8F2BD6B87E006F6D07 /* TabView_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE8E2BD6B87E006F6D07 /* TabView_1.swift */; };
+		FC02CE912BD6C037006F6D07 /* FetchReadings_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE902BD6C037006F6D07 /* FetchReadings_1.swift */; };
+		FC02CE932BD6C297006F6D07 /* FetchReadings_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE922BD6C297006F6D07 /* FetchReadings_2.swift */; };
+		FC02CE952BD6F530006F6D07 /* FetchReadings_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE942BD6F530006F6D07 /* FetchReadings_3.swift */; };
+		FC02CE972BD6F7FE006F6D07 /* ContextMenu_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02CE962BD6F7FE006F6D07 /* ContextMenu_1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC0261542BD028CD004B5B62 /* ConventionContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConventionContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC0261572BD028CD004B5B62 /* ConventionContactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConventionContactsApp.swift; sourceTree = "<group>"; };
-		FC0261592BD028CD004B5B62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FC02615B2BD028CE004B5B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC02615E2BD028CE004B5B62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FC0261652BD028F9004B5B62 /* NonNegative_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonNegative_.swift; sourceTree = "<group>"; };
-		FC0261672BD02BA3004B5B62 /* Extention_BinaryInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention_BinaryInteger.swift; sourceTree = "<group>"; };
-		FC02CE6F2BD6AA4F006F6D07 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
-		FC21B3A52BD171C9005F9DE0 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
-		FC21B3A72BD176B6005F9DE0 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		FC02CE7A2BD6B2BE006F6D07 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02CE7D2BD6B2BE006F6D07 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
+		FC02CE7F2BD6B2BE006F6D07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC02CE812BD6B2BF006F6D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC02CE842BD6B2BF006F6D07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC02CE8B2BD6B4CD006F6D07 /* SelectionMultiple_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMultiple_.swift; sourceTree = "<group>"; };
+		FC02CE8E2BD6B87E006F6D07 /* TabView_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView_1.swift; sourceTree = "<group>"; };
+		FC02CE902BD6C037006F6D07 /* FetchReadings_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadings_1.swift; sourceTree = "<group>"; };
+		FC02CE922BD6C297006F6D07 /* FetchReadings_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadings_2.swift; sourceTree = "<group>"; };
+		FC02CE942BD6F530006F6D07 /* FetchReadings_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadings_3.swift; sourceTree = "<group>"; };
+		FC02CE962BD6F7FE006F6D07 /* ContextMenu_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu_1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC0261512BD028CD004B5B62 /* Frameworks */ = {
+		FC02CE772BD6B2BE006F6D07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,50 +44,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC02614B2BD028CD004B5B62 = {
+		FC02CE712BD6B2BE006F6D07 = {
 			isa = PBXGroup;
 			children = (
-				FC0261562BD028CD004B5B62 /* ConventionContacts */,
-				FC0261552BD028CD004B5B62 /* Products */,
+				FC02CE7C2BD6B2BE006F6D07 /* HotProspects */,
+				FC02CE7B2BD6B2BE006F6D07 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FC0261552BD028CD004B5B62 /* Products */ = {
+		FC02CE7B2BD6B2BE006F6D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC0261542BD028CD004B5B62 /* ConventionContacts.app */,
+				FC02CE7A2BD6B2BE006F6D07 /* HotProspects.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC0261562BD028CD004B5B62 /* ConventionContacts */ = {
+		FC02CE7C2BD6B2BE006F6D07 /* HotProspects */ = {
 			isa = PBXGroup;
 			children = (
-				FC0261572BD028CD004B5B62 /* ConventionContactsApp.swift */,
-				FC0261592BD028CD004B5B62 /* ContentView.swift */,
-				FC02CE6F2BD6AA4F006F6D07 /* ContactView.swift */,
-				FC21B3A52BD171C9005F9DE0 /* AddContactView.swift */,
-				FC21B3A72BD176B6005F9DE0 /* Contact.swift */,
-				FC0261692BD02D85004B5B62 /* Practice */,
-				FC02615B2BD028CE004B5B62 /* Assets.xcassets */,
-				FC02615D2BD028CE004B5B62 /* Preview Content */,
+				FC02CE7D2BD6B2BE006F6D07 /* HotProspectsApp.swift */,
+				FC02CE7F2BD6B2BE006F6D07 /* ContentView.swift */,
+				FC02CE8D2BD6B4D2006F6D07 /* Practice */,
+				FC02CE812BD6B2BF006F6D07 /* Assets.xcassets */,
+				FC02CE832BD6B2BF006F6D07 /* Preview Content */,
 			);
-			path = ConventionContacts;
+			path = HotProspects;
 			sourceTree = "<group>";
 		};
-		FC02615D2BD028CE004B5B62 /* Preview Content */ = {
+		FC02CE832BD6B2BF006F6D07 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FC02615E2BD028CE004B5B62 /* Preview Assets.xcassets */,
+				FC02CE842BD6B2BF006F6D07 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FC0261692BD02D85004B5B62 /* Practice */ = {
+		FC02CE8D2BD6B4D2006F6D07 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				FC0261652BD028F9004B5B62 /* NonNegative_.swift */,
-				FC0261672BD02BA3004B5B62 /* Extention_BinaryInteger.swift */,
+				FC02CE902BD6C037006F6D07 /* FetchReadings_1.swift */,
+				FC02CE922BD6C297006F6D07 /* FetchReadings_2.swift */,
+				FC02CE942BD6F530006F6D07 /* FetchReadings_3.swift */,
+				FC02CE8E2BD6B87E006F6D07 /* TabView_1.swift */,
+				FC02CE8B2BD6B4CD006F6D07 /* SelectionMultiple_.swift */,
+				FC02CE962BD6F7FE006F6D07 /* ContextMenu_1.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -93,39 +96,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC0261532BD028CD004B5B62 /* ConventionContacts */ = {
+		FC02CE792BD6B2BE006F6D07 /* HotProspects */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC0261622BD028CE004B5B62 /* Build configuration list for PBXNativeTarget "ConventionContacts" */;
+			buildConfigurationList = FC02CE882BD6B2BF006F6D07 /* Build configuration list for PBXNativeTarget "HotProspects" */;
 			buildPhases = (
-				FC0261502BD028CD004B5B62 /* Sources */,
-				FC0261512BD028CD004B5B62 /* Frameworks */,
-				FC0261522BD028CD004B5B62 /* Resources */,
+				FC02CE762BD6B2BE006F6D07 /* Sources */,
+				FC02CE772BD6B2BE006F6D07 /* Frameworks */,
+				FC02CE782BD6B2BE006F6D07 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ConventionContacts;
-			productName = ConventionContacts;
-			productReference = FC0261542BD028CD004B5B62 /* ConventionContacts.app */;
+			name = HotProspects;
+			productName = HotProspects;
+			productReference = FC02CE7A2BD6B2BE006F6D07 /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FC02614C2BD028CD004B5B62 /* Project object */ = {
+		FC02CE722BD6B2BE006F6D07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					FC0261532BD028CD004B5B62 = {
+					FC02CE792BD6B2BE006F6D07 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = FC02614F2BD028CD004B5B62 /* Build configuration list for PBXProject "ConventionContacts" */;
+			buildConfigurationList = FC02CE752BD6B2BE006F6D07 /* Build configuration list for PBXProject "HotProspects" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -133,47 +136,48 @@
 				en,
 				Base,
 			);
-			mainGroup = FC02614B2BD028CD004B5B62;
-			productRefGroup = FC0261552BD028CD004B5B62 /* Products */;
+			mainGroup = FC02CE712BD6B2BE006F6D07;
+			productRefGroup = FC02CE7B2BD6B2BE006F6D07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC0261532BD028CD004B5B62 /* ConventionContacts */,
+				FC02CE792BD6B2BE006F6D07 /* HotProspects */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC0261522BD028CD004B5B62 /* Resources */ = {
+		FC02CE782BD6B2BE006F6D07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC02615F2BD028CE004B5B62 /* Preview Assets.xcassets in Resources */,
-				FC02615C2BD028CE004B5B62 /* Assets.xcassets in Resources */,
+				FC02CE852BD6B2BF006F6D07 /* Preview Assets.xcassets in Resources */,
+				FC02CE822BD6B2BF006F6D07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC0261502BD028CD004B5B62 /* Sources */ = {
+		FC02CE762BD6B2BE006F6D07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC21B3A82BD176B6005F9DE0 /* Contact.swift in Sources */,
-				FC0261682BD02BA3004B5B62 /* Extention_BinaryInteger.swift in Sources */,
-				FC21B3A62BD171C9005F9DE0 /* AddContactView.swift in Sources */,
-				FC02615A2BD028CD004B5B62 /* ContentView.swift in Sources */,
-				FC02CE702BD6AA4F006F6D07 /* ContactView.swift in Sources */,
-				FC0261582BD028CD004B5B62 /* ConventionContactsApp.swift in Sources */,
-				FC0261662BD028F9004B5B62 /* NonNegative_.swift in Sources */,
+				FC02CE972BD6F7FE006F6D07 /* ContextMenu_1.swift in Sources */,
+				FC02CE8F2BD6B87E006F6D07 /* TabView_1.swift in Sources */,
+				FC02CE802BD6B2BE006F6D07 /* ContentView.swift in Sources */,
+				FC02CE932BD6C297006F6D07 /* FetchReadings_2.swift in Sources */,
+				FC02CE7E2BD6B2BE006F6D07 /* HotProspectsApp.swift in Sources */,
+				FC02CE952BD6F530006F6D07 /* FetchReadings_3.swift in Sources */,
+				FC02CE912BD6C037006F6D07 /* FetchReadings_1.swift in Sources */,
+				FC02CE8C2BD6B4CD006F6D07 /* SelectionMultiple_.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FC0261602BD028CE004B5B62 /* Debug */ = {
+		FC02CE862BD6B2BF006F6D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,7 +240,7 @@
 			};
 			name = Debug;
 		};
-		FC0261612BD028CE004B5B62 /* Release */ = {
+		FC02CE872BD6B2BF006F6D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,14 +296,14 @@
 			};
 			name = Release;
 		};
-		FC0261632BD028CE004B5B62 /* Debug */ = {
+		FC02CE892BD6B2BF006F6D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ConventionContacts/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HotProspects/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -312,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.ConventionContacts;
+				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.HotProspects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,14 +324,14 @@
 			};
 			name = Debug;
 		};
-		FC0261642BD028CE004B5B62 /* Release */ = {
+		FC02CE8A2BD6B2BF006F6D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ConventionContacts/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HotProspects/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -340,7 +344,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.ConventionContacts;
+				PRODUCT_BUNDLE_IDENTIFIER = me.Stanton.David.HotProspects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -351,25 +355,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC02614F2BD028CD004B5B62 /* Build configuration list for PBXProject "ConventionContacts" */ = {
+		FC02CE752BD6B2BE006F6D07 /* Build configuration list for PBXProject "HotProspects" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC0261602BD028CE004B5B62 /* Debug */,
-				FC0261612BD028CE004B5B62 /* Release */,
+				FC02CE862BD6B2BF006F6D07 /* Debug */,
+				FC02CE872BD6B2BF006F6D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC0261622BD028CE004B5B62 /* Build configuration list for PBXNativeTarget "ConventionContacts" */ = {
+		FC02CE882BD6B2BF006F6D07 /* Build configuration list for PBXNativeTarget "HotProspects" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC0261632BD028CE004B5B62 /* Debug */,
-				FC0261642BD028CE004B5B62 /* Release */,
+				FC02CE892BD6B2BF006F6D07 /* Debug */,
+				FC02CE8A2BD6B2BF006F6D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FC02614C2BD028CD004B5B62 /* Project object */;
+	rootObject = FC02CE722BD6B2BE006F6D07 /* Project object */;
 }
