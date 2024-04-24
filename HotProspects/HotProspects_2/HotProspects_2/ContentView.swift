@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  HotProspects
+//  HotProspects_2
 //
-//  Created by David Stanton on 4/22/24.
+//  Created by David Stanton on 4/23/24.
 //
 // ContentView
 // TabView with 3 ProspectsView filtered for...
@@ -11,16 +11,10 @@
 // ProspectsView
 // enum for FilterType (none, contacted, uncontacted)
 // set a filter and a title that switches by the filter
-// In a NavStack, Text of "People: #of people"
-// toolbar with a button "qrcode.viewfinder" to add a prospect
-// Prospect data observed class
-// name, emailAddress, isContacted
-
 
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
         TabView {
             ProspectsView(filter: .none)
@@ -41,7 +35,6 @@ struct ContentView: View {
                 }
         }
     }
-    
 }
 
 #Preview {

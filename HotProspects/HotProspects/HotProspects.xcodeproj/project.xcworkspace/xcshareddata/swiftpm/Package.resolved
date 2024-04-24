@@ -1,0 +1,15 @@
+{
+  "originHash" : "786a3a410e9cd55901af390e03bc45830e861fc01ef423c9529ae8a70ff6e31e",
+  "pins" : [
+    {
+      "identity" : "samplepackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/Samplepackage",
+      "state" : {
+        "revision" : "f34f8498db05cf519000a9e5a6a14872ccc69ada",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

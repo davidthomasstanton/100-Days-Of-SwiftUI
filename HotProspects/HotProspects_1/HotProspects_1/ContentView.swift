@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  HotProspects
+//  HotProspects_1
 //
-//  Created by David Stanton on 4/22/24.
+//  Created by David Stanton on 4/23/24.
 //
 // ContentView
 // TabView with 3 ProspectsView filtered for...
@@ -16,11 +16,9 @@
 // Prospect data observed class
 // name, emailAddress, isContacted
 
-
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
         TabView {
             ProspectsView(filter: .none)
@@ -29,7 +27,7 @@ struct ContentView: View {
                 }
             ProspectsView(filter: .contacted)
                 .tabItem {
-                    Label("Contacted", systemImage: "checkmark.circle")
+                    Label("Contacted", systemImage: "checkmark.message.fill")
                 }
             ProspectsView(filter: .uncontacted)
                 .tabItem {
@@ -41,7 +39,6 @@ struct ContentView: View {
                 }
         }
     }
-    
 }
 
 #Preview {
