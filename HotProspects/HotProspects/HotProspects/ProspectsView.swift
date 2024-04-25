@@ -34,14 +34,36 @@ struct ProspectsView: View {
     }
     var body: some View {
         NavigationStack {
-            Text("People: \(prospects.count)")
-                .navigationTitle(title)
-                .toolbar {
-                    Button("Scan", systemImage: "qrcode.viewfinder") {
-                        let prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
-                        modelContext.insert(prospect)
-                    }
+            List(prospects) { prospect in
+                VStack(alignment: .leading) {
+                    Text(prospect.name)
+                        .font(.headline)
                 }
+            }
+            .navigationTitle(title)
+            .toolbar {
+                Button("Scan", systemImage: "qrcode.viewfinder") {
+                    let prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
+                    modelContext.insert(prospect)
+                }
+            }
+        }
+    }
+    // init for filter
+    // set self.filter to filter
+    // if the filter isn't .none...
+    // "showContactedOnly" is true if the filter is .contacted
+    // for the Query.Element of prospects...
+    // Sets the filter #Predicate if entry is contacted, sorting by name
+    init(filter: FilterType) {
+        self.filter = filter
+        
+        if filter != .none {
+            let showContactedOnly = filter == .contacted
+            
+            _prospects = Query(filter: #Predicate {
+                $0.isContacted == showContactedOnly
+            }, sort: [SortDescriptor(\Prospect.name)])
         }
     }
 }
