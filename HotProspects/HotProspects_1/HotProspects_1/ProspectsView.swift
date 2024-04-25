@@ -30,14 +30,31 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Contacts: \(prospects.count)")
-                .navigationTitle(title)
-                .toolbar {
-                    Button("Add prospect", systemImage: "qrcode.viewfinder") {
-                        let prospect = Prospect(name: "Paul Hudson", email: "paul@hackingwithswift.com", isContacted: false)
-                        modelContext.insert(prospect)
-                    }
+            List(prospects) { prospect in
+                VStack(alignment: .leading) {
+                    Text(prospect.name)
+                        .font(.headline)
                 }
+            }
+            .navigationTitle(title)
+            .toolbar {
+                Button("Add prospect", systemImage: "qrcode.viewfinder") {
+                    let prospect = Prospect(name: "Paul Hudson", email: "paul@hackingwithswift.com", isContacted: false)
+                    modelContext.insert(prospect)
+                }
+            }
+        }
+    }
+    
+    init(filter: FilterTypes) {
+        self.filter = filter
+        
+        if filter != .none {
+            let isContacted = filter == .contacted
+            
+            _prospects = Query(filter: #Predicate {
+                $0.isContacted == isContacted
+            }, sort: [SortDescriptor(\Prospect.name)])
         }
     }
 }
