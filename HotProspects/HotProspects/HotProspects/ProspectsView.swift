@@ -8,8 +8,14 @@
 // enum for FilterType (none, contacted, uncontacted)
 // set a filter and a title that switches by the filter
 // Query variable that sorts by name "prospects"
-// In a NavStack, Text of "People: #of people"
-// toolbar with a button "qrcode.viewfinder" to add a prospect
+// In a NavStack, List of prospects
+// swipeActions{
+// Button to delete, "trash", func to delete all
+// Button to mark contacted or uncontacted "person.crop.circle.badge.xmark" "person.crop.circle.fill.badge.checkmark"
+// toolbar with a button to scan "qrcode.viewfinder", EditButton()
+// if there are selected prospects, button below to delete them all
+
+import CodeScanner
 import SwiftData
 import SwiftUI
 
@@ -20,6 +26,9 @@ struct ProspectsView: View {
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Prospect.name) var prospects: [Prospect]
+    @State private var isShowingScanner = false
+    @State private var selectedProspects = Set<Prospect>()
+    
     let filter: FilterType
     
     var title: String {
@@ -34,18 +43,53 @@ struct ProspectsView: View {
     }
     var body: some View {
         NavigationStack {
-            List(prospects) { prospect in
+            List(prospects, selection: $selectedProspects) { prospect in
                 VStack(alignment: .leading) {
                     Text(prospect.name)
                         .font(.headline)
+                    
+                    Text(prospect.emailAddress)
+                        .foregroundStyle(.secondary)
                 }
+                .swipeActions {
+                    Button("Delete", systemImage: "trash", role: .destructive) {
+                        modelContext.delete(prospect)
+                    }
+                    
+                    if prospect.isContacted {
+                        Button("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark") {
+                            prospect.isContacted.toggle()
+                        }
+                        .tint(.blue)
+                    } else {
+                        Button("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark") {
+                            prospect.isContacted.toggle()
+                        }
+                        .tint(.green)
+                    }
+                }
+                .tag(prospect)
             }
             .navigationTitle(title)
             .toolbar {
-                Button("Scan", systemImage: "qrcode.viewfinder") {
-                    let prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
-                    modelContext.insert(prospect)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Scan", systemImage: "qrcode.viewfinder") {
+                        isShowingScanner = true
+                    }
                 }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
+                
+                if selectedProspects.isEmpty == false {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Delete Selected", action: delete)
+                    }
+                }
+            }
+            .sheet(isPresented: $isShowingScanner) {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
             }
         }
     }
@@ -64,6 +108,34 @@ struct ProspectsView: View {
             _prospects = Query(filter: #Predicate {
                 $0.isContacted == showContactedOnly
             }, sort: [SortDescriptor(\Prospect.name)])
+        }
+    }
+    // func handleScan() result is a generic Result of ScanResult or ScanError
+    // isShowingScanner is false,
+    // switch on the result, if successful, let result be:
+    // set details to be the result seperatedBy new line
+    // if the count isn't 2, return
+    // set the person from the details, add to the data
+    // if failure, set the error
+    func handleScan(result: Result<ScanResult, ScanError>) {
+        isShowingScanner = false
+        
+        switch result {
+        case .success(let result):
+            let details = result.string.components(separatedBy: "\n")
+            guard details.count == 2 else { return }
+            
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+            modelContext.insert(person)
+            
+        case .failure(let error):
+            print("Scanning failed: \(error.localizedDescription)")
+        }
+    }
+    
+    func delete() {
+        for prospect in selectedProspects {
+            modelContext.delete(prospect)
         }
     }
 }
