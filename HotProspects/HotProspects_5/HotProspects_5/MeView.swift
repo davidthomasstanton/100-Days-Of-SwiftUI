@@ -1,15 +1,16 @@
 //
 //  MeView.swift
-//  HotProspects_4
+//  HotProspects_5
 //
-//  Created by David Stanton on 4/25/24.
+//  Created by David Stanton on 4/26/24.
 //
+import CodeScanner
 import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct MeView: View {
     @AppStorage("name") private var name = "Anonymous"
-    @AppStorage("emailAddress") private var emailAddress = "me@email.com"
+    @AppStorage("emailAddress") private var email = "me@email.com"
     @State private var qrCode = UIImage()
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
@@ -20,7 +21,7 @@ struct MeView: View {
                 TextField("Name", text: $name)
                     .textContentType(.name)
                     .font(.headline)
-                TextField("Email", text: $emailAddress)
+                TextField("Email", text: $email)
                     .textContentType(.emailAddress)
                     .font(.headline)
                 Image(uiImage: qrCode)
@@ -33,12 +34,11 @@ struct MeView: View {
             }
             .navigationTitle(name)
             .onAppear(perform: updateCode)
-            .onChange(of: name, updateCode)
-            .onChange(of: emailAddress, updateCode)
         }
     }
+    
     func updateCode() {
-        qrCode = generateQRCode(for: "\(name)\n\(emailAddress)")
+        qrCode = generateQRCode(for: "\(name)\n\(email)")
     }
     
     func generateQRCode(for string: String) -> UIImage {

@@ -4,6 +4,7 @@
 //
 //  Created by David Stanton on 4/25/24.
 //
+import UserNotifications
 import CodeScanner
 import SwiftData
 import SwiftUI
@@ -52,6 +53,11 @@ struct ProspectView: View {
                             prospect.isContacted.toggle()
                         }
                         .tint(.green)
+                        
+                        Button("Add Notification", systemImage: "bell") {
+                            addNotification(for: prospect)
+                        }
+                        .tint(.orange)
                     }
                 }
                 .tag(prospect)
@@ -106,6 +112,34 @@ struct ProspectView: View {
     func deleteSelected() {
         for prospect in selectedProspect {
             modelContext.delete(prospect)
+        }
+    }
+    
+    func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+        
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = "at \(prospect.emailAddress)"
+            content.sound = UNNotificationSound.default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+        }
+        
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else if let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
     }
 }
