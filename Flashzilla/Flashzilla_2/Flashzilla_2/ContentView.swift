@@ -1,19 +1,16 @@
 //
 //  ContentView.swift
-//  Flashzilla
+//  Flashzilla_2
 //
-//  Created by David Stanton on 4/30/24.
+//  Created by David Stanton on 5/1/24.
 //
 
 import SwiftUI
-// extension of View, func called stacked()
-// take in the total amount of cards and the position, return some view
-// create an offset of the total minus the position
-// return the offset of self with the y value being the offset * 10
+
 extension View {
     func stacked(at position: Int, in total: Int) -> some View {
         let offset = Double(total - position)
-        return self.offset(y: offset * 10)
+        return self.offset(x: offset * 3, y: offset * 3)
     }
 }
 struct ContentView: View {
@@ -24,6 +21,7 @@ struct ContentView: View {
             Image(.background)
                 .resizable()
                 .ignoresSafeArea()
+                .opacity(0.8)
             
             VStack {
                 ZStack {
@@ -35,8 +33,6 @@ struct ContentView: View {
             }
         }
     }
-    
-
 }
 
 #Preview {
