@@ -1,8 +1,8 @@
 //
 //  CardView.swift
-//  Flashzilla
+//  Flashzilla_3
 //
-//  Created by David Stanton on 5/1/24.
+//  Created by David Stanton on 5/2/24.
 //
 
 import SwiftUI
@@ -18,11 +18,10 @@ struct CardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .fill(
-                    accessibilityDifferentiateWithoutColor 
+                    accessibilityDifferentiateWithoutColor
                     ? .white
-                    : .white
-                        .opacity(1 - Double(abs(offset.width / 50)))
-                )
+                    : .white.opacity(1 - Double(abs(offset.width / 50)))
+                    )
                 .background(
                     accessibilityDifferentiateWithoutColor
                     ? nil
@@ -30,7 +29,7 @@ struct CardView: View {
                         .fill(offset.width > 0 ? .green : .red)
                 )
                 .shadow(radius: 10)
-            
+                
             VStack {
                 Text(card.prompt)
                     .font(.largeTitle)
@@ -42,12 +41,12 @@ struct CardView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .padding(20)
+            .padding()
             .multilineTextAlignment(.center)
         }
         .frame(width: 450, height: 250)
         .rotationEffect(.degrees(offset.width / 5.0))
-        .offset(x: offset.width * 5.0)
+        .offset(x: offset.width * 5)
         .opacity(2 - Double(abs(offset.width / 50)))
         .gesture(
             DragGesture()
@@ -65,6 +64,7 @@ struct CardView: View {
         .onTapGesture {
             isShowingAnswer.toggle()
         }
+        
     }
 }
 
