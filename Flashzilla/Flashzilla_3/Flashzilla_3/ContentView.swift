@@ -1,16 +1,16 @@
 //
 //  ContentView.swift
-//  Flashzilla_1
+//  Flashzilla_3
 //
-//  Created by David Stanton on 5/1/24.
+//  Created by David Stanton on 5/2/24.
 //
 
 import SwiftUI
 
 extension View {
-    func stacked(at position: Int, total: Int) -> some View {
+    func stacked(at position: Int, in total: Int) -> some View {
         let offset = Double(total - position)
-        return self.offset(x: offset * 2, y: offset * 8)
+        return self.offset(x: offset * 4, y: offset * 4)
     }
 }
 struct ContentView: View {
@@ -24,17 +24,18 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Image(.background)
-                .resizable()
+                .opacity(0.8)
                 .ignoresSafeArea()
             
             VStack {
                 Text("Time Remaining: \(timeRemaining)")
                     .font(.title)
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 20)
                     .padding(.vertical, 5)
+                    .padding(.horizontal, 20)
                     .background(.black.opacity(0.75))
                     .clipShape(.capsule)
+                
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in
                         CardView(card: cards[index]) {
@@ -42,69 +43,50 @@ struct ContentView: View {
                                 removeCard(at: index)
                             }
                         }
-                        .stacked(at: index, total: 10)
+                        .stacked(at: index, in: cards.count)
                     }
                 }
-                .allowsHitTesting(timeRemaining > 0)
-                
-                if cards.isEmpty {
-                    Button("Start Again", action: resetCards)
-                        .padding()
-                        .foregroundStyle(.white)
-                        .background(.black.opacity(0.8))
-                        .clipShape(.capsule)
-                }
+                .padding()
             }
-            
             if accessibilityDifferentiateWithoutColor {
                 VStack {
                     Spacer()
-                    
                     HStack {
                         Image(systemName: "xmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.8))
+                            .background(.black.opacity(6.0))
                             .clipShape(.circle)
-                        
+                            .padding()
                         Spacer()
-                        
                         Image(systemName: "checkmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.8))
+                            .background(.black.opacity(6.0))
                             .clipShape(.circle)
+                            .padding()
                     }
-                    .foregroundStyle(.white)
-                    .font(.largeTitle)
                     .padding()
                 }
+                .foregroundStyle(.white)
+                .font(.system(size: 90))
+                .padding()
             }
         }
         .onReceive(timer) { time in
             guard isActive else { return }
-            
             if timeRemaining > 0 {
                 timeRemaining -= 1
             }
         }
         .onChange(of: scenePhase) {
-            if scenePhase == .active && !cards.isEmpty {
+            if scenePhase == .active {
                 isActive = true
             } else {
                 isActive = false
             }
         }
-    }
-    func removeCard(at index: Int) {
-        cards.remove(at: index)
-        if cards.isEmpty {
-            isActive = false
-        }
+        
     }
     
-    func resetCards() {
-        cards = Array<Card>(repeating: .example, count: 10)
-        timeRemaining = 100
-        isActive = true
+    func removeCard(at index: Int) {
+        cards.remove(at: index)
     }
 }
 
