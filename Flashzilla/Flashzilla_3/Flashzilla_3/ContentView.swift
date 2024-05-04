@@ -15,6 +15,7 @@ extension View {
 }
 struct ContentView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var accessibilityDifferentiateWithoutColor
+    @Environment(\.accessibilityVoiceOverEnabled) var accessibilityVoiceOverEnabled
     @State private var cards = Array<Card>(repeating: .example, count: 10)
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var timeRemaining = 100
@@ -23,7 +24,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Image(.background)
+            Image(decorative: "background")
                 .opacity(0.8)
                 .ignoresSafeArea()
             
@@ -44,23 +45,44 @@ struct ContentView: View {
                             }
                         }
                         .stacked(at: index, in: cards.count)
+                        .allowsHitTesting(index == cards.count - 1)
+                        .accessibilityHidden(index < cards.count - 1)
+                        
                     }
                 }
                 .padding()
             }
-            if accessibilityDifferentiateWithoutColor {
+            if accessibilityDifferentiateWithoutColor || accessibilityVoiceOverEnabled {
                 VStack {
                     Spacer()
+                    
                     HStack {
-                        Image(systemName: "xmark.circle")
-                            .background(.black.opacity(6.0))
-                            .clipShape(.circle)
-                            .padding()
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                                .background(.black.opacity(6.0))
+                                .clipShape(.circle)
+                                .padding()
+                        }
+                        .accessibilityLabel("Wrong")
+                        .accessibilityHint("Mark your answer as being incorrect.")
+                        
                         Spacer()
-                        Image(systemName: "checkmark.circle")
-                            .background(.black.opacity(6.0))
-                            .clipShape(.circle)
-                            .padding()
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "checkmark.circle")
+                                .background(.black.opacity(6.0))
+                                .clipShape(.circle)
+                                .padding()
+                        }
+                        .accessibilityLabel("Correct")
+                        .accessibilityHint("Mark your answer as being correct.")
                     }
                     .padding()
                 }
@@ -86,6 +108,7 @@ struct ContentView: View {
     }
     
     func removeCard(at index: Int) {
+        guard index >= 0 else { return }
         cards.remove(at: index)
     }
 }
