@@ -68,8 +68,11 @@ struct EditCardsView: View {
         let prompt = newPrompt.trimmingCharacters(in: .whitespaces)
         let answer = newAnswer.trimmingCharacters(in: .whitespaces)
         guard prompt.isEmpty == false && answer.isEmpty == false else { return }
-        let newCard = Card(prompt: prompt, answer: answer)
+        let newCard = Card(id: UUID(), prompt: prompt, answer: answer)
         cards.insert(newCard, at: 0)
+        
+        newPrompt = ""
+        newAnswer = ""
         saveData()
     }
     
