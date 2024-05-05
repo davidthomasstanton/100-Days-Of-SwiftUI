@@ -1,8 +1,8 @@
 //
-//  EditCards.swift
-//  Flashzilla
+//  EditCardsView.swift
+//  Flashzilla_2
 //
-//  Created by David Stanton on 5/3/24.
+//  Created by David Stanton on 5/4/24.
 //
 // EditCards: View
 // Section to Add new card, "newPrompt" "newAnswer" Button to "addCard"
@@ -12,24 +12,22 @@
 // func saveData()
 // func addCard() making sure entries aren't empty
 // func removeCards()
-
 import SwiftUI
 
-struct EditCards: View {
-    @Environment(\.dismiss) var dismiss
+struct EditCardsView: View {
     @State private var cards = [Card]()
     @State private var newPrompt = ""
     @State private var newAnswer = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             List {
-                Section("Add new card") {
-                    TextField("Prompt", text: $newPrompt)
+                Section {
+                    TextField("?", text: $newPrompt)
                     TextField("Answer", text: $newAnswer)
                     Button("Add Card", action: addCard)
                 }
-                
                 Section {
                     ForEach(0..<cards.count, id: \.self) { index in
                         VStack(alignment: .leading) {
@@ -39,21 +37,21 @@ struct EditCards: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    .onDelete(perform: removeCards)
+                    .onDelete(perform: removeCard)
                 }
             }
             .navigationTitle("Edit Cards")
+            .onAppear(perform: loadData)
             .toolbar {
                 Button("Done", action: done)
             }
-            .onAppear(perform: loadData)
+            
         }
     }
     
     func done() {
         dismiss()
     }
-    
     func loadData() {
         if let data = UserDefaults.standard.data(forKey: "Cards") {
             if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
@@ -61,32 +59,30 @@ struct EditCards: View {
             }
         }
     }
-    
     func saveData() {
         if let data = try? JSONEncoder().encode(cards) {
             UserDefaults.standard.set(data, forKey: "Cards")
         }
     }
-    
     func addCard() {
-        let trimmedPrompt = newPrompt.trimmingCharacters(in: .whitespaces)
-        let trimmedAnswer = newAnswer.trimmingCharacters(in: .whitespaces)
-        guard trimmedPrompt.isEmpty == false && trimmedAnswer.isEmpty == false else { return }
-        
-        let card = Card(prompt: trimmedPrompt, answer: trimmedAnswer)
-        cards.insert(card, at: 0)
-        saveData()
-        
-        newPrompt = ""
-        newAnswer = ""
+        let prompt = newPrompt.trimmingCharacters(in: .whitespaces)
+        let answer = newAnswer.trimmingCharacters(in: .whitespaces)
+        if !prompt.isEmpty && !answer.isEmpty {
+            let card = Card(prompt: prompt, answer: answer)
+            cards.insert(card, at: 0)
+            saveData()
+            
+            newPrompt = ""
+            newAnswer = ""
+        }
     }
-    
-    func removeCards(at offsets: IndexSet) {
+    func removeCard(at offsets: IndexSet) {
         cards.remove(atOffsets: offsets)
         saveData()
     }
+    
 }
 
 #Preview {
-    EditCards()
+    EditCardsView()
 }

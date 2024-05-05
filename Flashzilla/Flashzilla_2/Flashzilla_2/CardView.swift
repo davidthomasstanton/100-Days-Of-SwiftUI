@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+extension Shape {
+    func fill(offset: Double) -> some View {
+        
+    }
+}
 struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var accessibilityDifferentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var accessibilityVoiceOverEnabled
