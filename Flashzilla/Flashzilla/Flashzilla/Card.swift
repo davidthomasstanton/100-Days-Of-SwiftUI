@@ -4,7 +4,9 @@
 //
 //  Created by David Stanton on 5/1/24.
 //
-
+// struct Card
+// Codable, Equatable, Hashable, Identifiable
+// var for id, prompt, answer, example
 import Foundation
 
 
