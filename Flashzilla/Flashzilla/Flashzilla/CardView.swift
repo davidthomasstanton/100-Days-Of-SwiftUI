@@ -4,6 +4,21 @@
 //
 //  Created by David Stanton on 5/1/24.
 //
+// extension on Shape
+// function fill() that returns a fill of white, green, or red
+// CardView
+// RoundedRectangle that reveals the background the further from center it gets
+// background is white, green, or red depending on right/wrong
+// Prompt and Answer if isShowingAnswer
+// frame of 450/250
+// rotation is the degrees offset / 5
+// x value is offset amount * 5
+// the opacity becomes clear as it gets toward the edges
+// add a DragGesture() that sets the offset to the gesture's translation
+// when the gesture has ended, check of the offset amount is more than 100
+// if right, remove, if left, add, if less than 100, snap it back
+// tapGesture to show answer
+// animation is bouncy
 
 import SwiftUI
 extension Shape {

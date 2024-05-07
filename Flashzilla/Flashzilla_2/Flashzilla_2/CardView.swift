@@ -9,7 +9,13 @@ import SwiftUI
 
 extension Shape {
     func fill(offset: Double) -> some View {
-        
+        if offset == 0 {
+            return self.fill(.white)
+        } else if offset < 0 {
+            return self.fill(.red)
+        } else {
+            return self.fill(.green)
+        }
     }
 }
 struct CardView: View {
@@ -18,7 +24,7 @@ struct CardView: View {
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
     let card: Card
-    var removal: (() -> Void)? = nil
+    var removal: ((Bool) -> Void)? = nil
     
     var body: some View {
         ZStack {
@@ -33,7 +39,7 @@ struct CardView: View {
                     accessibilityDifferentiateWithoutColor
                     ? nil
                     : RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .fill(offset.width > 0 ? .green : .red)
+                        .fill(offset: offset.width)
                 )
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             VStack {
@@ -68,12 +74,16 @@ struct CardView: View {
                 }
                 .onEnded { _ in
                     if abs(offset.width) > 100 {
-                        removal?()
+                        if offset.width < 0 {
+                            removal?(true)
+                        } else {
+                            removal?(false)
+                            offset = .zero
+                        }
                     } else {
                         offset = .zero
                     }
                 }
-        
         )
         .onTapGesture {
             isShowingAnswer.toggle()
