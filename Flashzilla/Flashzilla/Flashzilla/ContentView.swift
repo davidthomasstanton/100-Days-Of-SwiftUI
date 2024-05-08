@@ -43,22 +43,6 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @State private var isActive = true
     
-    // ContentView
-    // Background image that's decorative
-    // Time that counts down from 100 if scene is active
-    // Show all cards (enumerated) in a stack, not tappable or screen-read when not in front
-    // with an Animation, call function removeCard, passing in the offset and reinsert Bool
-    // if cards are empty, button to start again
-    // Button to add cards
-    // if sheet is presented, go to an initialized EditCards, and reset current cards
-    // func removeCard()
-    // guard that the index is greater than 0
-    // if it's reinserted, move the card to 0, otherwise, remove
-    // if cards are empty, scene is not active
-    // func resetCards()
-    // set time to 100, scene is active, loadData
-    // func loadData()
-    // load data from UserDefaults and decode, set cards to decoded
     var body: some View {
         ZStack {
             Image(decorative: "background")
