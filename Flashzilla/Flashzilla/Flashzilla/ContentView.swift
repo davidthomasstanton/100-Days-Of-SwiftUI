@@ -35,7 +35,7 @@ extension View {
 struct ContentView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var accessibilityDifferentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var accessibilityVoiceOverEnabled
-    @State private var cards = [Card]()
+    @State private var cards = DataManager.load()
     @State private var showingEditScreen = false
     
     @State private var timeRemaining = 100
@@ -156,7 +156,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingEditScreen, onDismiss: resetCards, content: EditCards.init)
-        .onAppear(perform: resetCards)
+//        .onAppear(perform: resetCards)
     }
     
     func removeCard(at index: Int, reinsert: Bool) {
@@ -176,16 +176,16 @@ struct ContentView: View {
     func resetCards() {
         timeRemaining = 100
         isActive = true
-        loadData()
+        cards = DataManager.load()
     }
     
-    func loadData() {
-        if let data = UserDefaults.standard.data(forKey: "Cards") {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                cards = decoded
-            }
-        }
-    }
+//    func loadData() {
+//        if let data = UserDefaults.standard.data(forKey: "Cards") {
+//            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+//                cards = decoded
+//            }
+//        }
+//    }
 }
 
 #Preview {

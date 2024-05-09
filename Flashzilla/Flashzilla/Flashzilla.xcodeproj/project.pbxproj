@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0B07232BEBC27F00CD668A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B07222BEBC27F00CD668A /* DataManager.swift */; };
 		FC6195A62BE1393D00BB3114 /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6195A52BE1393D00BB3114 /* FlashzillaApp.swift */; };
 		FC6195A82BE1393D00BB3114 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6195A72BE1393D00BB3114 /* ContentView.swift */; };
 		FC6195AA2BE1393E00BB3114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6195A92BE1393E00BB3114 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0B07222BEBC27F00CD668A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FC6195A22BE1393D00BB3114 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6195A52BE1393D00BB3114 /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		FC6195A72BE1393D00BB3114 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				FC6195A52BE1393D00BB3114 /* FlashzillaApp.swift */,
 				FC6195A72BE1393D00BB3114 /* ContentView.swift */,
+				FC0B07222BEBC27F00CD668A /* DataManager.swift */,
 				FCBDFECB2BE2911300230186 /* CardView.swift */,
 				FCBDFEC92BE2906B00230186 /* Card.swift */,
 				FC9E52522BE5442B003104D6 /* EditCards.swift */,
@@ -207,6 +210,7 @@
 				FC6195BD2BE143E600BB3114 /* CombinedGestureView.swift in Sources */,
 				FC6195BF2BE1455D00BB3114 /* CombinedGestureView_1.swift in Sources */,
 				FC6195B62BE13E1C00BB3114 /* MagnifyGestureView_1.swift in Sources */,
+				FC0B07232BEBC27F00CD668A /* DataManager.swift in Sources */,
 				FC6195B42BE13C2900BB3114 /* MagnifyGestureView.swift in Sources */,
 				FC6195C32BE14C2F00BB3114 /* CombinedGestureView_2.swift in Sources */,
 				FCBDFECC2BE2911300230186 /* CardView.swift in Sources */,
