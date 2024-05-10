@@ -19,6 +19,12 @@
 		FC0B074A2BEC0EA500CD668A /* GeometryReader_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B07492BEC0EA500CD668A /* GeometryReader_1.swift */; };
 		FC0B074C2BEC12E900CD668A /* GeometryReader_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B074B2BEC12E900CD668A /* GeometryReader_2.swift */; };
 		FC0B074E2BEC153900CD668A /* GeometryReader_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B074D2BEC153900CD668A /* GeometryReader_3.swift */; };
+		FC987D092BED23010074D7DE /* HelixSpin_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D082BED23010074D7DE /* HelixSpin_1.swift */; };
+		FC987D0B2BED248A0074D7DE /* HelixSpin_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D0A2BED248A0074D7DE /* HelixSpin_2.swift */; };
+		FC987D0D2BED27900074D7DE /* HorizontalBoxScroll_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D0C2BED27900074D7DE /* HorizontalBoxScroll_1.swift */; };
+		FC987D0F2BED2E5E0074D7DE /* VisualEffect_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D0E2BED2E5E0074D7DE /* VisualEffect_1.swift */; };
+		FC987D112BED30820074D7DE /* VisualEffect_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D102BED30820074D7DE /* VisualEffect_2.swift */; };
+		FC987D132BED64C80074D7DE /* VisualEffect_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC987D122BED64C80074D7DE /* VisualEffect_3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		FC0B07492BEC0EA500CD668A /* GeometryReader_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader_1.swift; sourceTree = "<group>"; };
 		FC0B074B2BEC12E900CD668A /* GeometryReader_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader_2.swift; sourceTree = "<group>"; };
 		FC0B074D2BEC153900CD668A /* GeometryReader_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader_3.swift; sourceTree = "<group>"; };
+		FC987D082BED23010074D7DE /* HelixSpin_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelixSpin_1.swift; sourceTree = "<group>"; };
+		FC987D0A2BED248A0074D7DE /* HelixSpin_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelixSpin_2.swift; sourceTree = "<group>"; };
+		FC987D0C2BED27900074D7DE /* HorizontalBoxScroll_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxScroll_1.swift; sourceTree = "<group>"; };
+		FC987D0E2BED2E5E0074D7DE /* VisualEffect_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect_1.swift; sourceTree = "<group>"; };
+		FC987D102BED30820074D7DE /* VisualEffect_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect_2.swift; sourceTree = "<group>"; };
+		FC987D122BED64C80074D7DE /* VisualEffect_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect_3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,12 @@
 		FC0B07402BEBCB8200CD668A /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				FC987D0E2BED2E5E0074D7DE /* VisualEffect_1.swift */,
+				FC987D102BED30820074D7DE /* VisualEffect_2.swift */,
+				FC987D122BED64C80074D7DE /* VisualEffect_3.swift */,
+				FC987D0C2BED27900074D7DE /* HorizontalBoxScroll_1.swift */,
+				FC987D082BED23010074D7DE /* HelixSpin_1.swift */,
+				FC987D0A2BED248A0074D7DE /* HelixSpin_2.swift */,
 				FC0B07492BEC0EA500CD668A /* GeometryReader_1.swift */,
 				FC0B074B2BEC12E900CD668A /* GeometryReader_2.swift */,
 				FC0B074D2BEC153900CD668A /* GeometryReader_3.swift */,
@@ -169,16 +187,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC987D0F2BED2E5E0074D7DE /* VisualEffect_1.swift in Sources */,
 				FC0B074A2BEC0EA500CD668A /* GeometryReader_1.swift in Sources */,
+				FC987D132BED64C80074D7DE /* VisualEffect_3.swift in Sources */,
 				FC0B07332BEBC4F100CD668A /* ContentView.swift in Sources */,
 				FC0B073F2BEBCAF200CD668A /* AlignmentGuide_1.swift in Sources */,
 				FC0B07442BEBD75700CD668A /* ExtensionVerticalAlignment_2.swift in Sources */,
+				FC987D092BED23010074D7DE /* HelixSpin_1.swift in Sources */,
 				FC0B074E2BEC153900CD668A /* GeometryReader_3.swift in Sources */,
 				FC0B074C2BEC12E900CD668A /* GeometryReader_2.swift in Sources */,
 				FC0B07462BEBD83A00CD668A /* ExtensionVerticalAlignment_3.swift in Sources */,
 				FC0B07482BEBDACC00CD668A /* ExtensionVerticalAlignment_4.swift in Sources */,
+				FC987D0D2BED27900074D7DE /* HorizontalBoxScroll_1.swift in Sources */,
+				FC987D0B2BED248A0074D7DE /* HelixSpin_2.swift in Sources */,
 				FC0B07422BEBD45B00CD668A /* ExtensionVerticalAlignment.swift in Sources */,
 				FC0B07312BEBC4F100CD668A /* LayoutAndGeometryApp.swift in Sources */,
+				FC987D112BED30820074D7DE /* VisualEffect_2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
