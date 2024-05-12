@@ -86,6 +86,9 @@ struct ContentView: View {
         .background(Color(.lightGray))
     }
     
+    func randomNum() {        
+        result = Int.random(in: 0...increment)
+    }
     func rollDice() {
         isActive = false
         result = Int.random(in: 1...increment)
