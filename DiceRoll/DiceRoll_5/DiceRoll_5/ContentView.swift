@@ -1,45 +1,45 @@
 //
 //  ContentView.swift
-//  DiceRoll_4
+//  DiceRoll_5
 //
-//  Created by David Stanton on 5/11/24.
+//  Created by David Stanton on 5/13/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     let diceTypes = [4, 6, 8, 10, 12, 20, 100]
-    @AppStorage("typeOfDice") var typeOfDice = 6
-    @AppStorage("numberOfDice") var numberOfDice = 4
+    @State private var currentResult = DiceResult(number: 0, type: 0)
+    @State private var diceNumber: Int = 4
+    @State private var diceType: Int = 6
     @State private var stoppedDice = 0
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    @State private var currentResult = DiceResult(number: 0, type: 0)
-    var columns: [GridItem] = [
-        .init(.adaptive(minimum: 60))
-    ]
     
-    // save with JSON
-    let savedPath = URL.documentsDirectory.appending(path: "SavedResults.JSON")
+    let savedPath = URL.documentsDirectory.appending(path: "SavedPath.JSON")
     @State private var savedResults = [DiceResult]()
+    
+    let columns: [GridItem] = [.init(.adaptive(minimum: 60))]
     
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Picker("Types of Dice", selection: $typeOfDice) {
+                Section("Dice Type & Number") {
+                    Picker("Dice Type", selection: $diceType) {
                         ForEach(diceTypes, id: \.self) { type in
                             Text("d\(type)")
                         }
                     }
                     .pickerStyle(.segmented)
                     
-                    Stepper("Number of Dice: \(numberOfDice)", value: $numberOfDice, in: 1...20)
+                    Stepper("Number of Dice: \(diceNumber)", value: $diceNumber, in: 1...20)
                     
-                    Button("Roll 'em!", action: rollDice)
-                    
+                    Button("Roll Dice!", action: rollDice)
+                }
+                
+                Section("Rolls") {
                     LazyVGrid(columns: columns) {
-                        ForEach(0..<currentResult.rolls.count, id: \.self) { roll in
-                            Text(String(currentResult.rolls[roll]))
+                        ForEach(0..<currentResult.rolls.count, id: \.self) { index in
+                            Text(String(currentResult.rolls[index]))
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .aspectRatio(1, contentMode: .fit)
                                 .foregroundStyle(.black)
@@ -49,19 +49,21 @@ struct ContentView: View {
                         }
                     }
                 }
-                .disabled(stoppedDice > currentResult.rolls.count)
+                .disabled(stoppedDice < currentResult.rolls.count)
                 
                 if savedResults.isEmpty == false {
                     Section("Previous Results") {
-                        ForEach(savedResults) { result in
-                            Text("Rolled \(result.number) d\(result.type)")
-                                .font(.headline)
-                            Text(result.rolls.map(String.init).joined(separator: ", "))
+                        ForEach(savedResults, id: \.self) { result in
+                            VStack(alignment: .leading) {
+                                Text("Rolled: \(result.number) d\(result.type)")
+                                    .font(.headline)
+                                Text("Rolls:    \(result.description)")
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("Dice Roller!")
+            .navigationTitle("Dice Roller v5")
             .onReceive(timer) { _ in
                 updateDice()
             }
@@ -70,16 +72,16 @@ struct ContentView: View {
     }
     
     func rollDice() {
-        currentResult = DiceResult(number: numberOfDice, type: typeOfDice)
+        currentResult = DiceResult(number: diceNumber, type: diceType)
         stoppedDice = -10
     }
     
     func updateDice() {
         guard stoppedDice < currentResult.rolls.count else { return }
         
-        for i in stoppedDice..<numberOfDice {
+        for i in stoppedDice..<diceNumber {
             if i < 0 { continue }
-            currentResult.rolls[i] = Int.random(in: 1...typeOfDice)
+            currentResult.rolls[i] = Int.random(in: 1...diceType)
         }
         
         stoppedDice += 1

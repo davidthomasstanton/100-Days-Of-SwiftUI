@@ -1,25 +1,23 @@
 //
 //  DiceResult.swift
-//  DiceRoll
+//  DiceRoll_5
 //
-//  Created by David Stanton on 5/11/24.
+//  Created by David Stanton on 5/13/24.
 //
-// struct for DiceResult that's Codable and Identifiable
-// id, type, number rolls
-// initializer for type and number and for appending random rolls
+
 import Foundation
 
-struct DiceResult: Codable, Identifiable {
+struct DiceResult: Codable, Hashable, Identifiable {
     var id = UUID()
-    var type: Int
     var number: Int
+    var type: Int
     var rolls = [Int]()
     var description: String {
         rolls.map(String.init).joined(separator: ", ")
     }
-    init(type: Int, number: Int) {
-        self.type = type
+    init(number: Int, type: Int) {
         self.number = number
+        self.type = type
         
         for _ in 0..<number {
             let roll = Int.random(in: 1...type)
