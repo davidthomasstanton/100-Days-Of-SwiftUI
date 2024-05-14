@@ -17,6 +17,11 @@ struct ContentView: View {
     ]
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State private var stoppedDice = 0
+    
+    // save as URL
+    let savedPath = URL.documentsDirectory.appending(path: "SavedResults.JSON")
+    @State private var savedResults = [DiceResult]()
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -50,6 +55,18 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                if savedResults.isEmpty == false {
+                    Section("Previous Results") {
+                        ForEach(savedResults) { result in
+                            VStack(alignment: .leading) {
+                                Text("Rolled \(result.number) x d\(result.type)")
+                                    .font(.headline)
+                                Text(result.rolls.map(String.init).joined(separator: ", "))
+                            }
+                        }
+                    }
+                }
             }
             .disabled(stoppedDice < currentRoll.rolls.count)
         }
@@ -57,6 +74,7 @@ struct ContentView: View {
         .onReceive(timer) { _ in
             updateDice()
         }
+        .onAppear(perform: load)
     }
     
     func rollDice() {
@@ -72,6 +90,25 @@ struct ContentView: View {
             currentRoll.rolls[i] = Int.random(in: 1...selectedDiceType)
         }
         stoppedDice += 1
+        
+        if stoppedDice == currentRoll.rolls.count {
+            savedResults.insert(currentRoll, at: 0)
+            save()
+        }
+    }
+    
+    func load() {
+        if let data = try? Data(contentsOf: savedPath) {
+            if let results = try? JSONDecoder().decode([DiceResult].self, from: data) {
+                savedResults = results
+            }
+        }
+    }
+    
+    func save() {
+        if let data = try? JSONEncoder().encode(savedResults) {
+            try? data.write(to: savedPath, options: [.atomic, .completeFileProtection])
+        }
     }
 }
 

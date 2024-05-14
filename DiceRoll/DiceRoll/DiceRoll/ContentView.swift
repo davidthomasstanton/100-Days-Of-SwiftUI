@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let diceTypes = [4, 6, 8, 10, 12, 20, 100]
     
+    @Environment(\.accessibilityVoiceOverEnabled) var accessibilityVoiceOverEnabled
     @AppStorage("selectedDiceType") var selectedDiceType = 6
     @AppStorage("numberToRoll") var numberToRoll = 4
     
@@ -21,6 +22,10 @@ struct ContentView: View {
     
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State private var stoppedDice = 0
+    
+    // save previous rolls with a json
+    let savePath = URL.documentsDirectory.appending(path: "SavedRolls.json")
+    @State private var savedResults = [DiceResult]()
 
     var body: some View {
         NavigationStack {
@@ -50,19 +55,46 @@ struct ContentView: View {
                                 .padding(5)
                         }
                     }
+                    .accessibilityElement()
+                    .accessibilityLabel("Latest roll: \(currentResult.description)")
+                }
+                if savedResults.isEmpty == false {
+                    Section("Previous results") {
+                        ForEach(savedResults) { result in
+                            VStack(alignment: .leading) {
+                                Text("\(result.number) x d\(result.type)")
+                                    .font(.headline)
+                                
+                                Text(result.description)
+                            }
+                            .accessibilityElement()
+                            .accessibilityLabel("\(result.number) d\(result.type), \(result.description)")
+                        }
+                    }
                 }
             }
             .disabled(stoppedDice < currentResult.rolls.count)
+            
+            
         }
         .navigationTitle("High Rollers")
         .onReceive(timer) { _ in
             updateDice()
         }
+        .onAppear(perform: load)
+        .sensoryFeedback(.impact, trigger: currentResult.rolls)
     }
     
     func rollDice() {
         currentResult = DiceResult(type: selectedDiceType, number: numberToRoll)
-        stoppedDice = -20
+        
+        if accessibilityVoiceOverEnabled {
+            stoppedDice = numberToRoll
+            savedResults.insert(currentResult, at: 0)
+            save()
+        } else {
+            stoppedDice = -20
+        }
     }
     
     func updateDice() {
@@ -74,6 +106,24 @@ struct ContentView: View {
         }
         
         stoppedDice += 1
+        
+        if stoppedDice == numberToRoll {
+            savedResults.insert(currentResult, at: 0)
+        }
+    }
+    
+    func load() {
+        if let data = try? Data(contentsOf: savePath) {
+            if let results = try? JSONDecoder().decode([DiceResult].self, from: data) {
+                savedResults = results
+            }
+        }
+    }
+    
+    func save() {
+        if let data = try? JSONEncoder().encode(savedResults) {
+            try? data.write(to: savePath, options: [.atomic, .completeFileProtection])
+        }
     }
 }
 
