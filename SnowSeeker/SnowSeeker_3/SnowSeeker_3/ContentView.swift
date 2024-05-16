@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  SnowSeeker
+//  SnowSeeker_3
 //
-//  Created by David Stanton on 5/14/24.
+//  Created by David Stanton on 5/15/24.
 //
 
 import SwiftUI
@@ -20,24 +20,24 @@ struct ContentView: View {
                             .scaledToFill()
                             .frame(width: 40, height: 25)
                             .clipShape(.rect(cornerRadius: 5))
-                            .overlay(
+                            .overlay {
                                 RoundedRectangle(cornerRadius: 5)
-                                    .stroke(.black, lineWidth: 1)
-                            )
+                                    .stroke(.black, lineWidth: 1.0)
+                            }
+                        
                         VStack(alignment: .leading) {
                             Text(resort.name)
                                 .font(.headline)
-                            
                             Text("\(resort.runs) runs")
                                 .foregroundStyle(.secondary)
                         }
                     }
                 }
+                .navigationDestination(for: Resort.self) { resort in
+                    ResortView(resort: resort)
+                }
             }
-            .navigationTitle("Resorts")
-            .navigationDestination(for: Resort.self) { resort in
-                ResortView(resort: resort)
-            }
+            .navigationTitle("SnowSeeker_3")
         } detail: {
             WelcomeView()
         }
