@@ -1,15 +1,14 @@
 //
 //  ContentView.swift
-//  SnowSeeker
+//  SnowSeeker_2
 //
-//  Created by David Stanton on 5/14/24.
+//  Created by David Stanton on 5/15/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
-    
     var body: some View {
         NavigationSplitView {
             List(resorts) { resort in
@@ -20,23 +19,21 @@ struct ContentView: View {
                             .scaledToFill()
                             .frame(width: 40, height: 25)
                             .clipShape(.rect(cornerRadius: 5))
-                            .overlay(
+                            .overlay {
                                 RoundedRectangle(cornerRadius: 5)
                                     .stroke(.black, lineWidth: 1)
-                            )
+                            }
                         VStack(alignment: .leading) {
                             Text(resort.name)
                                 .font(.headline)
-                            
                             Text("\(resort.runs) runs")
                                 .foregroundStyle(.secondary)
                         }
                     }
                 }
-            }
-            .navigationTitle("Resorts")
-            .navigationDestination(for: Resort.self) { resort in
-                ResortView(resort: resort)
+                .navigationDestination(for: Resort.self) { resort in
+                    ResortView(resort: resort)
+                }
             }
         } detail: {
             WelcomeView()
