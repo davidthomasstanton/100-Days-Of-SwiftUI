@@ -12,21 +12,21 @@ struct SkiDetailsView: View {
         
     var body: some View {
         Group {
-                VStack {
-                    Text("Elevation")
-                        .font(.caption.bold())
-                    
-                    Text("\(resort.elevation)m")
-                        .font(.title3)
-                }
+            VStack {
+                Text("Elevation")
+                    .font(.caption.bold())
                 
-                VStack {
-                    Text("Snow")
-                        .font(.caption.bold())
+                Text("\(resort.elevation)m")
+                    .font(.title3)
+            }
+            
+            VStack {
+                Text("Snow")
+                    .font(.caption.bold())
 
-                    Text("\(resort.snowDepth)cm")
-                        .font(.title3)
-                }
+                Text("\(resort.snowDepth)cm")
+                    .font(.title3)
+            }
         }
         .frame(maxWidth: .infinity)
 
