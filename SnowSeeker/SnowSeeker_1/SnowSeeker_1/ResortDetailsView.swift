@@ -23,21 +23,21 @@ struct ResortDetailsView: View {
     }
     var body: some View {
         Group {
-                VStack {
-                    Text("Size")
-                        .font(.caption.bold())
-                    
-                    Text(size)
-                        .font(.title3)
-                }
+            VStack {
+                Text("Size")
+                    .font(.caption.bold())
                 
-                VStack {
-                    Text("Price")
-                        .font(.caption.bold())
+                Text(size)
+                    .font(.title3)
+            }
+            
+            VStack {
+                Text("Price")
+                    .font(.caption.bold())
 
-                    Text(price)
-                        .font(.title3)
-                }
+                Text(price)
+                    .font(.title3)
+            }
         }
         .frame(maxWidth: .infinity)
 
