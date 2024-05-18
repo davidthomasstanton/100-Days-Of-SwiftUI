@@ -28,6 +28,8 @@
 		FC8C32352BF517B10057B740 /* ResortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C32342BF517B10057B740 /* ResortView.swift */; };
 		FC8C32372BF519020057B740 /* SkiDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C32362BF519020057B740 /* SkiDetailsView.swift */; };
 		FC8C32392BF54A650057B740 /* ResortDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C32382BF54A650057B740 /* ResortDetailsView.swift */; };
+		FCCCD3AF2BF653BB00970DEB /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCD3AE2BF653BB00970DEB /* Facility.swift */; };
+		FCCCD3B72BF69B6200970DEB /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCD3B62BF69B6200970DEB /* Favorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		FC8C32342BF517B10057B740 /* ResortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortView.swift; sourceTree = "<group>"; };
 		FC8C32362BF519020057B740 /* SkiDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiDetailsView.swift; sourceTree = "<group>"; };
 		FC8C32382BF54A650057B740 /* ResortDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsView.swift; sourceTree = "<group>"; };
+		FCCCD3AE2BF653BB00970DEB /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
+		FCCCD3B62BF69B6200970DEB /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				FC8C322E2BF515F00057B740 /* WelcomeView.swift */,
 				FC8C31E82BF5028D0057B740 /* resorts.json */,
 				FC8C31EA2BF5031B0057B740 /* Resort.swift */,
+				FCCCD3B62BF69B6200970DEB /* Favorites.swift */,
+				FCCCD3AE2BF653BB00970DEB /* Facility.swift */,
 				FC8C31EC2BF503890057B740 /* Bundle-Decodable.swift */,
 				FC7B3D922BF3FEF0005B36F2 /* Practice */,
 				FC7B3D742BF3B3C6005B36F2 /* Assets.xcassets */,
@@ -198,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7B3D732BF3B3C5005B36F2 /* ContentView.swift in Sources */,
+				FCCCD3AF2BF653BB00970DEB /* Facility.swift in Sources */,
 				FC7B3D8D2BF3F952005B36F2 /* Searchable_3.swift in Sources */,
 				FC8C32372BF519020057B740 /* SkiDetailsView.swift in Sources */,
 				FC7B3D7F2BF3B618005B36F2 /* NavSplitView_1.swift in Sources */,
@@ -209,6 +216,7 @@
 				FC7B3D8B2BF3C777005B36F2 /* Searchable_2.swift in Sources */,
 				FC7B3D852BF3BF22005B36F2 /* HorizontalSizeClass_1.swift in Sources */,
 				FC7B3D832BF3B9E7005B36F2 /* SheetDetents_2.swift in Sources */,
+				FCCCD3B72BF69B6200970DEB /* Favorites.swift in Sources */,
 				FC7B3D812BF3B84E005B36F2 /* SheetDetents_1.swift in Sources */,
 				FC8C322F2BF515F00057B740 /* WelcomeView.swift in Sources */,
 				FC7B3D872BF3C36B005B36F2 /* ViewThatFits_1.swift in Sources */,
